@@ -59,6 +59,8 @@
 }
 
 .finders {
+  width: 195px;
+  height: 56px;
   display: flex;
   gap: 5rem;
   padding-top: 3rem;
@@ -74,6 +76,26 @@
 }
 .finders__option.active .content {
   display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.finders__option.active .content .header {
+  height: 100px;
+  width: 195px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.finders__option.active .content .header__title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 195px;
+  height: 56px;
+}
+.finders__option.active .content .header__finder {
+  padding-block: 2px;
+  padding-inline: 4px;
 }
 
 .title {
@@ -89,6 +111,5 @@
 
 .content {
   display: none;
-  flex-direction: column;
   /* Afficher le contenu lorsque .finders__ingrédients est activé */
 }/*# sourceMappingURL=styles.css.map */
