@@ -95,7 +95,15 @@
 }
 .finders__option.active .content .header__finder {
   padding-block: 2px;
-  padding-inline: 4px;
+  padding-inline: 8px;
+}
+.finders__option.active .content .header__finder .fa-magnifying-glass {
+  position: relative;
+  right: 25px;
+  font-size: 14px;
+}
+.finders__option.active .content .header__finder .input {
+  padding-inline: 3px;
 }
 
 .title {
