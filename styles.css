@@ -64,8 +64,14 @@
   padding-top: 3rem;
   padding-left: 104px;
 }
-.finders__option__title {
+.finders__option.active .title {
+  display: none;
+}
+.finders__option.active .content {
   display: flex;
+}
+
+.title {
   justify-content: center;
   align-items: center;
   background-color: white;
@@ -74,13 +80,8 @@
   width: 179px;
   /* Appliquer les styles lorsque .finders__ingrédients est activé */
 }
-.finders__option__title.active {
-  display: none;
-}
-.finders__option__title.active ~ div {
-  display: flex;
-}
-.finders__option__content {
+
+.content {
   display: none;
   flex-direction: column;
   /* Afficher le contenu lorsque .finders__ingrédients est activé */
