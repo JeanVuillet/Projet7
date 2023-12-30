@@ -63,6 +63,11 @@
   gap: 5rem;
   padding-top: 3rem;
   padding-left: 104px;
+  display: flex;
+}
+.finders__option {
+  display: flex;
+  flex-direction: column;
 }
 .finders__option.active .title {
   display: none;
@@ -72,7 +77,8 @@
 }
 
 .title {
-  justify-content: center;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   background-color: white;
   border: solid black;

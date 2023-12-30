@@ -70,8 +70,11 @@ height: 50rem;}
             gap: 5rem;
             padding-top: 3rem;
             padding-left: 104px;
+            display: flex;
           
             &__option {
+                display:flex;
+                flex-direction: column;
               &.active {
               .title {
                   display: none;
@@ -83,28 +86,10 @@ height: 50rem;}
               }
             }
           }
-        // .finders {
-        //     display: flex;
-        //     gap: 5rem;
-        //     padding-top: 3rem;
-        //     padding-left: 104px;
-          
-        //     &__option {
-        //       &.active {
-        //         .title {
-        //           display: none;
-        //         }
-          
-        //         .content {
-        //           display: flex;
-        //         }
-        //       }
-        //     }
-        //   }
-    
+ 
       .title {
-       
-        justify-content: center;
+       display:flex;
+        justify-content: space-around;
         align-items: center;
        background-color: white;
        border:solid black;
