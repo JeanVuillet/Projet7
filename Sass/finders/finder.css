@@ -59,4 +59,21 @@
 .content {
   display: none;
   /* Afficher le contenu lorsque .finders__ingrédients est activé */
+}
+
+.tags {
+  display: flex;
+  gap: 1rem;
+}
+
+.ingredientTag {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 203px;
+  height: 53px;
+  background-color: #FFD15B;
+  border-radius: 10px;
+  padding: 17px, 18px, 17px, 18px;
+  gap: 60px;
 }/*# sourceMappingURL=finder.css.map */

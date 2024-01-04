@@ -4,6 +4,7 @@ import  { recipes } from "./recipes.mjs";
 import { finderIngredients } from "./finders.mjs";
 
 const finders = document.getElementsByClassName("finders__option");
+const ingredientDiv= document.getElementById("finders__ingrédients");
 var a=1;
 // Utiliser forEach sur la collection pour itérer sur chaque élément
 Array.from(finders).forEach(element => {
@@ -36,7 +37,7 @@ chevronUp[0].addEventListener("click",
 
 const listMakerObject= new listMaker();
 //including finders content
-const ingredientDiv= document.getElementById("finders__ingrédients");
+
 
 listMakerObject.sortIngredients().forEach(function(ingredient){
     let ingredientP =document.createElement('p');
@@ -49,5 +50,21 @@ recipes.forEach(function(recipe){
     let recetteArticle=recetteMaker(recipe);
     sectionRecettes.appendChild(recetteArticle);
 });
+
+
 });
 
+//implementing tagMaker
+ingredientDiv.addEventListener('click',function(e){
+       const closeCross=document.createElement('i');
+       closeCross.className='fa-solid fa-xmark';
+      
+        let selectedIngredientP=document.createElement('p');
+        selectedIngredientP.appendChild(e.target);
+        selectedIngredientP.appendChild(closeCross);
+        selectedIngredientP.className='ingredientTag';
+        let tagDiv=document.getElementById('tags');
+        tagDiv.appendChild(selectedIngredientP);
+        //adding cross event listener
+        closeCross.addEventListener('click',()=>tagDiv.removeChild(selectedIngredientP));
+    })
