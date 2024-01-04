@@ -1,0 +1,61 @@
+*{
+   
+}
+.Header {
+    height: 960px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    position:absolute;
+    z-index:-1;
+    height: 960px;
+    width: 100%;
+  }
+  &__logo {
+    z-index:1;
+    position:absolute;
+    
+    left: 69px; 
+    top: 69px;
+ 
+  }
+  &__inputLabel{
+    width: 954px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    &__slogan{
+        color: #FFD15B;
+        font-size: 44px;
+        font-family: Anton;
+        font-weight: 400;
+        word-wrap: break-word;
+        text-align: center;
+        margin-left: -70px;
+       
+    }
+  &__finder {
+    display: flex;
+    height: 72px;
+    align-items: center;
+    &__input {
+      height: 100%;
+      width: 954px;
+    }
+    &__button {
+      height: 51px;
+      width: 52px;
+
+      &__img {
+        margin-left: -70px;
+        height: 100%;
+        width: 51px;
+      }
+    }
+}
+}
+
+}
