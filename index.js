@@ -5,18 +5,18 @@ import { finderIngredients } from "./finders.mjs";
 
 const finders = document.getElementsByClassName("finders__option");
 const ingredientDiv= document.getElementById("finders__ingrédients");
-var a=1;
+var open=true;
 // Utiliser forEach sur la collection pour itérer sur chaque élément
 Array.from(finders).forEach(element => {
-    element.addEventListener("click", function(){ if(a==1){element.classList.add('active')}
-    else{a++;}} )
+    element.addEventListener("click", function(){ if(open==true){element.classList.add('active')}
+    else{open=true;}} )
 
 });
 Array.from(finders).forEach(element => {
     //implementing closer
     let chevronUp=element.getElementsByClassName('fa-chevron-up')
 chevronUp[0].addEventListener("click",
-    function(){ element.classList.remove('active');  a--;})
+    function(){ element.classList.remove('active'); open=false;})
 
     //implementing finder
     let input=element.querySelector('.input');
@@ -65,6 +65,9 @@ ingredientDiv.addEventListener('click',function(e){
         selectedIngredientP.className='ingredientTag';
         let tagDiv=document.getElementById('tags');
         tagDiv.appendChild(selectedIngredientP);
+        //closing finder
+        const finder=document.getElementById('ingredientFinder');
+        finder.classList.remove('active'); open=false;
         //adding cross event listener
         closeCross.addEventListener('click',()=>tagDiv.removeChild(selectedIngredientP));
     })
