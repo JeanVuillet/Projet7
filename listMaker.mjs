@@ -4,19 +4,18 @@ import recetteMaker from "./recette.mjs"
 
 var masterList=[];
 export function reloadMasterList(selectedList) {
-
+masterList=[];
     if(selectedList.length!=0){
-    masterList=recipes;
+
     for (let i = 0; i < recipes.length; i++) {
       for (let j = 0; j < recipes[i].ingredients.length; j++) {
-        let present=true;
+        let present=false;
         for (let k = 0; k < selectedList.length; k++) {
 
           if (recipes[i].ingredients[j].ingredient==selectedList[k]) {
        present=true;
           }
-       if(present=false){  
-        }
+  
       }
       if (present==true){masterList.push(recipes[i])}
     }
