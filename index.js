@@ -2,9 +2,12 @@ import listMaker from "./listMaker.mjs";
 import recetteMaker from "./recette.mjs";
 import { recipes } from "./recipes.mjs";
 import { finderIngredients } from "./finders.mjs";
+import { reloadMasterList } from "./listMaker.mjs";
+
 
 const finders = document.getElementsByClassName("finders__option");
 const ingredientDiv = document.getElementById("finders__ingrédients");
+var selectedList=[];
 export var open = true;
 // Utiliser forEach sur la collection pour itérer sur chaque élément
 Array.from(finders).forEach((element) => {
@@ -25,7 +28,9 @@ Array.from(finders).forEach((element) => {
   });
 
   const sectionRecettes = document.getElementById("recettes");
-  recipes.forEach(function (recipe) {
+  sectionRecettes.innerHTML='';
+  let masterList=reloadMasterList(selectedList);
+  masterList.forEach(function (recipe) {
     let recetteArticle = recetteMaker(recipe);
     sectionRecettes.appendChild(recetteArticle);
   });
@@ -33,6 +38,16 @@ Array.from(finders).forEach((element) => {
 //       IMPLEMENTING FINDERS
 
 //Ingredient Finder
+function newFinderIngredients(){
+
+    let newIngredientList=listMakerObject.sortIngredients(selectedList);
+    ingredientDiv.innerHTML='';
+    newIngredientList.forEach(function (ingredient) {
+        let ingredientP = document.createElement("p");
+        ingredientP.textContent = `${ingredient}`;
+        ingredientDiv.appendChild(ingredientP);
+      })
+}
 
 //implementing ingredients finder
 let input = document.getElementById("ingredientsInput");
@@ -51,7 +66,7 @@ input.addEventListener("input", function newList() {
 const listMakerObject = new listMaker();
 //including ingredient finder content
 
-listMakerObject.sortIngredients().forEach(function (ingredient) {
+listMakerObject.sortIngredients(selectedList).forEach(function (ingredient) {
   let ingredientP = document.createElement("p");
   ingredientP.textContent = `${ingredient}`;
   ingredientDiv.appendChild(ingredientP);
@@ -64,16 +79,35 @@ ingredientDiv.addEventListener("click", function (e) {
 
   let selectedIngredientP = document.createElement("p");
   selectedIngredientP.appendChild(e.target);
+
   selectedIngredientP.appendChild(closeCross);
-  selectedIngredientP.className = "ingredientTag";
-  let tagDiv = document.getElementById("tags");
+  selectedIngredientP.className = "tags__ingredientsTags__ingredientTag";
+  let tagDiv = document.getElementById("ingredientsTag");
   tagDiv.appendChild(selectedIngredientP);
+
   //closing ingredient finder
   const finder = document.getElementById("ingredientFinder");
   finder.classList.remove("active");
   open = false;
   //adding cross event listener
-  closeCross.addEventListener("click", () =>
+  closeCross.addEventListener("click", function() {
     tagDiv.removeChild(selectedIngredientP)
+    selectedList.pop(selectedIngredientP.innerText);
+  
+            reloadMasterList(selectedList);
+            newFinderIngredients();
+        
+
+
+
+}
   );
+    //implementing selectedList
+    selectedList.push(e.target.textContent);
+    reloadMasterList(selectedList);
+    newFinderIngredients();
 });
+
+export function getSelectedList(){
+    return selectedList;
+}

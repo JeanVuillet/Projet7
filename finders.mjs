@@ -1,12 +1,12 @@
 import listMaker from "./listMaker.mjs";
 
-
+import { getSelectedList } from "./index.js";
 const listMakerObject=new listMaker();
 
-
+let selectedList=getSelectedList();
 export function finderIngredients(input){
 
-    let newIngredientList=listMakerObject.sortIngredients().filter(function(ingredient){
+    let newIngredientList=listMakerObject.sortIngredients(selectedList).filter(function(ingredient){
         if (ingredient.toLowerCase().includes(input.value.toLowerCase())){
             return ingredient
         }

@@ -65,8 +65,11 @@
   display: flex;
   gap: 1rem;
 }
-
-.ingredientTag {
+.tags__ingredientsTags {
+  display: flex;
+  flex-direction: column;
+}
+.tags__ingredientsTags__ingredientTag {
   display: flex;
   justify-content: space-around;
   align-items: center;

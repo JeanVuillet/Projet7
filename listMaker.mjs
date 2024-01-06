@@ -1,60 +1,126 @@
-import {recipes} from "./recipes.mjs";
+import { recipes } from "./recipes.mjs";
 
-export default class listMaker{
-//sort ingredients
+import recetteMaker from "./recette.mjs"
 
+var masterList=[];
+export function reloadMasterList(selectedList) {
 
- sortIngredients(){
-let listIngredients=[];
+    if(selectedList.length!=0){
+    masterList=[];
+    for (let i = 0; i < recipes.length; i++) {
+      for (let j = 0; j < recipes[i].ingredients.length; j++) {
+        for (let k = 0; k < selectedList.length; k++) {
 
-for(let i=0; i<recipes.length; i++){
-    for(let j=0; j<recipes[i].ingredients.length; j++){
-        listIngredients.push(recipes[i].ingredients[j].ingredient);
-
+          if (recipes[i].ingredients[j].ingredient==selectedList[k]) {
+            masterList.push(recipes[i])
+          }
+        }
+      }
     }
-}
-
-listIngredients=listIngredients.sort( function (a,b){if(a>b){return 1} else{ return -1} });
-let CleanListIngredients=[listIngredients[0]];
-let i=0;
-listIngredients.forEach(function (ingredient){if (CleanListIngredients[i]!= ingredient){CleanListIngredients.push(ingredient); i++;}
-});
-return CleanListIngredients;
-}
-//sort appareils
-sortAppareils(){
-let listAppareils=[];
-
-for(let i=0; i<recipes.length; i++){
-   
-        listAppareils.push(recipes[i].appliance);
+  
     }
-listAppareils=listAppareils.sort( function (a,b){if(a>b){return 1} else{ return -1} });
+    else {masterList=recipes;}
 
-let CleanListAppareils=[listAppareils[0]];
- i=0;
-listAppareils.forEach(function (appareil){if (CleanListAppareils[i]!= appareil){CleanListAppareils.push(appareil); i++;}
-});
-return CleanListAppareils;
-}
-//sort ustensils
-sortUstensils(){
-let listUstensils=[];
+    const sectionRecettes = document.getElementById("recettes");
+    sectionRecettes.innerHTML='';
+  
+    masterList.forEach(function (recipe) {
+      let recetteArticle = recetteMaker(recipe);
+      sectionRecettes.appendChild(recetteArticle);})
 
-for(let i=0; i<recipes.length; i++){
-    for(let j=0; j<recipes[i].ustensils.length; j++){
+    return masterList;
+
+  }
+
+export default class listMaker {
+  //sort ingredients
+
+
+  sortIngredients(selectedList) {
+
+    let listIngredients = [];
+
+    for (let i = 0; i < masterList.length; i++) {
+      for (let j = 0; j < masterList[i].ingredients.length; j++) {
+        let present=false;
+        for( let k=0; k<selectedList.length; k++){
+           
+           if(selectedList[k]==recipes[i].ingredients[j]){
+            present=true;
+           } 
+
+        }
+        if(present==false) {listIngredients.push(recipes[i].ingredients[j].ingredient) };
+      }
+    }
+
+    listIngredients = listIngredients.sort(function (a, b) {
+      if (a > b) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+    let CleanListIngredients = [listIngredients[0]];
+    let i = 0;
+    listIngredients.forEach(function (ingredient) {
+      if (CleanListIngredients[i] != ingredient) {
+        CleanListIngredients.push(ingredient);
+        i++;
+      }
+    });
+    return CleanListIngredients;
+  }
+  //sort appareils
+  sortAppareils() {
+    let listAppareils = [];
+
+    for (let i = 0; i < recipes.length; i++) {
+      listAppareils.push(recipes[i].appliance);
+    }
+    listAppareils = listAppareils.sort(function (a, b) {
+      if (a > b) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+
+    let CleanListAppareils = [listAppareils[0]];
+    i = 0;
+    listAppareils.forEach(function (appareil) {
+      if (CleanListAppareils[i] != appareil) {
+        CleanListAppareils.push(appareil);
+        i++;
+      }
+    });
+    return CleanListAppareils;
+  }
+  //sort ustensils
+  sortUstensils() {
+    let listUstensils = [];
+
+    for (let i = 0; i < recipes.length; i++) {
+      for (let j = 0; j < recipes[i].ustensils.length; j++) {
         listUstensils.push(recipes[i].ustensils[j]);
-
+      }
     }
+
+    listUstensils = listUstensils.sort(function (a, b) {
+      if (a > b) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+
+    let CleanListUstensils = [listUstensils[0]];
+    i = 0;
+    listUstensils.forEach(function (ustensil) {
+      if (CleanListUstensils[i] != ustensil) {
+        CleanListUstensils.push(ustensil);
+        i++;
+      }
+    });
+  }
 }
-
-listUstensils=listUstensils.sort( function (a,b){if(a>b){return 1} else{ return -1} });
-
-let CleanListUstensils=[listUstensils[0]];
- i=0;
-listUstensils.forEach(function (ustensil){if (CleanListUstensils[i]!= ustensil){CleanListUstensils.push(ustensil); i++;}
-});
-}
-
-
-};
