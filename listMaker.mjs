@@ -6,19 +6,22 @@ var masterList=[];
 export function reloadMasterList(selectedList) {
 
     if(selectedList.length!=0){
-    masterList=[];
+    masterList=recipes;
     for (let i = 0; i < recipes.length; i++) {
       for (let j = 0; j < recipes[i].ingredients.length; j++) {
+        let present=true;
         for (let k = 0; k < selectedList.length; k++) {
 
           if (recipes[i].ingredients[j].ingredient==selectedList[k]) {
-            masterList.push(recipes[i])
+       present=true;
           }
+       if(present=false){  
         }
       }
+      if (present==true){masterList.push(recipes[i])}
     }
   
-    }
+    }}
     else {masterList=recipes;}
 
     const sectionRecettes = document.getElementById("recettes");
@@ -37,7 +40,7 @@ export default class listMaker {
 
 
   sortIngredients(selectedList) {
-
+let masterList=reloadMasterList(selectedList);
     let listIngredients = [];
 
     for (let i = 0; i < masterList.length; i++) {
@@ -45,12 +48,12 @@ export default class listMaker {
         let present=false;
         for( let k=0; k<selectedList.length; k++){
            
-           if(selectedList[k]==recipes[i].ingredients[j]){
+           if(selectedList[k]==masterList[i].ingredients[j]){
             present=true;
            } 
 
         }
-        if(present==false) {listIngredients.push(recipes[i].ingredients[j].ingredient) };
+        if(present==false) {listIngredients.push(masterList[i].ingredients[j].ingredient) };
       }
     }
 
@@ -71,6 +74,10 @@ export default class listMaker {
     });
     return CleanListIngredients;
   }
+
+
+
+
   //sort appareils
   sortAppareils() {
     let listAppareils = [];

@@ -38,8 +38,8 @@ Array.from(finders).forEach((element) => {
 //       IMPLEMENTING FINDERS
 
 //Ingredient Finder
-function newFinderIngredients(){
-
+function newFinderIngredients(selectedList){
+reloadMasterList(selectedList);
     let newIngredientList=listMakerObject.sortIngredients(selectedList);
     ingredientDiv.innerHTML='';
     newIngredientList.forEach(function (ingredient) {
@@ -50,18 +50,18 @@ function newFinderIngredients(){
 }
 
 //implementing ingredients finder
-let input = document.getElementById("ingredientsInput");
+// let input = document.getElementById("ingredientsInput");
 
-input.addEventListener("input", function newList() {
-  ingredientDiv.innerHTML = "";
-  const newList = finderIngredients(input);
+// input.addEventListener("input", function newList() {
+//   ingredientDiv.innerHTML = "";
+//   const newList = finderIngredients(input);
 
-  newList.forEach(function (ingredient) {
-    let ingredientP = document.createElement("p");
-    ingredientP.textContent = `${ingredient}`;
-    ingredientDiv.appendChild(ingredientP);
-  });
-});
+//   newList.forEach(function (ingredient) {
+//     let ingredientP = document.createElement("p");
+//     ingredientP.textContent = `${ingredient}`;
+//     ingredientDiv.appendChild(ingredientP);
+//   });
+// });
 
 const listMakerObject = new listMaker();
 //including ingredient finder content
@@ -104,8 +104,8 @@ ingredientDiv.addEventListener("click", function (e) {
   );
     //implementing selectedList
     selectedList.push(e.target.textContent);
-    reloadMasterList(selectedList);
-    newFinderIngredients();
+ 
+    newFinderIngredients(selectedList);
 });
 
 export function getSelectedList(){
