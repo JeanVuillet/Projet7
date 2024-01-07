@@ -38,35 +38,25 @@ Array.from(finders).forEach((element) => {
 //       IMPLEMENTING FINDERS
 
 //Ingredient Finder
-function newFinderIngredients(selectedList){
-reloadMasterList(selectedList);
-    let newIngredientList=listMakerObject.sortIngredients(selectedList);
-    ingredientDiv.innerHTML='';
-    newIngredientList.forEach(function (ingredient) {
-        let ingredientP = document.createElement("p");
-        ingredientP.textContent = `${ingredient}`;
-        ingredientDiv.appendChild(ingredientP);
-      })
-}
+// function newFinderIngredients(selectedList){
+// reloadMasterList(selectedList);
+//     let newIngredientList=listMakerObject.sortIngredients(selectedList);
+//     ingredientDiv.innerHTML='';
+//     newIngredientList.forEach(function (ingredient) {
+//         let ingredientP = document.createElement("p");
+//         ingredientP.textContent = `${ingredient}`;
+//         ingredientDiv.appendChild(ingredientP);
+//       })
+// }
 
-//implementing ingredients finder
-// let input = document.getElementById("ingredientsInput");
 
-// input.addEventListener("input", function newList() {
-//   ingredientDiv.innerHTML = "";
-//   const newList = finderIngredients(input);
 
-//   newList.forEach(function (ingredient) {
-//     let ingredientP = document.createElement("p");
-//     ingredientP.textContent = `${ingredient}`;
-//     ingredientDiv.appendChild(ingredientP);
-//   });
-// });
 
 const listMakerObject = new listMaker();
 //including ingredient finder content
 
 listMakerObject.sortIngredients(selectedList).forEach(function (ingredient) {
+
   let ingredientP = document.createElement("p");
   ingredientP.textContent = `${ingredient}`;
   ingredientDiv.appendChild(ingredientP);
@@ -104,10 +94,15 @@ ingredientDiv.addEventListener("click", function (e) {
   );
     //implementing selectedList
     selectedList.push(e.target.textContent);
- 
-    newFinderIngredients(selectedList);
+    ingredientDiv.innerHTML='';
+   listMakerObject.sortIngredients(selectedList).forEach(function (ingredient) {
+
+    let ingredientP = document.createElement("p");
+    ingredientP.textContent = `${ingredient}`;
+    ingredientDiv.appendChild(ingredientP);;
+});
 });
 
 export function getSelectedList(){
     return selectedList;
-}
+};

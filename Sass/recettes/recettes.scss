@@ -58,16 +58,16 @@ color:black;
             display:flex;
             flex-direction: column;
             flex-wrap: wrap;
-            gap:10px;
+            gap:0px;
             &__name{
-                width:50%;
+                width:20%;
                 color:black;
                 font-weight: 500;
                 font-size: 14px;
                 line-height: 19.12px;
             }
             &__quantity{
-                width:50%;
+               
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 19.12px;

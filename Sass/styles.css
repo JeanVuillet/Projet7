@@ -188,17 +188,16 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0px;
 }
 .recetteContainer__ingredientsSection__ingredients__name {
-  width: 50%;
+  width: 20%;
   color: black;
   font-weight: 500;
   font-size: 14px;
   line-height: 19.12px;
 }
 .recetteContainer__ingredientsSection__ingredients__quantity {
-  width: 50%;
   font-weight: 400;
   font-size: 14px;
   line-height: 19.12px;
