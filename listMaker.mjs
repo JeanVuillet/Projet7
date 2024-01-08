@@ -3,7 +3,7 @@ import { recipes } from "./recipes.mjs";
 import recetteMaker from "./recette.mjs"
 
 var masterList=[];
-export function reloadMasterList(selectedList) {
+export function reloadMasterList(selectedList,) {
 masterList=[];
 
 //traiter chaque recette
