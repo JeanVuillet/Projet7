@@ -4,15 +4,15 @@ import recetteMaker from "./recette.mjs"
 
 var masterList=[];
 export function reloadMasterList(selectedList) {
-masterList=[];
+masterList=recipes;
 
 //traiter chaque recette
-    for (let i = 0; i < recipes.length; i++) {
+    for (let i = recipes.length-1; i > -1; i--) {
       // parcourir la liste de tag
       // par defaut on dit qu il est present au cas ou tagList serait vide
      let present=true;
 
-      for (let j = 0; j < selectedList.length; j++) {
+      for (let j = 0; j < selectedList.length-1; j++) {
       // pour ce tag parcourir la liste des ingredients de cette recette
       //par defaut il est abscent
        present=false;
@@ -34,10 +34,9 @@ masterList=[];
       //  de cette recette bouclent sur le prochain tag
 
     }
-    // a la sortie si on est pas passe par false alors tous les ingredients de 
-    // cette recette sont presents dans la tagList 
-    // donc on ajoute cette recette a masterlist
-    if (present==true){masterList.push(recipes[i])}
+    // a la sortie si on a false alors un des ingredients ne colle pas 
+    // donc on exclue cette recette de masterlist
+    if (present==false){masterList.splice(i,1);}
     }
 
   
