@@ -7,21 +7,21 @@ export function reloadMasterList(selectedList) {
 masterList=recipes;
 
 //traiter chaque recette
-    for (let i = recipes.length-1; i > -1; i--) {
+    for (let i = masterList.length-1; i > -1; i--) {
       // parcourir la liste de tag
       // par defaut on dit qu il est present au cas ou tagList serait vide
      let present=true;
 
-      for (let j = 0; j < selectedList.length-1; j++) {
+      for (let j = 0; j < selectedList.length; j++) {
       // pour ce tag parcourir la liste des ingredients de cette recette
       //par defaut il est abscent
        present=false;
-      for (let k = 0; k < recipes[i].ingredients.length; k++) {
+      for (let k = 0; k < masterList[i].ingredients.length; k++) {
   
    //si un ingredient est egale au tag=true
    
 
-          if (selectedList[j]==recipes[i].ingredients[k].ingredient) {
+          if (selectedList[j]==masterList[i].ingredients[k].ingredient) {
        present=true;
           }
   
@@ -36,7 +36,9 @@ masterList=recipes;
     }
     // a la sortie si on a false alors un des ingredients ne colle pas 
     // donc on exclue cette recette de masterlist
-    if (present==false){masterList.splice(i,1);}
+    if (present==false)
+    {masterList.splice(i,1);
+    console.log('vous avez suppr '+i+'recette'+masterList[i])}
     }
 
   
