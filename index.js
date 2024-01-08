@@ -9,6 +9,13 @@ const finders = document.getElementsByClassName("finders__option");
 const ingredientDiv = document.getElementById("finders__ingrédients");
 var selectedList=[];
 export var open = true;
+
+// gestion du masterInput
+let input=document.getElementById("recherche");
+input.addEventListener("keyup",function(e)
+{if(e.target.value.length==3){
+  reloadMasterList(selectedList);
+}})
 // Utiliser forEach sur la collection pour itérer sur chaque élément
 Array.from(finders).forEach((element) => {
   element.addEventListener("click", function () {
@@ -85,7 +92,7 @@ ingredientDiv.addEventListener("click", function (e) {
     selectedList.pop(selectedIngredientP.innerText);
   
             reloadMasterList(selectedList);
-            newFinderIngredients();
+           listMakerObject.sortIngredients(selectedList);
         
 
 
