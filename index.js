@@ -1,8 +1,7 @@
 import listMaker from "./listMaker.mjs";
 import recetteMaker from "./recette.mjs";
-import { recipes } from "./recipes.mjs";
-import { finderIngredients } from "./finders.mjs";
 import { reloadMasterList } from "./listMaker.mjs";
+import { TagObject } from "./Tag/tags.mjs";
 
 
 const finders = document.getElementsByClassName("finders__option");
@@ -35,19 +34,6 @@ Array.from(finders).forEach((element) => {
     sectionRecettes.appendChild(recetteArticle);
   });
 });
-//       IMPLEMENTING FINDERS
-
-//Ingredient Finder
-// function newFinderIngredients(selectedList){
-// reloadMasterList(selectedList);
-//     let newIngredientList=listMakerObject.sortIngredients(selectedList);
-//     ingredientDiv.innerHTML='';
-//     newIngredientList.forEach(function (ingredient) {
-//         let ingredientP = document.createElement("p");
-//         ingredientP.textContent = `${ingredient}`;
-//         ingredientDiv.appendChild(ingredientP);
-//       })
-// }
 
 
 
@@ -94,6 +80,8 @@ ingredientDiv.addEventListener("click", function (e) {
   );
     //implementing selectedList
     selectedList.push(e.target.textContent);
+    //implementing TagObject Class
+    TagObject.ingredientsTaglist.push(e.target.textContent);
     ingredientDiv.innerHTML='';
    listMakerObject.sortIngredients(selectedList).forEach(function (ingredient) {
 

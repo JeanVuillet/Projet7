@@ -1,9 +1,48 @@
-export class  tags {
+import { newReloadMasterList, reloadMasterList } from "../listMaker.mjs";
+
+export class TagObject extends CheckTags {
+
+}
+
+
+export class TagSetter {
     static ingredientsTaglist = [];
     static appareilsTaglist = [];
     static ustensilsTaglist = [];
-   
-    static checkTags(RecetteIngredients,RecetteApplaiance,RecetteUstensils) {
+
+   static removeIngredient(ingredient){
+        for(let i=0; i<ingredientsTaglist;i++){
+            if(ingredientsTaglist[i]==ingredient){
+                ingredientsTaglist.splice(i,1);
+                 newReloadMasterList(TagObject);
+                break;
+            }
+        }
+    }
+  static  removeAppareil(appareil){
+        for(let i=0; i<appareilsTaglist;i++){
+            if(appareilsTaglist[i]==appareil){
+                appareilTaglist.splice(i,1);
+                newReloadMasterList(TagObject);
+                break;
+            }
+        }
+    }
+  static  removeUstensil(ustensil){
+        for(let i=0; i<ustensilsTaglist;i++){
+            if(ustensilsTaglist[i]==ustensil){
+                ustensilTaglist.splice(i,1);
+                newReloadMasterList(TagObject);
+                break;
+            }
+        }
+    }
+}
+
+
+export class  CheckTags extends TagSetter{
+
+    constructor (RecetteIngredients,RecetteApplaiance,RecetteUstensils) {
        let present=false;
     if(
        (checkRecetteIngredients(RecetteIngredients))&& 
@@ -52,5 +91,9 @@ export class  tags {
        }
        return present;
      }
-   }
+
+    }
+
+   
+
    

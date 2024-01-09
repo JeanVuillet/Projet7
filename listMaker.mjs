@@ -1,4 +1,5 @@
 import { recipes } from "./recipes.mjs";
+import { CheckTags, tags } from "./Tag/tags.mjs";
 
 import recetteMaker from "./recette.mjs"
 
@@ -6,11 +7,18 @@ var masterList=[];
 export function reloadMasterList(selectedList,) {
 masterList=[];
 
+const tags= new tags();
 //traiter chaque recette
     for (let i = 0; i < recipes.length; i++) {
       // parcourir la liste de tag
       // par defaut on dit qu il est present au cas ou tagList serait vide
      let present=true;
+
+
+
+// testing tagClass
+
+
 
       for (let j = 0; j < selectedList.length; j++) {
       // pour ce tag parcourir la liste des ingredients de cette recette
