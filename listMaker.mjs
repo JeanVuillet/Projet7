@@ -1,5 +1,5 @@
 import { recipes } from "./recipes.mjs";
-import { CheckTags, tags } from "./Tag/tags.mjs";
+
 
 import recetteMaker from "./recette.mjs"
 
@@ -67,47 +67,50 @@ export default class listMaker {
 
 // creer  a partir de masterlist une nouvelle liste d
 // ingredients qui ne contient pas les ingredients selectionnes
-  sortIngredients(selectedList) {
-// verification qu au moins un element a ete selectionne
+
+
+// Ancienne version de sort ingredients
+//   sortIngredients(selectedList) {
+// // verification qu au moins un element a ete selectionne
  
 
-let masterList=reloadMasterList(selectedList);
-    let listIngredients = [];
-// parcourir des recettes de masterList
-  for (let i = 0; i < masterList.length; i++) {
-      // parcourt des ingredients de chaque recette
-      for (let j = 0; j < masterList[i].ingredients.length; j++) {
-        let present=false;
-     // comparer chaque ingredient a la selected list si present =true
-        for( let k=0; k<selectedList.length; k++){
+// let masterList=reloadMasterList(selectedList);
+//     let listIngredients = [];
+// // parcourir des recettes de masterList
+//   for (let i = 0; i < masterList.length; i++) {
+//       // parcourt des ingredients de chaque recette
+//       for (let j = 0; j < masterList[i].ingredients.length; j++) {
+//         let present=false;
+//      // comparer chaque ingredient a la selected list si present =true
+//         for( let k=0; k<selectedList.length; k++){
            
-           if(selectedList[k]==masterList[i].ingredients[j].ingredient){
-            present==true;
-           } 
+//            if(selectedList[k]==masterList[i].ingredients[j].ingredient){
+//             present==true;
+//            } 
 
-        }
-        if(present==false) 
-        {listIngredients.push(masterList[i].ingredients[j].ingredient) };
-      }
-    }
+//         }
+//         if(present==false) 
+//         {listIngredients.push(masterList[i].ingredients[j].ingredient) };
+//       }
+//     }
 
-    listIngredients = listIngredients.sort(function (a, b) {
-      if (a > b) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
-    let CleanListIngredients = [listIngredients[0]];
-    let i = 0;
-    listIngredients.forEach(function (ingredient) {
-      if (CleanListIngredients[i] != ingredient) {
-        CleanListIngredients.push(ingredient);
-        i++;
-      }
-    });
-    return CleanListIngredients;
-  }
+//     listIngredients = listIngredients.sort(function (a, b) {
+//       if (a > b) {
+//         return 1;
+//       } else {
+//         return -1;
+//       }
+//     });
+//     let CleanListIngredients = [listIngredients[0]];
+//     let i = 0;
+//     listIngredients.forEach(function (ingredient) {
+//       if (CleanListIngredients[i] != ingredient) {
+//         CleanListIngredients.push(ingredient);
+//         i++;
+//       }
+//     });
+//     return CleanListIngredients;
+//   }
 
   
 

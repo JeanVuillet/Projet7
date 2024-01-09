@@ -1,20 +1,22 @@
-import { newReloadMasterList, reloadMasterList } from "../listMaker.mjs";
 
-export class TagObject extends CheckTags {
-
-}
+import { ReloadPage } from "../reloadPage.mjs";
 
 
-export class TagSetter {
+
+
+export class Tag {
     static ingredientsTaglist = [];
     static appareilsTaglist = [];
-    static ustensilsTaglist = [];
+    static ustensilesTaglist = [];
+   
+//  static  coucou(){return 'coucou' ;}
+
 
    static removeIngredient(ingredient){
         for(let i=0; i<ingredientsTaglist;i++){
             if(ingredientsTaglist[i]==ingredient){
                 ingredientsTaglist.splice(i,1);
-                 newReloadMasterList(TagObject);
+                 ReloadPage(TagObject);
                 break;
             }
         }
@@ -23,77 +25,114 @@ export class TagSetter {
         for(let i=0; i<appareilsTaglist;i++){
             if(appareilsTaglist[i]==appareil){
                 appareilTaglist.splice(i,1);
-                newReloadMasterList(TagObject);
+                ReloadPage(TagObject);
                 break;
             }
         }
     }
   static  removeUstensil(ustensil){
-        for(let i=0; i<ustensilsTaglist;i++){
-            if(ustensilsTaglist[i]==ustensil){
+        for(let i=0; i<ustensilesTaglist;i++){
+            if(ustensilesTaglist[i]==ustensil){
                 ustensilTaglist.splice(i,1);
-                newReloadMasterList(TagObject);
+                ReloadPage(TagObject);
                 break;
             }
         }
     }
-}
 
+    
 
-export class  CheckTags extends TagSetter{
-
-    constructor (RecetteIngredients,RecetteApplaiance,RecetteUstensils) {
+ 
+  
+  
+static checkTags(RecetteIngredients,RecetteApplaiance,Recetteustensiles){
        let present=false;
     if(
-       (checkRecetteIngredients(RecetteIngredients))&& 
-       (checkRecetteAppareils(RecetteApplaiance))&&
-       (checkRecetteUstensils(RecetteUstensils))
+       (Tag.checkRecetteIngredients(RecetteIngredients))&& 
+       (Tag.checkRecetteAppareils(RecetteApplaiance))&&
+       (Tag.checkRecetteustensiles(Recetteustensiles))
        )
        {present=true;}
    
        return present;
-       }
+      
+    }
+
    
     
      
    
      static checkRecetteIngredients(RecetteIngredients) {
-       let present=true;
-       for (let i = 0; i < this.ingredientsTaglist.length; i++) {
-         
+      let present=true;
+       // on boucle sur chaque tag de la liste de tags Selectionnes
+       for (let i = 0; i < Tag.ingredientsTaglist.length; i++) {
+         // pour ce tag on boucle sour tous les ingredients de cette recette
+          present=false;
            for(let j=0; j<RecetteIngredients.length; j++)
+
            {
-            if(this.ingredientsTaglist[i]!=RecetteIngredients[j].ingredient)
-            {present=false;}
+            //  si cet ingredient = ce tag
+             // present=true
+            if(Tag.ingredientsTaglist[i]==RecetteIngredients[j].ingredient)
+            {present=true;}
+          
            }
-           return present;
+           // si present =true un ingredient a matche avec un tag
+           // on continue sur la boucle suivante
+           // si present= false on return false
+           if (present==false){
+            return false;
+           }
+         
        }
+       // present a passe toutes les boucles et a matche a chaque fois
+       // tous les ingredients sont presents dans la taglist
+       // on revoie true
+       return true;
      }
     static  checkRecetteAppareils(RecetteApplaiance){
-       let present=true;
-       for(let i=0; i<this.appareilsTaglist; i++){
-   if (RecetteApplaiance !=this.appareilsTaglist){
-       present=false;
-   }
-       }
-       return false;
-     }
-   
-    static checkRecetteUstensils(RecetteUstensils){
-       present=true;
-       for (i=0; i<this.ustensilsTaglist; i++) {
-           for(j=0; j<RecetteUstensils; j++){
-               if(this>this.ustensilsTaglist[i] != RecetteUstensils[j])
-               {
-                   present=false;
-               }
-           }
-       }
+        //on initialise present a true au cas ou la liste soit vide
+        var present=true;
+// on boucle sur tous les appareils de la taglist
+       for(let i=0; i<Tag.appareilsTaglist; i++){
+        //la liste n est donc pas vide on met donc present a false
+        present=false;
+        //si cet appareil match alors l appareil de cette
+        // recette a matche avec un tag 
+   if (RecetteApplaiance ==Tag.appareilsTaglist[i]){
+    //on valid ce tag present=true on passe au prochain tag
+    present=true; 
        return present;
+       }
+       // on a fini la boucle sans match donc l appareil de la recette
+       // n est pas dans les tags recette rejettee
+       //present= false et recette rejettee
+       present=false;
+       return present;
+     
      }
-
+     return present;
     }
 
-   
-
-   
+    static checkRecetteustensiles(RecetteUstensiles){
+       let  present=true;
+        //on boucle sur les ustensiles de la taglist
+        for (let i=0; i<Tag.ustensilesTaglist.length; i++) {
+            present=false;
+            // pour ce tagUstensil on boucle sur les ustensiles de la recette
+            for(j=0; j<RecetteUstensiles; j++){
+                // si il y a match alors ce tag est
+                // present dans les ustensiles de la recette
+                if(Tag.ustensilesTaglist[i] == RecetteUstensiles[j])
+                { present=true;}
+            }
+            // a la sortie de cette boucle si present= true le tag est valide
+            //  on peut boucler  sur le tag suivant sinon on exclue la recette
+            if (present==false){ return false}
+        }
+        //a la sortie de cette boucle tous les tags ont matches avec des ustensiles
+        // on valide les ustensils de cette recette et on renvoie true
+        return present;
+      }
+    
+}

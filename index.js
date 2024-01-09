@@ -1,7 +1,8 @@
 import listMaker from "./listMaker.mjs";
 import recetteMaker from "./recette.mjs";
 import { reloadMasterList } from "./listMaker.mjs";
-import { TagObject } from "./Tag/tags.mjs";
+import { Tag } from "./Tag/tags.mjs";
+import { ReloadPage } from "./reloadPage.mjs";
 
 
 const finders = document.getElementsByClassName("finders__option");
@@ -26,13 +27,7 @@ Array.from(finders).forEach((element) => {
     open = false;
   });
 
-  const sectionRecettes = document.getElementById("recettes");
-  sectionRecettes.innerHTML='';
-  let masterList=reloadMasterList(selectedList);
-  masterList.forEach(function (recipe) {
-    let recetteArticle = recetteMaker(recipe);
-    sectionRecettes.appendChild(recetteArticle);
-  });
+  ReloadPage(Tag);
 });
 
 
@@ -41,12 +36,12 @@ Array.from(finders).forEach((element) => {
 const listMakerObject = new listMaker();
 //including ingredient finder content
 
-listMakerObject.sortIngredients(selectedList).forEach(function (ingredient) {
+// listMakerObject.sortIngredients(selectedList).forEach(function (ingredient) {
 
-  let ingredientP = document.createElement("p");
-  ingredientP.textContent = `${ingredient}`;
-  ingredientDiv.appendChild(ingredientP);
-});
+//   let ingredientP = document.createElement("p");
+//   ingredientP.textContent = `${ingredient}`;
+//   ingredientDiv.appendChild(ingredientP);
+// });
 
 //implementing ingredient tagMaker
 ingredientDiv.addEventListener("click", function (e) {
@@ -70,8 +65,8 @@ ingredientDiv.addEventListener("click", function (e) {
     tagDiv.removeChild(selectedIngredientP)
     selectedList.pop(selectedIngredientP.innerText);
   
-            reloadMasterList(selectedList);
-            newFinderIngredients();
+       
+         ReloadPage(Tag);
         
 
 
