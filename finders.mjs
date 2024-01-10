@@ -23,12 +23,12 @@ export function finderAppareils(input){
     return newAppareilList;
 }
 
-export function finderUstensils(input){
+export function finderUstensiles(input){
 
-    let newUstensilsList=listMakerObject.sortUstensilss().filter(function(ustensils){
-        if (ustensils.toLowerCase().includes(input.value.toLowerCase())){
-            return ustensils
+    let newUstensilesList=listMakerObject.sortUstensiless().filter(function(ustensiles){
+        if (ustensiles.toLowerCase().includes(input.value.toLowerCase())){
+            return ustensiles
         }
     });
-    return newUstensilsList;
+    return newUstensilesList;
 }

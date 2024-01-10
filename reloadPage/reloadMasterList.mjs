@@ -14,7 +14,7 @@ export class MasterList{
            // par defaut on dit qu il est present au cas ou tagList serait vide
           let present=true;
     //  alert(tag.coucou());
-     present=  tag.checkTags(recipes[i].ingredients, recipes[i].appliance, recipes[i].ustensils);
+     present=  tag.checkTags(recipes[i].ingredients, recipes[i].appliance, recipes[i].ustensiles);
     
          if (present==true){masterList.push(recipes[i])}
          }

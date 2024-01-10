@@ -131,7 +131,7 @@ static checkTags(RecetteIngredients,RecetteApplaiance,Recetteustensiles){
             if (present==false){ return false}
         }
         //a la sortie de cette boucle tous les tags ont matches avec des ustensiles
-        // on valide les ustensils de cette recette et on renvoie true
+        // on valide les ustensiles de cette recette et on renvoie true
         return present;
       }
     

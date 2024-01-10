@@ -36,7 +36,7 @@
                 <div class="title" id="finder">Ingrédients <i class="fas fa-chevron-down"></i></div> 
                 <div class="content">
                     <div class="header">
-                        <div class="header__title">Ingrédients <i class="fas fa-chevron-up"></i></div>
+                        <div class="header__title">Ingrédients <i class="fas fa-chevron-up" id="closingIngredientsFinder"></i></div>
                         <div class="header__finder">
                             <input class="input" id="ingredientsInput" type="text"> <i class=" fa-solid fa-magnifying-glass"></i>
                         </div>
@@ -46,13 +46,13 @@
             </div>
             
             
-            <div class="finders__option">
+            <div class="finders__option" id="appareilFinder">
      
                     <div class="title">Appareils  <i class="fas fa-chevron-down"></i> </div>
                  
                     <div class="content">
                         <div class="header">
-                            <div class="header__title">Appareils <i class="fas fa-chevron-up"></i></div> 
+                            <div class="header__title">Appareils <i class="fas fa-chevron-up" id="closingAppareilsFinder"></i></div> 
                             <div class="header__finder">
                                 <input class="input"  type="text"> <i class="fas fa-magnifying-glass"></i>
                             </div>
@@ -63,17 +63,17 @@
                 </div>
             </div>
 
-            <div class="finders__option">
-                <div class="title">Ustensils  <i class="fas fa-chevron-down"></i></div>
+            <div class="finders__option" id="ustensilFinder">
+                <div class="title">Ustensiles  <i class="fas fa-chevron-down"></i></div>
 
                 <div class="content">
                     <div class="header">
-                        <div class="header__title">Ustensils <i class="fas fa-chevron-up"></i></div> 
+                        <div class="header__title">Ustensiles <i class="fas fa-chevron-up" id="closingUstensilsFinder"></i></div> 
                         <div class="header__finder">
                             <input class="input"  type="text"> <i class="fas fa-magnifying-glass"></i>
                         </div>
                     </div>
-                    <div id="finders__ustensils"></div>
+                    <div id="finders__ustensiles"></div>
                 </div>
             </div>
            
@@ -81,7 +81,7 @@
         <section id="tags" class="tags">
             <div class="tags__ingredientsTag" id="ingredientsTag"></div>
             <div class="tags__appareilsTag" id="appareilsTag"></div>
-            <div class="tags__ustensilsTag" id="ustensilsTag"></div>
+            <div class="tags__ustensilesTag" id="ustensilesTag"></div>
         </section>
         <section class="recette" id="recettes">
         </section>
