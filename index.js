@@ -18,7 +18,7 @@ let ingredientFinder=document.getElementById('ingredientFinder');
     } else {
       open = true;
     }
-    ReloadPage(Tag);
+
   });
 
 Array.from(finders).forEach((element) => {
@@ -33,17 +33,6 @@ Array.from(finders).forEach((element) => {
 });
 
 
-
-
-
-//including ingredient finder content
-
-// listMakerObject.sortIngredients(selectedList).forEach(function (ingredient) {
-
-//   let ingredientP = document.createElement("p");
-//   ingredientP.textContent = `${ingredient}`;
-//   ingredientDiv.appendChild(ingredientP);
-// });
 
 //implementing ingredient tagMaker
 ingredientDiv.addEventListener("click", function (e) {
@@ -69,7 +58,7 @@ ingredientDiv.addEventListener("click", function (e) {
   
 Tag.removeIngredient(selectedIngredientP.textContent);
 tagDiv.removeChild(selectedIngredientP);
-  
+  ReloadPage(Tag);
 
 }
   );

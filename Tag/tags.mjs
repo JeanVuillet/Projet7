@@ -13,7 +13,7 @@ export class Tag {
 
 
    static removeIngredient(ingredient){
-        for(let i=0; i<Tag.ingredientsTaglist.le;i++){
+        for(let i=0; i<Tag.ingredientsTaglist.length;i++){
             if(Tag.ingredientsTaglist[i]==ingredient){
                 Tag.ingredientsTaglist.splice(i,1);
                  ReloadPage(Tag);
