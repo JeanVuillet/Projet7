@@ -1,6 +1,5 @@
-import listMaker from "./listMaker.mjs";
+
 import recetteMaker from "./recette.mjs";
-import { reloadMasterList } from "./listMaker.mjs";
 import { Tag } from "./Tag/tags.mjs";
 import { ReloadPage } from "./reloadPage.mjs";
 
@@ -36,7 +35,7 @@ Array.from(finders).forEach((element) => {
 
 
 
-const listMakerObject = new listMaker();
+
 //including ingredient finder content
 
 // listMakerObject.sortIngredients(selectedList).forEach(function (ingredient) {
@@ -48,6 +47,8 @@ const listMakerObject = new listMaker();
 
 //implementing ingredient tagMaker
 ingredientDiv.addEventListener("click", function (e) {
+
+  //implement zone taglist du dom
   const closeCross = document.createElement("i");
   closeCross.className = "fa-solid fa-xmark";
 
@@ -65,17 +66,15 @@ ingredientDiv.addEventListener("click", function (e) {
   open = false;
   //adding cross event listener
   closeCross.addEventListener("click", function() {
-    tagDiv.removeChild(selectedIngredientP)
-    selectedList.pop(selectedIngredientP.innerText);
   
-       
-         ReloadPage(Tag);
-        
-
-
+Tag.removeIngredient(selectedIngredientP.textContent);
+tagDiv.removeChild(selectedIngredientP);
+  
 
 }
   );
+  // fin fabrication  tagZone 
+
     //implementing selectedList
     Tag.ingredientsTaglist.push(e.target.textContent);
 

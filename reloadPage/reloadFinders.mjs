@@ -1,6 +1,6 @@
-import { reloadMasterList } from "./reloadMasterList.mjs";
-import { Tag } from "../Tag/tags.mjs";
 
+import { Tag } from "../Tag/tags.mjs";
+import { MasterList } from "./reloadMasterList.mjs";
 export class Finders{
 
 static ingredentsFinder=[];
@@ -22,26 +22,29 @@ static reloadIngredientsFinder(Tag){
           // verification qu au moins un element a ete selectionne
            
           
-          let masterList=reloadMasterList(Tag);
-              let listIngredients = [];
+       
+              Finders.ingredentsFinder = [];
           // parcourir des recettes de masterList
-            for (let i = 0; i < masterList.length; i++) {
+            for (let i = 0; i < MasterList.masterList.length; i++) {
                 // parcourt des ingredients de chaque recette
-                for (let j = 0; j < masterList[i].ingredients.length; j++) {
+                for (let j = 0; j < MasterList.masterList[i].ingredients.length; j++) {
                   let present=false;
                // comparer chaque ingredient a sa TagList si present =true
                   for( let k=0; k<Tag.ingredientsTaglist.length; k++){
                      
-                     if(Tag.ingredientsTaglist[k]==masterList[i].ingredients[j].ingredient){
+                     if(Tag.ingredientsTaglist[k]==MasterList.masterList[i].ingredients[j].ingredient){
                       present==true;
                      } 
           
                   }
                   if(present==false) 
                   // si l ingredient n est pas dans la taglist on l ajoute au finder
-                  {Finders.ingredentsFinder.push(masterList[i].ingredients[j].ingredient) };
+                  {Finders.ingredentsFinder.push(MasterList.masterList[i].ingredients[j].ingredient) 
+                
+                  };
                 }
               }
+              console.log(Finders.ingredentsFinder);
           let FilteredIngredientlist=[];
                FilteredIngredientlist  =  Finders.ingredentsFinder.sort(function (a, b) {
                 if (a > b) {
@@ -50,8 +53,8 @@ static reloadIngredientsFinder(Tag){
                   return -1;
                 }
               });
-
-              let newIngredientsFinder = [FilteredIngredientlist[0]];
+              let newIngredientsFinder=[];
+                 newIngredientsFinder = [FilteredIngredientlist[0]];
               let i = 0;
 
               for(let i=1; i<FilteredIngredientlist.length; i++){
@@ -68,17 +71,19 @@ static reloadIngredientsFinder(Tag){
 
            
                    // implementing Dom
-        let ingredientDiv = document.getElementById("finders__ingrédients");
+               
+            let ingredientDiv = document.getElementById("finders__ingrédients");
+            ingredientDiv.innerHTML='';
         for(let i=0; i<Finders.ingredentsFinder.length; i++){
         let ingredientP = document.createElement("p");
         ingredientP.textContent = `${Finders.ingredentsFinder[i]}`;
         ingredientDiv.appendChild(ingredientP);
-      };
-}
 
+
+        }
             
-
+        
    
 } 
         
-
+}

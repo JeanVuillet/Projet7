@@ -1,7 +1,8 @@
 import { recipes } from "../../recipes.mjs";
 import recetteMaker from "../recette.mjs";
-
-export function reloadMasterList(tag){
+export class MasterList{
+ static masterList=[];
+ static reloadMasterList(tag){
        
 
     let   masterList=[];
@@ -17,8 +18,8 @@ export function reloadMasterList(tag){
     
          if (present==true){masterList.push(recipes[i])}
          }
-     
-       
+     console.log(masterList);
+       MasterList.masterList=masterList;
      // IMPLEMENTATION DANS LE DOM
 
      const sectionRecettes = document.getElementById("recettes");
@@ -28,6 +29,7 @@ export function reloadMasterList(tag){
            let recetteArticle = recetteMaker(recipe);
            sectionRecettes.appendChild(recetteArticle);})
      
-         return masterList;
+    
      
      }
+    }
