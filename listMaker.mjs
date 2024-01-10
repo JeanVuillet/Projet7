@@ -63,110 +63,58 @@ const tags= new tags();
 }
 
 export default class listMaker {
-  //sort ingredients
+//   sort ingredients
 
 // creer  a partir de masterlist une nouvelle liste d
 // ingredients qui ne contient pas les ingredients selectionnes
 
 
 // Ancienne version de sort ingredients
-//   sortIngredients(selectedList) {
-// // verification qu au moins un element a ete selectionne
+  sortIngredients(selectedList) {
+// verification qu au moins un element a ete selectionne
  
 
-// let masterList=reloadMasterList(selectedList);
-//     let listIngredients = [];
-// // parcourir des recettes de masterList
-//   for (let i = 0; i < masterList.length; i++) {
-//       // parcourt des ingredients de chaque recette
-//       for (let j = 0; j < masterList[i].ingredients.length; j++) {
-//         let present=false;
-//      // comparer chaque ingredient a la selected list si present =true
-//         for( let k=0; k<selectedList.length; k++){
+let masterList=reloadMasterList(selectedList);
+    let listIngredients = [];
+// parcourir des recettes de masterList
+  for (let i = 0; i < masterList.length; i++) {
+      // parcourt des ingredients de chaque recette
+      for (let j = 0; j < masterList[i].ingredients.length; j++) {
+        let present=false;
+     // comparer chaque ingredient a la selected list si present =true
+        for( let k=0; k<selectedList.length; k++){
            
-//            if(selectedList[k]==masterList[i].ingredients[j].ingredient){
-//             present==true;
-//            } 
+           if(selectedList[k]==masterList[i].ingredients[j].ingredient){
+            present==true;
+           } 
 
-//         }
-//         if(present==false) 
-//         {listIngredients.push(masterList[i].ingredients[j].ingredient) };
-//       }
-//     }
+        }
+        if(present==false) 
+        {listIngredients.push(masterList[i].ingredients[j].ingredient) };
+      }
+    }
 
-//     listIngredients = listIngredients.sort(function (a, b) {
-//       if (a > b) {
-//         return 1;
-//       } else {
-//         return -1;
-//       }
-//     });
-//     let CleanListIngredients = [listIngredients[0]];
-//     let i = 0;
-//     listIngredients.forEach(function (ingredient) {
-//       if (CleanListIngredients[i] != ingredient) {
-//         CleanListIngredients.push(ingredient);
-//         i++;
-//       }
-//     });
-//     return CleanListIngredients;
-//   }
+    listIngredients = listIngredients.sort(function (a, b) {
+      if (a > b) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+    let CleanListIngredients = [listIngredients[0]];
+    let i = 0;
+    listIngredients.forEach(function (ingredient) {
+      if (CleanListIngredients[i] != ingredient) {
+        CleanListIngredients.push(ingredient);
+        i++;
+      }
+    });
+    return CleanListIngredients;
+  }
 
   
 
 
 
 
-  //sort appareils
-  sortAppareils() {
-    let listAppareils = [];
-
-    for (let i = 0; i < recipes.length; i++) {
-      listAppareils.push(recipes[i].appliance);
-    }
-    listAppareils = listAppareils.sort(function (a, b) {
-      if (a > b) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
-
-    let CleanListAppareils = [listAppareils[0]];
-    i = 0;
-    listAppareils.forEach(function (appareil) {
-      if (CleanListAppareils[i] != appareil) {
-        CleanListAppareils.push(appareil);
-        i++;
-      }
-    });
-    return CleanListAppareils;
-  }
-  //sort ustensils
-  sortUstensils() {
-    let listUstensils = [];
-
-    for (let i = 0; i < recipes.length; i++) {
-      for (let j = 0; j < recipes[i].ustensils.length; j++) {
-        listUstensils.push(recipes[i].ustensils[j]);
-      }
-    }
-
-    listUstensils = listUstensils.sort(function (a, b) {
-      if (a > b) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
-
-    let CleanListUstensils = [listUstensils[0]];
-    i = 0;
-    listUstensils.forEach(function (ustensil) {
-      if (CleanListUstensils[i] != ustensil) {
-        CleanListUstensils.push(ustensil);
-        i++;
-      }
-    });
-  }
 }

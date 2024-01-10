@@ -15,7 +15,7 @@ ReloadPage(Tag);
 let ingredientFinder=document.getElementById('ingredientFinder');
   ingredientFinder.addEventListener("click", function () {
     if (open == true) {
-      element.classList.add("active");
+      ingredientFinder.classList.add("active");
     } else {
       open = true;
     }
@@ -77,16 +77,9 @@ ingredientDiv.addEventListener("click", function (e) {
 }
   );
     //implementing selectedList
-    selectedList.push(e.target.textContent);
-    //implementing TagObject Class
     Tag.ingredientsTaglist.push(e.target.textContent);
-    ingredientDiv.innerHTML='';
-   Tag.sortIngredients(selectedList).forEach(function (ingredient) {
 
-    let ingredientP = document.createElement("p");
-    ingredientP.textContent = `${ingredient}`;
-    ingredientDiv.appendChild(ingredientP);;
-});
+ReloadPage(Tag);
 });
 
 export function getSelectedList(){
