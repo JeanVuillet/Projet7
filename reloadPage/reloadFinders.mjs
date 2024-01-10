@@ -42,41 +42,43 @@ static reloadIngredientsFinder(Tag){
                   {Finders.ingredentsFinder.push(masterList[i].ingredients[j].ingredient) };
                 }
               }
-          
-              Finders.ingredentsFinder  =  Finders.ingredentsFinder.sort(function (a, b) {
+          let FilteredIngredientlist=[];
+               FilteredIngredientlist  =  Finders.ingredentsFinder.sort(function (a, b) {
                 if (a > b) {
                   return 1;
                 } else {
                   return -1;
                 }
               });
-              let newIngredientsFinder = [Finders.ingredentsFinder[0]];
+
+              let newIngredientsFinder = [FilteredIngredientlist[0]];
               let i = 0;
 
-              for(let i=0; i<Finders.ingredentsFinder.length; i++){
-                for (let j=0; j<newIngredientsFinder.length; j++){
+              for(let i=1; i<FilteredIngredientlist.length; i++){
+         
              
-                if (newIngredientsFinder[i] != Finders.ingredentsFinder[j]) {
-                  newIngredientsFinder.push(Finders.ingredentsFinder[j]);
+                if (FilteredIngredientlist[i] !=FilteredIngredientlist[i-1] ) {
+                  newIngredientsFinder.push(FilteredIngredientlist[i]);
                   i++;
                 }
               }
-              };
+              
               Finders.ingredentsFinder=[];
               Finders.ingredentsFinder=newIngredientsFinder;
 
            
                    // implementing Dom
-        const ingredientDiv = document.getElementById("finders__ingrédients");
+        let ingredientDiv = document.getElementById("finders__ingrédients");
         for(let i=0; i<Finders.ingredentsFinder.length; i++){
         let ingredientP = document.createElement("p");
-        ingredientP.textContent = `${ Finders.ingredentsFinder[i]}`;
+        ingredientP.textContent = `${Finders.ingredentsFinder[i]}`;
         ingredientDiv.appendChild(ingredientP);
-        }
+      };
+}
 
-            }
+            
 
    
-   
-      }
+} 
+        
 
