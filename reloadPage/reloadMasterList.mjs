@@ -1,6 +1,9 @@
 import { recipes } from "../../recipes.mjs";
+import recetteMaker from "../recette.mjs";
 
 export function reloadMasterList(tag){
+       
+
     let   masterList=[];
      
      // FABRICATION DE NOUVELLE MASTERLIST
@@ -17,9 +20,9 @@ export function reloadMasterList(tag){
      
        
      // IMPLEMENTATION DANS LE DOM
-     
-         const sectionRecettes = document.getElementById("recettes");
-         sectionRecettes.innerHTML='';
+
+     const sectionRecettes = document.getElementById("recettes");
+     sectionRecettes.innerHTML='';
        
          masterList.forEach(function (recipe) {
            let recetteArticle = recetteMaker(recipe);

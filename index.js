@@ -9,16 +9,19 @@ const finders = document.getElementsByClassName("finders__option");
 const ingredientDiv = document.getElementById("finders__ingrédients");
 var selectedList=[];
 export var open = true;
-// Utiliser forEach sur la collection pour itérer sur chaque élément
-Array.from(finders).forEach((element) => {
-  element.addEventListener("click", function () {
+//initiating page 
+ReloadPage(Tag);
+// Implementing ingredientsFinder
+let ingredientFinder=document.getElementById('ingredientFinder');
+  ingredientFinder.addEventListener("click", function () {
     if (open == true) {
       element.classList.add("active");
     } else {
       open = true;
     }
+    ReloadPage(Tag);
   });
-});
+
 Array.from(finders).forEach((element) => {
   //implementing closer
   let chevronUp = element.getElementsByClassName("fa-chevron-up");
@@ -27,7 +30,7 @@ Array.from(finders).forEach((element) => {
     open = false;
   });
 
-  ReloadPage(Tag);
+
 });
 
 
@@ -76,9 +79,9 @@ ingredientDiv.addEventListener("click", function (e) {
     //implementing selectedList
     selectedList.push(e.target.textContent);
     //implementing TagObject Class
-    TagObject.ingredientsTaglist.push(e.target.textContent);
+    Tag.ingredientsTaglist.push(e.target.textContent);
     ingredientDiv.innerHTML='';
-   listMakerObject.sortIngredients(selectedList).forEach(function (ingredient) {
+   Tag.sortIngredients(selectedList).forEach(function (ingredient) {
 
     let ingredientP = document.createElement("p");
     ingredientP.textContent = `${ingredient}`;

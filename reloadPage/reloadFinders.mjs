@@ -10,8 +10,10 @@ export function reloadFinders(Tag){
 function   reloadIngredientsFinder(Tag){
 
     // // verification qu au moins un element a ete selectionne
-     
+
+     //CEUX CI N AFFICHE PLUS LES RECETTES
     let masterList=reloadMasterList(Tag);
+
         let listIngredients = [];
     // parcourir des recettes de masterList
       for (let i = 0; i < masterList.length; i++) {
@@ -46,12 +48,13 @@ function   reloadIngredientsFinder(Tag){
             i++;
           }
         });
-        return CleanListIngredients;
+   
         // implementing Dom
         const ingredientDiv = document.getElementById("finders__ingrédients");
-        for(let i=0; i<Tag.ingredientsTaglist.length; i++){
+        for(let i=0; i<CleanListIngredients.length; i++){
         let ingredientP = document.createElement("p");
-        ingredientP.textContent = `${ Tag.ingredientsTaglist[i]}`;
+        ingredientP.textContent = `${ CleanListIngredients[i]}`;
         ingredientDiv.appendChild(ingredientP);
         }
+        return CleanListIngredients;
       }

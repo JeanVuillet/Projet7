@@ -22,7 +22,7 @@ export class Tag {
         }
     }
   static  removeAppareil(appareil){
-        for(let i=0; i<appareilsTaglist;i++){
+        for(let i=0; i<appareilsTaglist.length;i++){
             if(appareilsTaglist[i]==appareil){
                 appareilTaglist.splice(i,1);
                 ReloadPage(TagObject);
@@ -31,7 +31,7 @@ export class Tag {
         }
     }
   static  removeUstensil(ustensil){
-        for(let i=0; i<ustensilesTaglist;i++){
+        for(let i=0; i<ustensilesTaglist.length;i++){
             if(ustensilesTaglist[i]==ustensil){
                 ustensilTaglist.splice(i,1);
                 ReloadPage(TagObject);
@@ -94,7 +94,7 @@ static checkTags(RecetteIngredients,RecetteApplaiance,Recetteustensiles){
         //on initialise present a true au cas ou la liste soit vide
         var present=true;
 // on boucle sur tous les appareils de la taglist
-       for(let i=0; i<Tag.appareilsTaglist; i++){
+       for(let i=0; i<Tag.appareilsTaglist.length; i++){
         //la liste n est donc pas vide on met donc present a false
         present=false;
         //si cet appareil match alors l appareil de cette
