@@ -19,7 +19,7 @@ ReloadPage(Tag);
 let input=document.getElementById('recherche');
 input.addEventListener('keyup',function(e){
   if(input.value.length>2){
-    MasterList.reloadMasterList(Tag);
+    ReloadPage(Tag);
   }
 })
 //INGREDIENTS SECTION
