@@ -23,8 +23,8 @@ export class Tag {
     }
   static  removeAppareil(appareil){
         for(let i=0; i<Tag.appareilsTaglist.length;i++){
-            if(appareilsTaglist[i]==appareil){
-                appareilTaglist.splice(i,1);
+            if(Tag.appareilsTaglist[i]==appareil){
+                Tag.appareilsTaglist.splice(i,1);
                 ReloadPage(Tag);
                 break;
             }
@@ -120,11 +120,13 @@ static checkTags(RecetteIngredients,RecetteApplaiance,Recetteustensiles){
         for (let i=0; i<Tag.ustensilesTaglist.length; i++) {
             present=false;
             // pour ce tagUstensil on boucle sur les ustensiles de la recette
-            for(let j=0; j<RecetteUstensiles; j++){
+            for(let j=0; j<RecetteUstensiles.length; j++){
                 // si il y a match alors ce tag est
                 // present dans les ustensiles de la recette
+                // la recette est validee
                 if(Tag.ustensilesTaglist[i] == RecetteUstensiles[j])
-                { present=true;}
+                { present=true;
+                break;}
             }
             // a la sortie de cette boucle si present= true le tag est valide
             //  on peut boucler  sur le tag suivant sinon on exclue la recette

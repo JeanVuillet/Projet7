@@ -110,7 +110,7 @@ appareilFinder.addEventListener("click", function () {
   }
 // APPEL DE CETTE FONCTION DANS LES EVENT LISTENERS DES FINDERS
 
-//ingredient tagMaker
+//INGREDIENT tagMaker
 ingredientDiv.addEventListener("click", function (e) {
 
   //Adding Tag to taglist
@@ -138,7 +138,7 @@ ingredientDiv.addEventListener("click", function (e) {
 // ustensiles TagMaker
 
 ustensileseDiv.addEventListener("click", function (g) {
-alert('coucou');
+
   //Adding Tag to taglist
   Tag.ustensilesTaglist.push(g.target.textContent);
   ReloadPage(Tag);

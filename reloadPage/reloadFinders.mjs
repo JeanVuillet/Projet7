@@ -9,8 +9,9 @@ static appareilsFinder=[];
 
    static reloadFinders(Tag){
    Finders.reloadIngredientsFinder(Tag);
+   Finders.reloadAppareilsFinder(Tag);
     Finders.reloadUstensilesFinder(Tag);
-    // Findrers.reloadAppareilsFinder(Tag);
+  
 };
 
   
@@ -33,7 +34,7 @@ static reloadIngredientsFinder(Tag){
                   for( let k=0; k<Tag.ingredientsTaglist.length; k++){
                      
                      if(Tag.ingredientsTaglist[k]==MasterList.masterList[i].ingredients[j].ingredient){
-                      present==true;
+                      present=true;
                      } 
           
                   }
@@ -62,7 +63,7 @@ static reloadIngredientsFinder(Tag){
              
                 if (FilteredIngredientlist[i] !=FilteredIngredientlist[i-1] ) {
                   newIngredientsFinder.push(FilteredIngredientlist[i]);
-                  i++;
+               
                 }
               }
               
@@ -86,6 +87,80 @@ static reloadIngredientsFinder(Tag){
    
 } 
    
+static reloadAppareilsFinder(Tag){
+
+
+
+      
+  // verification qu au moins un element a ete selectionne
+   
+  
+
+      Finders.appareilsFinder = [];
+  // parcourir des recettes de masterList
+    for (let i = 0; i < MasterList.masterList.length; i++) {
+        // parcourt des appareils de chaque recette
+
+          let present=false;
+       // comparer l appareil de cette recette a sa TagList si present =true
+          for( let k=0; k<Tag.appareilsTaglist.length; k++){
+             
+             if(Tag.appareilsTaglist[k]==MasterList.masterList[i].appliance){
+              present=true;
+              break;
+             } 
+  
+          }
+          if(present==false) 
+          // si l ingredient n est pas dans la taglist on l ajoute au finder
+          {Finders.appareilsFinder.push(MasterList.masterList[i].appliance) 
+        
+          };
+        }
+     
+      console.log(Finders.appareilsFinder);
+  let FilteredAppareilslist=[];
+       FilteredAppareilslist  =  Finders.appareilsFinder.sort(function (a, b) {
+        if (a > b) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+      let newAppareilsFinder=[];
+         newAppareilsFinder = [FilteredAppareilslist[0]];
+      let i = 0;
+
+      for(let i=1; i<FilteredAppareilslist.length; i++){
+ 
+     
+        if (FilteredAppareilslist[i] !=FilteredAppareilslist[i-1] ) {
+          newAppareilsFinder.push(FilteredAppareilslist[i]);
+          
+        }
+      }
+      
+      Finders.appareilsFinder=[];
+      Finders.appareilsFinder=newAppareilsFinder;
+
+   
+           // implementing Dom
+       
+    let appareilDiv = document.getElementById("finder__appareils");
+    appareilDiv.innerHTML='';
+for(let i=0; i<Finders.appareilsFinder.length; i++){
+let appareilP = document.createElement("p");
+appareilP.textContent = `${Finders.appareilsFinder[i]}`;
+appareilDiv.appendChild(appareilP);
+
+
+}
+    
+
+
+} 
+
+
 static reloadUstensilesFinder(Tag){
 
 
@@ -104,14 +179,14 @@ static reloadUstensilesFinder(Tag){
        // comparer chaque ingredient a sa TagList si present =true
           for( let k=0; k<Tag.ustensilesTaglist.length; k++){
              
-             if(Tag.ustensilesTaglist[k]==MasterList.masterList[i].ustensiles[j].ingredient){
-              present==true;
+             if(Tag.ustensilesTaglist[k]==MasterList.masterList[i].ustensiles[j]){
+              present=true;
              } 
   
           }
           if(present==false) 
           // si l ustensiles n est pas dans la taglist on l ajoute au finder
-          {Finders.ingredentsFinder.push(MasterList.masterList[i].ustensiles[j].ingredient) 
+          {Finders.ustensilesFinder.push(MasterList.masterList[i].ustensiles[j]) 
         
           };
         }
@@ -148,7 +223,7 @@ static reloadUstensilesFinder(Tag){
     ustensilesDiv.innerHTML='';
 for(let i=0; i<Finders.ustensilesFinder.length; i++){
 let ustensilesP = document.createElement("p");
-ustensilesP.textContent = `${Finders.ingredentsFinder[i]}`;
+ustensilesP.textContent = `${Finders.ustensilesFinder[i]}`;
 ustensilesDiv.appendChild(ustensilesP);
 
 
