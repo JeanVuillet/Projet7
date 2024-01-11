@@ -79,6 +79,38 @@ appareilFinder.addEventListener("click", function () {
 ingredientDiv.addEventListener("click", function (e) {
 
   //implement zone taglist du dom
+
+  function implementingTag(type, className,TagdivId){
+    const closeCross = document.createElement("i");
+  closeCross.className = "fa-solid fa-xmark";
+
+  let selectedIngredientP = document.createElement("p");
+  selectedIngredientP.appendChild(e.target);
+
+  selectedIngredientP.appendChild(closeCross);
+  selectedIngredientP.className =`"tags__${type}sTags__${type}Tag"`;
+  let tagDiv = document.getElementById(`"${type}sTag"`);
+  tagDiv.appendChild(selectedIngredientP);
+
+  if(type.startsWith('i')){
+  Tag.removeIngredient(selectedIngredientP.textContent);
+  tagDiv.removeChild(selectedIngredientP);
+    ReloadPage(Tag);
+  }
+  else if(type.startsWith('a')){
+    Tag.removeAppareil(selectedIngredientP.textContent);
+    tagDiv.removeChild(selectedIngredientP);
+      ReloadPage(Tag);
+    }
+    else (type.startsWith('u')){
+      Tag.removeUstensil(selectedIngredientP.textContent);
+      tagDiv.removeChild(selectedIngredientP);
+        ReloadPage(Tag);
+      }
+  }
+
+  ;
+
   const closeCross = document.createElement("i");
   closeCross.className = "fa-solid fa-xmark";
 
