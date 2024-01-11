@@ -12,11 +12,13 @@ export class MasterList{
          for (let i = 0; i < recipes.length; i++) {
            // parcourir la liste de tag
            // par defaut on dit qu il est present au cas ou tagList serait vide
-          let present=true;
-    //  alert(tag.coucou());
-     present=  tag.checkTags(recipes[i].ingredients, recipes[i].appliance, recipes[i].ustensiles);
-    
-         if (present==true){masterList.push(recipes[i])}
+          let present;
+          let inputMatch;
+
+     present=  ((tag.checkTags(recipes[i].ingredients, recipes[i].appliance, recipes[i].ustensiles)));
+    inputMatch=MasterList.checkInupt(recipes[i]);
+         if ((present==true) && (inputMatch==true))
+         {masterList.push(recipes[i])}
          }
      console.log(masterList);
        MasterList.masterList=masterList;
@@ -32,4 +34,32 @@ export class MasterList{
     
      
      }
-    }
+  static  checkInupt(recette){
+
+  let inputMatch;
+  let input=document.getElementById('recherche');
+//checking recette name match
+      if(recette.name.includes(input.value))
+      {inputMatch=true;return inputMatch};
+//checking recette description match
+      if(recette.description.includes(input.value))
+      {inputMatch=true;return inputMatch};
+//checking recette ingredients match
+      for(let i=0; i<recette.ingredients.length; i++){
+
+            if(recette.ingredients[i].ingredient.includes(input.value))
+
+            {inputMatch=true; return inputMatch;}
+
+          }
+//no match
+       inputMatch=false;
+       return inputMatch;
+      }
+
+ 
+
+
+     }
+     
+    
