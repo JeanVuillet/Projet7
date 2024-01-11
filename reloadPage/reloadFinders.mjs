@@ -110,7 +110,7 @@ static reloadUstensilesFinder(Tag){
   
           }
           if(present==false) 
-          // si l ustensil n est pas dans la taglist on l ajoute au finder
+          // si l ustensiles n est pas dans la taglist on l ajoute au finder
           {Finders.ingredentsFinder.push(MasterList.masterList[i].ustensiles[j].ingredient) 
         
           };
@@ -144,12 +144,12 @@ static reloadUstensilesFinder(Tag){
    
            // implementing Dom
        
-    let ustensilDiv = document.getElementById("finders__ustensiles");
-    ustensilDiv.innerHTML='';
+    let ustensilesDiv = document.getElementById("finders__ustensiles");
+    ustensilesDiv.innerHTML='';
 for(let i=0; i<Finders.ustensilesFinder.length; i++){
-let ustensilP = document.createElement("p");
-ustensilP.textContent = `${Finders.ingredentsFinder[i]}`;
-ustensilDiv.appendChild(ustensilP);
+let ustensilesP = document.createElement("p");
+ustensilesP.textContent = `${Finders.ingredentsFinder[i]}`;
+ustensilesDiv.appendChild(ustensilesP);
 
 
 }

@@ -6,7 +6,8 @@ import { ReloadPage } from "./reloadPage.mjs";
 
 
 const ingredientDiv = document.getElementById("finders__ingrédients");
-const ustensilDiv =document.getElementById('finders__ustensils')
+const appareilDiv=document.getElementById('finders__appareils');
+const ustensileseDiv =document.getElementById('finders__ustensiless');
 var selectedList=[];
 export var open = true;
 //initiating page 
@@ -51,96 +52,102 @@ appareilFinder.addEventListener("click", function () {
 
     // USTENSILS SECTION
 
-  //implementing ustensilFinder
-  let ustensilFinder=document.getElementById('ustensilFinder');
-  ustensilFinder.addEventListener("click", function () {
+  //implementing ustensilesFinder
+  let ustensilesFinder=document.getElementById('ustensilesFinder');
+  ustensilesFinder.addEventListener("click", function () {
     if (open == true) {
-      ustensilFinder.classList.add("active");
+      ustensilesFinder.classList.add("active");
     } else {
       open = true;
     }
 
   });
 
-//implementing ustensil closer
-    let UstensilsCloseButton = document.getElementById("closingUstensilsFinder");
-    UstensilsCloseButton.addEventListener("click", function () {
-      ustensilFinder.classList.remove("active");
+//implementing ustensiles closer
+    let UstensilesCloseButton = document.getElementById("closingUstensilesFinder");
+    UstensilesCloseButton.addEventListener("click", function () {
+      ustensilesFinder.classList.remove("active");
       open = false;
     });
 
 
 
+   
+    // cette fonction permet d implementer les tags dans le dom
+    //avec leur close event listener
 
+    function implementingTag(type, event, TagRemoveFunction){
+ 
+      const closeCross = document.createElement("i");
+    closeCross.className = "fa-solid fa-xmark";
+  
+    let selectedIngredientP = document.createElement("p");
+    selectedIngredientP.appendChild(event.target);
+  
+    selectedIngredientP.appendChild(closeCross);
+    selectedIngredientP.className =`tags__${type}sTags__${type}Tag`;
+    let tagDiv = document.getElementById(`${type}sTag`);
+    tagDiv.appendChild(selectedIngredientP);
 
-
-
-//implementing ingredient tagMaker
-ingredientDiv.addEventListener("click", function (e) {
-
-  //implement zone taglist du dom
-
-  function implementingTag(type, className,TagdivId){
-    const closeCross = document.createElement("i");
-  closeCross.className = "fa-solid fa-xmark";
-
-  let selectedIngredientP = document.createElement("p");
-  selectedIngredientP.appendChild(e.target);
-
-  selectedIngredientP.appendChild(closeCross);
-  selectedIngredientP.className =`"tags__${type}sTags__${type}Tag"`;
-  let tagDiv = document.getElementById(`"${type}sTag"`);
-  tagDiv.appendChild(selectedIngredientP);
-
-  if(type.startsWith('i')){
-  Tag.removeIngredient(selectedIngredientP.textContent);
-  tagDiv.removeChild(selectedIngredientP);
-    ReloadPage(Tag);
-  }
-  else if(type.startsWith('a')){
-    Tag.removeAppareil(selectedIngredientP.textContent);
-    tagDiv.removeChild(selectedIngredientP);
-      ReloadPage(Tag);
-    }
-    else (type.startsWith('u')){
-      Tag.removeUstensil(selectedIngredientP.textContent);
-      tagDiv.removeChild(selectedIngredientP);
-        ReloadPage(Tag);
-      }
-  }
-
-  ;
-
-  const closeCross = document.createElement("i");
-  closeCross.className = "fa-solid fa-xmark";
-
-  let selectedIngredientP = document.createElement("p");
-  selectedIngredientP.appendChild(e.target);
-
-  selectedIngredientP.appendChild(closeCross);
-  selectedIngredientP.className = "tags__ingredientsTags__ingredientTag";
-  let tagDiv = document.getElementById("ingredientsTag");
-  tagDiv.appendChild(selectedIngredientP);
-
-  //closing ingredient finder
-  const finder = document.getElementById("ingredientFinder");
+      //close finder
+  const finder = document.getElementById(`${type}Finder`);
   finder.classList.remove("active");
   open = false;
-  //adding cross event listener
-  closeCross.addEventListener("click", function() {
+
+  //adding Tag close event listener
+  closeCross.addEventListener("click",function  () {
+    
+    //cette fonction(placee en paremetres) supprime l element selectionne 
+    //de sa TagList
+    TagRemoveFunction(selectedIngredientP.textContent);
   
-Tag.removeIngredient(selectedIngredientP.textContent);
-tagDiv.removeChild(selectedIngredientP);
+    tagDiv.removeChild(selectedIngredientP);
+      ReloadPage(Tag);
+ 
+    });
+    
+  }
+// APPEL DE CETTE FONCTION DANS LES EVENT LISTENERS DES FINDERS
+
+//ingredient tagMaker
+ingredientDiv.addEventListener("click", function (event) {
+
+  //Adding Tag to taglist
+  Tag.ingredientsTaglist.push(event.target.textContent);
   ReloadPage(Tag);
 
-}
-  );
-  // fin fabrication  tagZone 
+  //creating tag in dom
+  implementingTag('ingredient',event, Tag.removeIngredient);
 
-    //implementing selectedList
-    Tag.ingredientsTaglist.push(e.target.textContent);
 
-ReloadPage(Tag);
-});
+ });
 
-  
+ //appareil TagMaker
+ 
+ appareilDiv.addEventListener("click", function (event) {
+
+  //Adding Tag to taglist
+  Tag.appareilsTaglist.push(event.target.textContent);
+  ReloadPage(Tag);
+
+  //creating tag in dom
+  implementingTag('appareil',event, Tag.removeAppareil);
+
+// ustensiles TagMaker
+
+ustensileseDiv.addEventListener("click", function (event) {
+
+  //Adding Tag to taglist
+  Tag.ustensilesTaglist.push(event.target.textContent);
+  ReloadPage(Tag);
+
+  //creating tag in dom
+  implementingTag('ustensilese',event, Tag.removeUstensil);
+
+
+
+ });
+
+
+
+ })

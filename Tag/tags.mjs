@@ -30,10 +30,10 @@ export class Tag {
             }
         }
     }
-  static  removeUstensil(ustensil){
+  static  removeUstensil(ustensiles){
         for(let i=0; i<ustensilesTaglist.length;i++){
-            if(ustensilesTaglist[i]==ustensil){
-                ustensilTaglist.splice(i,1);
+            if(ustensilesTaglist[i]==ustensiles){
+                ustensilesTaglist.splice(i,1);
                 ReloadPage(TagObject);
                 break;
             }
