@@ -1,4 +1,4 @@
-import { recipes } from "../../recipes.mjs";
+import { recipes } from "../recipes.mjs";
 import recetteMaker from "../recette.mjs";
 export class MasterList{
  static masterList=[];
