@@ -5,9 +5,10 @@ import { ReloadPage } from "./reloadPage.mjs";
 
 
 
-const ingredientDiv = document.getElementById("finders__ingrédients");
-const appareilDiv=document.getElementById('finders__appareils');
-const ustensileseDiv =document.getElementById('finders__ustensiless');
+const ingredientDiv = document.getElementById("finder__ingrédients");
+const appareilDiv=document.getElementById('finder__appareils');
+const ustensileseDiv =document.getElementById("finder__ustensiles");
+
 var selectedList=[];
 export var open = true;
 //initiating page 
@@ -25,7 +26,7 @@ let ingredientFinder=document.getElementById('ingredientFinder');
 
   });
     //implementing ingedient closer
-    let chevronUp = document.getElementById("closingIngredientsFinder");
+    let chevronUp = document.getElementById("closingIngredientFinder");
     chevronUp.addEventListener("click", function () {
       ingredientFinder.classList.remove("active");
       open = false;
@@ -44,7 +45,7 @@ appareilFinder.addEventListener("click", function () {
 
 });
   //implementing appareil closer
-  let appareilCloser = document.getElementById("closingAppareilsFinder");
+  let appareilCloser = document.getElementById("closingAppareilFinder");
   appareilCloser.addEventListener("click", function () {
     appareilFinder.classList.remove("active");
     open = false;});
@@ -53,7 +54,7 @@ appareilFinder.addEventListener("click", function () {
     // USTENSILS SECTION
 
   //implementing ustensilesFinder
-  let ustensilesFinder=document.getElementById('ustensilesFinder');
+  let ustensilesFinder=document.getElementById('ustensileFinder');
   ustensilesFinder.addEventListener("click", function () {
     if (open == true) {
       ustensilesFinder.classList.add("active");
@@ -64,14 +65,14 @@ appareilFinder.addEventListener("click", function () {
   });
 
 //implementing ustensiles closer
-    let UstensilesCloseButton = document.getElementById("closingUstensilesFinder");
+    let UstensilesCloseButton = document.getElementById("closingUstensileFinder");
     UstensilesCloseButton.addEventListener("click", function () {
       ustensilesFinder.classList.remove("active");
       open = false;
     });
 
 
-
+// DOM TAG SECTION
    
     // cette fonction permet d implementer les tags dans le dom
     //avec leur close event listener
@@ -110,39 +111,40 @@ appareilFinder.addEventListener("click", function () {
 // APPEL DE CETTE FONCTION DANS LES EVENT LISTENERS DES FINDERS
 
 //ingredient tagMaker
-ingredientDiv.addEventListener("click", function (event) {
+ingredientDiv.addEventListener("click", function (e) {
 
   //Adding Tag to taglist
-  Tag.ingredientsTaglist.push(event.target.textContent);
+  Tag.ingredientsTaglist.push(e.target.textContent);
   ReloadPage(Tag);
 
   //creating tag in dom
-  implementingTag('ingredient',event, Tag.removeIngredient);
+  implementingTag('ingredient',e, Tag.removeIngredient);
 
 
  });
 
  //appareil TagMaker
  
- appareilDiv.addEventListener("click", function (event) {
+ appareilDiv.addEventListener("click", function (f) {
 
   //Adding Tag to taglist
-  Tag.appareilsTaglist.push(event.target.textContent);
+  Tag.appareilsTaglist.push(f.target.textContent);
   ReloadPage(Tag);
 
   //creating tag in dom
-  implementingTag('appareil',event, Tag.removeAppareil);
+  implementingTag('appareil',f, Tag.removeAppareil);
+ });
 
 // ustensiles TagMaker
 
-ustensileseDiv.addEventListener("click", function (event) {
-
+ustensileseDiv.addEventListener("click", function (g) {
+alert('coucou');
   //Adding Tag to taglist
-  Tag.ustensilesTaglist.push(event.target.textContent);
+  Tag.ustensilesTaglist.push(g.target.textContent);
   ReloadPage(Tag);
 
   //creating tag in dom
-  implementingTag('ustensilese',event, Tag.removeUstensil);
+  implementingTag('ustensile',g, Tag.removeUstensil);
 
 
 
@@ -150,4 +152,4 @@ ustensileseDiv.addEventListener("click", function (event) {
 
 
 
- })
+

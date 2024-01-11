@@ -72,7 +72,7 @@ static reloadIngredientsFinder(Tag){
            
                    // implementing Dom
                
-            let ingredientDiv = document.getElementById("finders__ingrédients");
+            let ingredientDiv = document.getElementById("finder__ingrédients");
             ingredientDiv.innerHTML='';
         for(let i=0; i<Finders.ingredentsFinder.length; i++){
         let ingredientP = document.createElement("p");
@@ -144,7 +144,7 @@ static reloadUstensilesFinder(Tag){
    
            // implementing Dom
        
-    let ustensilesDiv = document.getElementById("finders__ustensiles");
+    let ustensilesDiv = document.getElementById("finder__ustensiles");
     ustensilesDiv.innerHTML='';
 for(let i=0; i<Finders.ustensilesFinder.length; i++){
 let ustensilesP = document.createElement("p");

@@ -22,19 +22,19 @@ export class Tag {
         }
     }
   static  removeAppareil(appareil){
-        for(let i=0; i<appareilsTaglist.length;i++){
+        for(let i=0; i<Tag.appareilsTaglist.length;i++){
             if(appareilsTaglist[i]==appareil){
                 appareilTaglist.splice(i,1);
-                ReloadPage(TagObject);
+                ReloadPage(Tag);
                 break;
             }
         }
     }
   static  removeUstensil(ustensiles){
-        for(let i=0; i<ustensilesTaglist.length;i++){
-            if(ustensilesTaglist[i]==ustensiles){
-                ustensilesTaglist.splice(i,1);
-                ReloadPage(TagObject);
+        for(let i=0; i<Tag.ustensilesTaglist.length;i++){
+            if(Tag.ustensilesTaglist[i]==ustensiles){
+                Tag.ustensilesTaglist.splice(i,1);
+                ReloadPage(Tag);
                 break;
             }
         }
@@ -120,7 +120,7 @@ static checkTags(RecetteIngredients,RecetteApplaiance,Recetteustensiles){
         for (let i=0; i<Tag.ustensilesTaglist.length; i++) {
             present=false;
             // pour ce tagUstensil on boucle sur les ustensiles de la recette
-            for(j=0; j<RecetteUstensiles; j++){
+            for(let j=0; j<RecetteUstensiles; j++){
                 // si il y a match alors ce tag est
                 // present dans les ustensiles de la recette
                 if(Tag.ustensilesTaglist[i] == RecetteUstensiles[j])
