@@ -109,7 +109,7 @@ appareilFinder.addEventListener("click", function () {
   let selectedIngredientP = document.createElement("p");
   selectedIngredientP.appendChild(event.target);
     selectedIngredientP.appendChild(closeCross);
-    selectedIngredientP.className =`tags__${type}sTags__${type}Tag`;
+    selectedIngredientP.className =`tags__tagDiv__tag`;
     let tagDiv = document.getElementById(`${type}sTag`);
     tagDiv.appendChild(selectedIngredientP);
 
