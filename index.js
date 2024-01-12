@@ -84,34 +84,46 @@ appareilFinder.addEventListener("click", function () {
 // DOM TAG SECTION
    
     // cette fonction permet d implementer les tags dans le dom
+    // et dans les finders
     //avec leur close event listener
 
     function implementingTag(type, event, TagRemoveFunction){
  
-      const closeCross = document.createElement("i");
-    closeCross.className = "fa-solid fa-xmark";
-  
-    let selectedIngredientP = document.createElement("p");
-    selectedIngredientP.appendChild(event.target);
-  
+   //FINDERLIST
+  // implementing selected element in findersList
+  let headerElementP=document.createElement("p");
+  headerElementP.className="header__selected__element";
+  headerElementP.textContent=event.target.textContent;
+  let headFinder=document.getElementById(`${type}Selected`);
+  headFinder.appendChild(headerElementP);
+  //close finder
+  const finder = document.getElementById(`${type}Finder`);
+  finder.classList.remove("active");
+  open = false;
+
+  // TAGLIST
+  //implementing element in tagList
+  const closeCross = document.createElement("i");
+  closeCross.className = "fa-solid fa-xmark";
+
+  let selectedIngredientP = document.createElement("p");
+  selectedIngredientP.appendChild(event.target);
     selectedIngredientP.appendChild(closeCross);
     selectedIngredientP.className =`tags__${type}sTags__${type}Tag`;
     let tagDiv = document.getElementById(`${type}sTag`);
     tagDiv.appendChild(selectedIngredientP);
 
-      //close finder
-  const finder = document.getElementById(`${type}Finder`);
-  finder.classList.remove("active");
-  open = false;
+
 
   //adding Tag close event listener
   closeCross.addEventListener("click",function  () {
     
     //cette fonction(placee en paremetres) supprime l element selectionne 
-    //de sa TagList
+    //de sa TagList et de son headerFinder
     TagRemoveFunction(selectedIngredientP.textContent);
   
     tagDiv.removeChild(selectedIngredientP);
+    headFinder.removeChild(headerElementP);
       ReloadPage(Tag);
  
     });
