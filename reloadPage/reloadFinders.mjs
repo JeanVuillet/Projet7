@@ -33,14 +33,14 @@ static reloadIngredientsFinder(Tag){
                // comparer chaque ingredient a sa TagList si present =true
                   for( let k=0; k<Tag.ingredientsTaglist.length; k++){
                      
-                     if(Tag.ingredientsTaglist[k]==MasterList.masterList[i].ingredients[j].ingredient){
+                     if(Tag.ingredientsTaglist[k]==MasterList.masterList[i].ingredients[j].ingredient.toLowerCase()){
                       present=true;
                      } 
           
                   }
                   if(present==false) 
                   // si l ingredient n est pas dans la taglist on l ajoute au finder
-                  {Finders.ingredentsFinder.push(MasterList.masterList[i].ingredients[j].ingredient) 
+                  {Finders.ingredentsFinder.push(MasterList.masterList[i].ingredients[j].ingredient.toLowerCase()) 
                 
                   };
                 }
@@ -62,7 +62,7 @@ static reloadIngredientsFinder(Tag){
          
              
                 if (FilteredIngredientlist[i] !=FilteredIngredientlist[i-1] ) {
-                  newIngredientsFinder.push(FilteredIngredientlist[i]);
+                  newIngredientsFinder.push(FilteredIngredientlist[i].toLowerCase());
                
                 }
               }
@@ -105,7 +105,7 @@ static reloadAppareilsFinder(Tag){
        // comparer l appareil de cette recette a sa TagList si present =true
           for( let k=0; k<Tag.appareilsTaglist.length; k++){
              
-             if(Tag.appareilsTaglist[k]==MasterList.masterList[i].appliance){
+             if(Tag.appareilsTaglist[k]==MasterList.masterList[i].appliance.toLowerCase()){
               present=true;
               break;
              } 
@@ -113,7 +113,7 @@ static reloadAppareilsFinder(Tag){
           }
           if(present==false) 
           // si l ingredient n est pas dans la taglist on l ajoute au finder
-          {Finders.appareilsFinder.push(MasterList.masterList[i].appliance) 
+          {Finders.appareilsFinder.push(MasterList.masterList[i].appliance.toLowerCase()) 
         
           };
         }
@@ -179,14 +179,14 @@ static reloadUstensilesFinder(Tag){
        // comparer chaque ingredient a sa TagList si present =true
           for( let k=0; k<Tag.ustensilesTaglist.length; k++){
              
-             if(Tag.ustensilesTaglist[k]==MasterList.masterList[i].ustensiles[j]){
+             if(Tag.ustensilesTaglist[k]==MasterList.masterList[i].ustensiles[j].toLowerCase()){
               present=true;
              } 
   
           }
           if(present==false) 
           // si l ustensiles n est pas dans la taglist on l ajoute au finder
-          {Finders.ustensilesFinder.push(MasterList.masterList[i].ustensiles[j]) 
+          {Finders.ustensilesFinder.push(MasterList.masterList[i].ustensiles[j].toLowerCase()) 
         
           };
         }

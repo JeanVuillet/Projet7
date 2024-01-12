@@ -73,7 +73,7 @@ static checkTags(RecetteIngredients,RecetteApplaiance,Recetteustensiles){
            {
             //  si cet ingredient = ce tag
              // present=true
-            if(Tag.ingredientsTaglist[i]==RecetteIngredients[j].ingredient)
+            if(Tag.ingredientsTaglist[i]==RecetteIngredients[j].ingredient.toLowerCase())
             {present=true;}
           
            }
@@ -99,7 +99,7 @@ static checkTags(RecetteIngredients,RecetteApplaiance,Recetteustensiles){
         present=false;
         //si cet appareil match alors l appareil de cette
         // recette a matche avec un tag 
-   if (RecetteApplaiance ==Tag.appareilsTaglist[i]){
+   if (RecetteApplaiance.toLowerCase() ==Tag.appareilsTaglist[i]){
     //on valid ce tag present=true on passe au prochain tag
     present=true; 
        return present;
@@ -124,7 +124,7 @@ static checkTags(RecetteIngredients,RecetteApplaiance,Recetteustensiles){
                 // si il y a match alors ce tag est
                 // present dans les ustensiles de la recette
                 // la recette est validee
-                if(Tag.ustensilesTaglist[i] == RecetteUstensiles[j])
+                if(Tag.ustensilesTaglist[i] == RecetteUstensiles[j].toLowerCase())
                 { present=true;
                 break;}
             }
