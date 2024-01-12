@@ -25,6 +25,11 @@ const recepeSectionTitle=document.createElement("h3");
 recepeSectionTitle.innerText="Recette";
 recepeSectionTitle.className="recetteContainer__recepeSection__title";
 recetteContainer.appendChild(recepeSectionTitle);
+//creating timeDiv
+const recetteSectionTime=document.createElement('div');
+recetteSectionTime.innerText=recette.time+'min';
+recetteContainer.appendChild(recetteSectionTime);
+
 //creating description
 const recepe=document.createElement("p");
 recepe.className="recetteContainer__recepeSection__recepe";
@@ -44,16 +49,22 @@ const ingredients=document.createElement("div");
 ingredients.className="recetteContainer__ingredientsSection__ingredients";
 //implementing ingredients
 recette.ingredients.forEach(element => {
+    const ingredientDiv=document.createElement("div");
     //name
     const ingredient = document.createElement("p");
     ingredient.className="recetteContainer__ingredientsSection__ingredients__name";
     ingredient.innerHTML = element.ingredient;
-    ingredients.appendChild(ingredient);
+    ingredientDiv.appendChild(ingredient);
     //quantity
     const quantity = document.createElement("p");
     quantity.className="recetteContainer__ingredientsSection__ingredients__quantity";
     (element.unit)? quantity.innerHTML = element.quantity+element.unit : quantity.innerHTML =element.quantity;
-    ingredients.appendChild(quantity);
+    
+
+    //name
+    const ingredientName = document.createElement("p");
+    ingredientDiv.appendChild(quantity);
+    ingredients.appendChild(ingredientDiv);
 
     
 });
