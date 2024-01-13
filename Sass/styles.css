@@ -109,6 +109,20 @@
   background-color: #FFD15B;
   width: 100%;
 }
+.finders__option .tags {
+  display: block;
+}
+.finders__option .tags__tag {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 203px;
+  height: 53px;
+  background-color: #FFD15B;
+  border-radius: 10px;
+  padding: 17px, 18px, 17px, 18px;
+  gap: 60px;
+}
 
 .title {
   display: flex;
@@ -155,7 +169,6 @@
 }
 
 .recetteContainer {
-  border: solid green;
   background-color: white;
   width: 380px;
   height: 731px;
@@ -182,9 +195,6 @@
   font-size: 14px;
   line-height: 19.12px;
   color: black;
-}
-.recetteContainer__ingredientsSection {
-  border: solid;
 }
 .recetteContainer__ingredientsSection__ingredients {
   width: 100%;
