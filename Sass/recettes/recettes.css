@@ -34,29 +34,22 @@
   line-height: 19.12px;
   color: black;
 }
-.recetteContainer__ingredientsSection {
-  width: 330px;
-  height: 190px;
-}
-.recetteContainer__ingredientsSection__title {
-  padding-bottom: 10px;
-}
 .recetteContainer__ingredientsSection__ingredients {
   width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   gap: 0px;
 }
-.recetteContainer__ingredientsSection__ingredients__name {
-  width: 20%;
+.recetteContainer__ingredientsSection__ingredients__nameQuantity {
+  width: 50%;
+}
+.recetteContainer__ingredientsSection__ingredients__nameQuantity__name {
   color: black;
   font-weight: 500;
   font-size: 14px;
   line-height: 19.12px;
 }
-.recetteContainer__ingredientsSection__ingredients__quantity {
+.recetteContainer__ingredientsSection__ingredients__nameQuantity__quantity {
   font-weight: 400;
   font-size: 14px;
   line-height: 19.12px;

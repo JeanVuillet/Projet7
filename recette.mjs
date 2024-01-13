@@ -50,14 +50,15 @@ ingredients.className="recetteContainer__ingredientsSection__ingredients";
 //implementing ingredients
 recette.ingredients.forEach(element => {
     const ingredientDiv=document.createElement("div");
+    ingredientDiv.className="recetteContainer__ingredientsSection__ingredients__nameQuantity";
     //name
     const ingredient = document.createElement("p");
-    ingredient.className="recetteContainer__ingredientsSection__ingredients__name";
+    ingredient.className="recetteContainer__ingredientsSection__ingredients__nameQuantity__name";
     ingredient.innerHTML = element.ingredient;
     ingredientDiv.appendChild(ingredient);
     //quantity
     const quantity = document.createElement("p");
-    quantity.className="recetteContainer__ingredientsSection__ingredients__quantity";
+    quantity.className="recetteContainer__ingredientsSection__ingredients__nameQuantity__quantity";
     (element.unit)? quantity.innerHTML = element.quantity+element.unit : quantity.innerHTML =element.quantity;
     
 
