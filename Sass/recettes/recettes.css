@@ -7,6 +7,7 @@
 }
 
 .recetteContainer {
+  position: relative;
   background-color: white;
   width: 380px;
   height: 731px;
@@ -15,43 +16,62 @@
   font-weight: 700px;
   font-size: 12px;
   line-height: 16.39px;
-  color: #7A7A7A;
+  color: #7a7a7a;
   /*letter 9%?*/
 }
 .recetteContainer__imageRecette {
   width: 380px;
   height: 253px;
 }
-.recetteContainer__title {
+.recetteContainer__detail {
+  margin: 25px;
+}
+.recetteContainer__detail__title {
   font-family: Anton;
   font-weight: 400;
   font-size: 18px;
   line-height: 27, 1px;
 }
-.recetteContainer__recepeSection__recepe {
+.recetteContainer__detail__time {
+  display: flex;
+  background-color: #ffd15b;
+  position: absolute;
+  top: 21px;
+  left: 252px;
+  width: 65px;
+  height: 26px;
+  border-radius: 14px;
+  justify-content: center;
+  align-items: center;
+}
+.recetteContainer__detail__recepeSection__recepe {
   font-weight: 400;
   font-size: 14px;
   line-height: 19.12px;
   color: black;
 }
-.recetteContainer__ingredientsSection__ingredients {
+.recetteContainer__detail__ingredientsSection__ingredients {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 0px;
 }
-.recetteContainer__ingredientsSection__ingredients__nameQuantity {
+.recetteContainer__detail__ingredientsSection__ingredients__nameQuantity {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
   width: 50%;
 }
-.recetteContainer__ingredientsSection__ingredients__nameQuantity__name {
+.recetteContainer__detail__ingredientsSection__ingredients__nameQuantity__name {
+  margin-block: 0;
   color: black;
   font-weight: 500;
   font-size: 14px;
   line-height: 19.12px;
 }
-.recetteContainer__ingredientsSection__ingredients__nameQuantity__quantity {
+.recetteContainer__detail__ingredientsSection__ingredients__nameQuantity__quantity {
+  margin-block: 0;
   font-weight: 400;
   font-size: 14px;
   line-height: 19.12px;
-  color: #7A7A7A;
+  color: #7a7a7a;
 }/*# sourceMappingURL=recettes.css.map */

@@ -18,7 +18,7 @@ ReloadPage(Tag);
 //INPUT SECTION
 let input=document.getElementById('recherche');
 input.addEventListener('keyup',function(e){
-  if(input.value.length>2){
+  if((input.value.length>2)||(input.value.length==0)){
     ReloadPage(Tag);
   }
 })

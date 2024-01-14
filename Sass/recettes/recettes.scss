@@ -1,82 +1,96 @@
+$grey: #7a7a7a;
+.recette {
+  margin: 3rem;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.recetteContainer {
+  position: relative;
 
-    $grey:#7A7A7A;
-    .recette{
-        margin:3rem;
+  h3 {
+    font-weight: 700px;
+    font-size: 12px;
+    line-height: 16.39px;
+    color: $grey;
+    /*letter 9%?*/
+  }
+  background-color: white;
+  width: 380px;
+  height: 731px;
+
+  &__imageRecette {
+    width: 380px;
+    height: 253px;
+  }
+  &__detail {
+    margin:25px;
+    &__title {
+      font-family: Anton;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27, 1px;
+    }
+    &__time {
+      display: flex;
+      background-color: #ffd15b;
+      position: absolute;
+      top: 21px;
+      left: 252px;
+      width: 65px;
+      height: 26px;
+      border-radius: 14px;
+      justify-content: center;
+      align-items: center;
+    }
+    &__recepeSection {
+
+
+      &__title {
+
+      }
+      &__recepe {
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19.12px;
+        color: black;
+      }
+    }
+    &__ingredientsSection {
+
+
+      &__ingredients {
         width: 100%;
-        display:flex;
-        gap:2rem;
+
+        display: flex;
+
         flex-wrap: wrap;
-    }
-.recetteContainer{
 
-    h3{
-        font-weight:700px;
-        font-size: 12px;
-        line-height: 16.39px;
-        color:$grey;
-        /*letter 9%?*/
-    }
-    background-color: white;
-    width:380px;
-    height:731px;
+        &__nameQuantity {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 2rem;
 
-    &__imageRecette{
-        width: 380px;
-        height: 253px;
-    }
+          width: 50%;
 
-    &__title{
-        font-family: Anton;
-         font-weight: 400;
-         font-size: 18px;
-         line-height: 27,1px;
-
-    }
-    &__recepeSection{
-        &__title{
-
+          &__name {
+            margin-block: 0;
+            color: black;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 19.12px;
+          }
+          &__quantity {
+            margin-block: 0;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 19.12px;
+            color: $grey;
+          }
         }
-        &__recepe{
-font-weight: 400;
-font-size: 14px;
-line-height: 19.12px;
-color:black;
-        }
-
+      }
     }
-    &__ingredientsSection{
-
-
-       
-        &__ingredients{
-    
-            width:100%;
-            
-    
-            display:flex;
-       
-            flex-wrap: wrap;
-            gap:0px;
-
-            &__nameQuantity{
-               
-                width:50%;
-                &__name{
-                
-                  
-                    color:black;
-                    font-weight: 500;
-                    font-size: 14px;
-                    line-height: 19.12px;
-                }
-                &__quantity{
-                
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 19.12px;
-                    color:$grey;
-                }
-            }
-        }
-    }
+  }
 }
