@@ -31,6 +31,10 @@ export class MasterList{
            let recetteArticle = recetteMaker(recipe);
            sectionRecettes.appendChild(recetteArticle);})
      
+           const recipesTotalDiv=document.getElementById("recipesTotal");
+           recipesTotalDiv.innerHTML='';
+           recipesTotalDiv.innerText=`${masterList.length} recettes`;
+
     
      
      }
@@ -60,6 +64,6 @@ export class MasterList{
  
 
 
-     }
      
-    
+     
+}

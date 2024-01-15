@@ -123,6 +123,13 @@
   padding: 17px, 18px, 17px, 18px;
   gap: 60px;
 }
+.finders__recipesTotal {
+  width: 97px;
+  height: 32px;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 31.61px;
+}
 
 .title {
   display: flex;
