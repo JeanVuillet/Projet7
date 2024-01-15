@@ -38,7 +38,7 @@
 .Header__inputLabel__finder {
   display: flex;
   height: 72px;
-  align-items: center;
+  align-items: flex-start;
 }
 .Header__inputLabel__finder__input {
   height: 100%;

@@ -14,7 +14,7 @@ recetteContainer.appendChild(imageRecette);
 const detailDiv=document.createElement('div');
 detailDiv.className='recetteContainer__detail';
 //creating titile
-const title=document.createElement("p");
+const title=document.createElement("h2");
 WebTransportBidirectionalStream.className="recetteContainer__detail__title";
 title.innerHTML=recette.name;
 detailDiv.appendChild(title);

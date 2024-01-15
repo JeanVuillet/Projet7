@@ -18,24 +18,26 @@
   display: flex;
   flex-direction: column;
   background-color: white;
+  padding-left: 2rem;
 }
 .finders__option.active .content .header {
   height: 100px;
   width: 195px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 .finders__option.active .content .header__title {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   width: 195px;
   height: 56px;
+  gap: 4rem;
 }
 .finders__option.active .content .header__finder {
   padding-block: 2px;
-  padding-inline: 8px;
+  padding-inline: 0px;
 }
 .finders__option.active .content .header__finder .fa-magnifying-glass {
   position: relative;
@@ -47,8 +49,10 @@
 }
 .finders__option.active .content .header__selected {
   width: 100%;
+  margin-left: -2rem;
 }
 .finders__option.active .content .header__selected__element {
+  padding-left: 2rem;
   display: flex;
   justify-content: space-around;
   background-color: #FFD15B;
