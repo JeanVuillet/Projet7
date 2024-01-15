@@ -91,11 +91,27 @@ appareilFinder.addEventListener("click", function () {
  
    //FINDERLIST
   // implementing selected element in findersList
+  const closeCrossFinder = document.createElement("i");
+  closeCrossFinder.className = "fa-solid fa-xmark";
+
   let headerElementP=document.createElement("p");
   headerElementP.className="header__selected__element";
   headerElementP.textContent=event.target.textContent;
+  headerElementP.appendChild(closeCrossFinder);
   let headFinder=document.getElementById(`${type}Selected`);
   headFinder.appendChild(headerElementP);
+
+  closeCrossFinder.addEventListener("click",function  () {
+    
+    //cette fonction(placee en paremetres) supprime l element selectionne 
+    //de sa TagList et de son headerFinder
+    TagRemoveFunction(selectedIngredientP.textContent);
+  
+    tagDiv.removeChild(selectedIngredientP);
+    headFinder.removeChild(headerElementP);
+      ReloadPage(Tag);
+ 
+    });
   //close finder
   const finder = document.getElementById(`${type}Finder`);
   finder.classList.remove("active");
@@ -105,6 +121,8 @@ appareilFinder.addEventListener("click", function () {
   //implementing element in tagList
   const closeCross = document.createElement("i");
   closeCross.className = "fa-solid fa-xmark";
+
+
 
   let selectedIngredientP = document.createElement("p");
   selectedIngredientP.appendChild(event.target);

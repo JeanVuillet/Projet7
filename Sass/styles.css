@@ -106,6 +106,8 @@
   width: 100%;
 }
 .finders__option.active .content .header__selected__element {
+  display: flex;
+  justify-content: space-around;
   background-color: #FFD15B;
   width: 100%;
 }
@@ -124,6 +126,7 @@
   gap: 60px;
 }
 .finders__recipesTotal {
+  font-family: Anton;
   width: 97px;
   height: 32px;
   font-weight: 400;
