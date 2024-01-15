@@ -14,7 +14,9 @@
   position: absolute;
   z-index: -1;
   height: 960px;
-  width: 100%;
+  width: -webkit-fill-available;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 .Header__logo {
   z-index: 1;
@@ -58,6 +60,7 @@
 }
 
 .finders {
+  position: relative;
   display: flex;
   gap: 5rem;
   padding-top: 3rem;
@@ -127,6 +130,8 @@
 }
 .finders__recipesTotal {
   font-family: Anton;
+  position: absolute;
+  left: 1223px;
   width: 97px;
   height: 32px;
   font-weight: 400;
@@ -172,16 +177,17 @@
 
 .recette {
   margin: 3rem;
-  width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
 .recetteContainer {
   position: relative;
+  border-radius: 21px 21px 0 0;
   background-color: white;
-  width: 380px;
+  width: auto;
   height: 731px;
 }
 .recetteContainer h3 {
@@ -192,7 +198,8 @@
   /*letter 9%?*/
 }
 .recetteContainer__imageRecette {
-  width: 380px;
+  border-radius: 21px 21px 0 0;
+  width: 100%;
   height: 253px;
 }
 .recetteContainer__detail {
@@ -209,7 +216,7 @@
   background-color: #ffd15b;
   position: absolute;
   top: 21px;
-  left: 252px;
+  right: 2rem;
   width: 65px;
   height: 26px;
   border-radius: 14px;
@@ -230,7 +237,7 @@
 .recetteContainer__detail__ingredientsSection__ingredients__nameQuantity {
   display: flex;
   flex-direction: column;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   width: 50%;
 }
 .recetteContainer__detail__ingredientsSection__ingredients__nameQuantity__name {

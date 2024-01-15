@@ -47,9 +47,12 @@ ingredientsSection.className="recetteContainer__detail__ingredientsSection";
 const ingredientsSectionTitle=document.createElement("h3");
 ingredientsSectionTitle.innerHTML="Ingrédients";
 ingredientsSectionTitle.className="recetteContainer__detail__ingredientsSection__title";
+
 //creating content
 const ingredients=document.createElement("div");
 ingredients.className="recetteContainer__detail__ingredientsSection__ingredients";
+// implementing title
+detailDiv.appendChild(ingredientsSectionTitle);
 //implementing ingredients
 recette.ingredients.forEach(element => {
     const ingredientDiv=document.createElement("div");

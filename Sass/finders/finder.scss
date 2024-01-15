@@ -1,5 +1,5 @@
 .finders {
-
+    position: relative;
     display: flex;
     gap: 5rem;
     padding-top: 3rem;
@@ -80,6 +80,9 @@
       }
       &__recipesTotal{
         font-family: Anton;
+        position:absolute;
+        left:1223px;
+      
 width:97px;
 height:32px;
 font-weight: 400;

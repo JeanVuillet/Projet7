@@ -11,7 +11,9 @@
     position:absolute;
     z-index:-1;
     height: 960px;
-    width: 100%;
+    width: -webkit-fill-available;
+    margin-left:8px;
+    margin-right: 8px;
   }
   &__logo {
     z-index:1;
