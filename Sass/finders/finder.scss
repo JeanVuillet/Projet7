@@ -52,6 +52,16 @@
                 justify-content: space-around;
                 background-color: #FFD15B;
                 width: 100%;
+                &>i{
+                  opacity: 0;
+                }
+                &:hover{
+                  font-weight: bolder;
+           
+                  &>i{
+                    opacity: 1;
+                  }
+                }
               }
             }
 
@@ -136,4 +146,7 @@ display: none;
     }
   }
 
+}
+ .header__selected__element:hover>i{
+  opacity: 1;
 }

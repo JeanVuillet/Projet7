@@ -94,6 +94,7 @@ appareilFinder.addEventListener("click", function () {
   const closeCrossFinder = document.createElement("i");
   closeCrossFinder.className = "fa-solid fa-xmark";
 
+
   let headerElementP=document.createElement("p");
   headerElementP.className="header__selected__element";
   headerElementP.textContent=event.target.textContent;
