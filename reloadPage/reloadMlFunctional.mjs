@@ -43,6 +43,19 @@ let FindedIngredient=recipe.ingredients.find(function findThisTag(ingredient){
     
 })
 console.log('je suis newMethode');
-console.log(masterList);  
+console.log(masterList); 
+   // IMPLEMENTATION DANS LE DOM
+
+   const sectionRecettes = document.getElementById("recettes");
+   sectionRecettes.innerHTML='';
+     
+       masterList.forEach(function (recipe) {
+         let recetteArticle = recetteMaker(recipe);
+         sectionRecettes.appendChild(recetteArticle);})
+   
+         const recipesTotalDiv=document.getElementById("recipesTotal");
+         recipesTotalDiv.innerHTML='';
+         recipesTotalDiv.innerText=`${masterList.length} recettes`;
+
 }
 }
