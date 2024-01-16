@@ -44,18 +44,24 @@ let FindedIngredient=recipe.ingredients.find(function findThisTag(ingredient){
 })
 console.log('je suis newMethode');
 console.log(masterList); 
+//raffraichissement de masterList
+FunctionalMasterList.masterList=masterList;
    // IMPLEMENTATION DANS LE DOM
 
-   const sectionRecettes = document.getElementById("recettes");
-   sectionRecettes.innerHTML='';
+     const sectionRecettes = document.getElementById("recettes");
+     sectionRecettes.innerHTML='';
+       
+         masterList.forEach(function (recipe) {
+           let recetteArticle = recetteMaker(recipe);
+           sectionRecettes.appendChild(recetteArticle);})
      
-       masterList.forEach(function (recipe) {
-         let recetteArticle = recetteMaker(recipe);
-         sectionRecettes.appendChild(recetteArticle);})
-   
-         const recipesTotalDiv=document.getElementById("recipesTotal");
-         recipesTotalDiv.innerHTML='';
-         recipesTotalDiv.innerText=`${masterList.length} recettes`;
+           const recipesTotalDiv=document.getElementById("recipesTotal");
+           recipesTotalDiv.innerHTML='';
+           recipesTotalDiv.innerText=`${masterList.length} recettes`;
 
+}
+static logMasterList(){
+    console.log('masterlist is now' );
+    console.log(FunctionalMasterList.masterList);
 }
 }

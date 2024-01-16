@@ -1,6 +1,7 @@
 
 import { Tag } from "../Tag/tags.mjs";
-import { MasterList } from "./reloadMasterList.mjs";
+
+import { FunctionalMasterList } from "./reloadMlFunctional.mjs";
 export class Finders{
 
 static ingredentsFinder=[];
@@ -26,21 +27,21 @@ static reloadIngredientsFinder(Tag){
        
               Finders.ingredentsFinder = [];
           // parcourir des recettes de masterList
-            for (let i = 0; i < MasterList.masterList.length; i++) {
+            for (let i = 0; i < FunctionalMasterList.masterList.length; i++) {
                 // parcourt des ingredients de chaque recette
-                for (let j = 0; j < MasterList.masterList[i].ingredients.length; j++) {
+                for (let j = 0; j < FunctionalMasterList.masterList[i].ingredients.length; j++) {
                   let present=false;
                // comparer chaque ingredient a sa TagList si present =true
                   for( let k=0; k<Tag.ingredientsTaglist.length; k++){
                      
-                     if(Tag.ingredientsTaglist[k]==MasterList.masterList[i].ingredients[j].ingredient.toLowerCase()){
+                     if(Tag.ingredientsTaglist[k]==FunctionalMasterList.masterList[i].ingredients[j].ingredient.toLowerCase()){
                       present=true;
                      } 
           
                   }
                   if(present==false) 
                   // si l ingredient n est pas dans la taglist on l ajoute au finder
-                  {Finders.ingredentsFinder.push(MasterList.masterList[i].ingredients[j].ingredient.toLowerCase()) 
+                  {Finders.ingredentsFinder.push(FunctionalMasterList.masterList[i].ingredients[j].ingredient.toLowerCase()) 
                 
                   };
                 }
@@ -98,14 +99,14 @@ static reloadAppareilsFinder(Tag){
 
       Finders.appareilsFinder = [];
   // parcourir des recettes de masterList
-    for (let i = 0; i < MasterList.masterList.length; i++) {
+    for (let i = 0; i < FunctionalMasterList.masterList.length; i++) {
         // parcourt des appareils de chaque recette
 
           let present=false;
        // comparer l appareil de cette recette a sa TagList si present =true
           for( let k=0; k<Tag.appareilsTaglist.length; k++){
              
-             if(Tag.appareilsTaglist[k]==MasterList.masterList[i].appliance.toLowerCase()){
+             if(Tag.appareilsTaglist[k]==FunctionalMasterList.masterList[i].appliance.toLowerCase()){
               present=true;
               break;
              } 
@@ -113,7 +114,7 @@ static reloadAppareilsFinder(Tag){
           }
           if(present==false) 
           // si l ingredient n est pas dans la taglist on l ajoute au finder
-          {Finders.appareilsFinder.push(MasterList.masterList[i].appliance.toLowerCase()) 
+          {Finders.appareilsFinder.push(FunctionalMasterList.masterList[i].appliance.toLowerCase()) 
         
           };
         }
@@ -172,21 +173,21 @@ static reloadUstensilesFinder(Tag){
 
       Finders.ustensilesFinder = [];
   // parcourir des recettes de masterList
-    for (let i = 0; i < MasterList.masterList.length; i++) {
+    for (let i = 0; i < FunctionalMasterList.masterList.length; i++) {
         // parcourt des ustensiles de chaque recette
-        for (let j = 0; j < MasterList.masterList[i].ustensiles.length; j++) {
+        for (let j = 0; j < FunctionalMasterList.masterList[i].ustensiles.length; j++) {
           let present=false;
        // comparer chaque ingredient a sa TagList si present =true
           for( let k=0; k<Tag.ustensilesTaglist.length; k++){
              
-             if(Tag.ustensilesTaglist[k]==MasterList.masterList[i].ustensiles[j].toLowerCase()){
+             if(Tag.ustensilesTaglist[k]==FunctionalMasterList.masterList[i].ustensiles[j].toLowerCase()){
               present=true;
              } 
   
           }
           if(present==false) 
           // si l ustensiles n est pas dans la taglist on l ajoute au finder
-          {Finders.ustensilesFinder.push(MasterList.masterList[i].ustensiles[j].toLowerCase()) 
+          {Finders.ustensilesFinder.push(FunctionalMasterList.masterList[i].ustensiles[j].toLowerCase()) 
         
           };
         }

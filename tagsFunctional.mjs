@@ -1,3 +1,5 @@
+import { ReloadPage } from "./reloadPage.mjs";
+
 export class NewTag{
     static ingredientsTaglist = []
     static appareilsTaglist =[]
