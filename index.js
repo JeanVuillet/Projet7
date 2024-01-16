@@ -3,6 +3,7 @@ import recetteMaker from "./recette.mjs";
 import { Tag } from "./Tag/tags.mjs";
 import { ReloadPage } from "./reloadPage.mjs";
 import { MasterList } from "./reloadPage/reloadMasterList.mjs";
+import { NewTag } from "./tagsFunctional.mjs";
 
 import { FunctionalMasterList } from "./reloadPage/reloadMlFunctional.mjs";
 
@@ -13,13 +14,13 @@ const ustensileseDiv =document.getElementById("finder__ustensiles");
 var selectedList=[];
 export var open = true;
 //initiating page 
-ReloadPage(Tag);
+ReloadPage(NewTag);
 
 //INPUT SECTION
 let input=document.getElementById('recherche');
 input.addEventListener('keyup',function(e){
   if((input.value.length>2)||(input.value.length==0)){
-    ReloadPage(Tag);
+    ReloadPage(NewTag);
   }
 })
 //INGREDIENTS SECTION
@@ -81,7 +82,7 @@ appareilFinder.addEventListener("click", function () {
     });
 
 
-// DOM TAG SECTION
+// DOM NewTag SECTION
    
     // cette fonction permet d implementer les tags dans le dom
     // et dans les finders
@@ -106,11 +107,11 @@ appareilFinder.addEventListener("click", function () {
     
     //cette fonction(placee en paremetres) supprime l element selectionne 
     //de sa TagList et de son headerFinder
-    TagRemoveFunction(selectedIngredientP.textContent);
+    NewTagRemoveFunction(selectedIngredientP.textContent);
   
     tagDiv.removeChild(selectedIngredientP);
     headFinder.removeChild(headerElementP);
-      ReloadPage(Tag);
+      ReloadPage(NewTag);
  
     });
   //close finder
@@ -143,7 +144,7 @@ appareilFinder.addEventListener("click", function () {
   
     tagDiv.removeChild(selectedIngredientP);
     headFinder.removeChild(headerElementP);
-      ReloadPage(Tag);
+      ReloadPage(NewTag);
  
     });
     
@@ -155,7 +156,7 @@ ingredientDiv.addEventListener("click", function (e) {
 
   //Adding Tag to taglist
   Tag.ingredientsTaglist.push(e.target.textContent.toLowerCase());
-  ReloadPage(Tag);
+  ReloadPage(NewTag);
 
   //creating tag in dom
   implementingTag('ingredient',e, Tag.removeIngredient);
@@ -169,7 +170,7 @@ ingredientDiv.addEventListener("click", function (e) {
 
   //Adding Tag to taglist
   Tag.appareilsTaglist.push(f.target.textContent.toLowerCase());
-  ReloadPage(Tag);
+  ReloadPage(NewTag);
 
   //creating tag in dom
   implementingTag('appareil',f, Tag.removeAppareil);
@@ -181,7 +182,7 @@ ustensileseDiv.addEventListener("click", function (g) {
 
   //Adding Tag to taglist
   Tag.ustensilesTaglist.push(g.target.textContent.toLowerCase());
-  ReloadPage(Tag);
+  ReloadPage(NewTag);
 
   //creating tag in dom
   implementingTag('ustensile',g, Tag.removeUstensil);
@@ -192,7 +193,7 @@ ustensileseDiv.addEventListener("click", function (g) {
 
 document.addEventListener('keydown',(e)=>{
   if(e.key=='a'){
-    FunctionalMasterList.reloadFunctionalMasterList(Tag);
+    FunctionalMasterList.reloadFunctionalMasterList(NewTag);
 
 
   }});
