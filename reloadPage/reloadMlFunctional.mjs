@@ -12,25 +12,37 @@ export class FunctionalMasterList{
      // FABRICATION DE NOUVELLE MASTERLIST
      
      //fitrer chaque recette
-
+var ingredientsPresent=[];
        masterList= recipes.filter( function checkTags (recipe){
 
-//pour cette recette filtrer les ingredients pour ne garder 
-//que ceux qui sont dans la taglis
-   let ingredients= recipe.ingredients.filter( function(ingredientObject){
-   let result =tag.ingredientsTaglist.find(function (taglistIngredient){
-        if(taglistIngredient.toLocaleLowerCase()==ingredientObject.ingredient.toLocaleLowerCase())
-        { return true}
-         else{return false}});
-         return result;
+//pour cette recette rechercher chaque tag dans la liste des ingredients
+// et le resultat est un tableau de boolean pour chaque tag ingredient present qu il faut initialiser a false
 
-   });
-            
-return ingredients.length!=0;
+// on filtre la taglist pour trouver les tags presents dans la liste des ingredients
+   ingredientsPresent= tag.ingredientsTaglist.filter( function filterTagPresents(taglistElement){
+
+    //verifier que ce tag est dans la recette si oui renvoyer true sinon false
+let FindedIngredient=recipe.ingredients.find(function findThisTag(ingredient){
+    if(ingredient.ingredient.toLocaleLowerCase()==taglistElement.toLocaleLowerCase()){
+        return true
+    }
+    else{return false}
+})
+       if (FindedIngredient)
+       {return true}   
+       else{return false}     
+
     
        })
-       console.log('je suis newMethode');
-    console.log(masterList);  
+     
+       if (ingredientsPresent.length ==tag.ingredientsTaglist.length)
+       {   return true;}
+    else{ return false;}
     
+ 
+    
+})
+console.log('je suis newMethode');
+console.log(masterList);  
 }
 }
