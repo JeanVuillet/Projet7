@@ -37,18 +37,23 @@ export class NewTag{
 
 
 static checkTags(recette){
-    checkIngredients(recette);
-    checkAppareils(recette);
-    checkUstensils(recette);
+
+    if(
+    (NewTag.checkIngredients(recette))&&
+    (NewTag.checkAppareils(recette))&&
+    (NewTag.checkUstensils(recette))
+     )
+    { return true;}
+    else{return false;}
 }
 
 static checkIngredients(recette){
 
-    //pour cette recette rechercher chaque tag dans la liste des ingredients
+    //pour cette recette rechercher chaque IngredientTag dans la liste des ingredients
 // et le resultat est un tableau 
 
 
-   ingredientsPresent= NewTag.ingredientsTaglist.filter( 
+  let ingredientsPresent= NewTag.ingredientsTaglist.filter( 
     // on utilise donc ici filter pour filtrer tous les elements de la taglist presents dans la recette
     function filterTagPresents(taglistElement){
 
@@ -82,7 +87,28 @@ let FindedIngredient=recette.ingredients.find(function findThisTag(ingredientObj
  
 
 }
-static checkAppareils(){}
-static checkUstensils(){}
+static checkAppareils(recette){
+// dans la liste des appareilsTag chercher l appareil de la recette
+let present=NewTag.appareilsTaglist.find(function(tag){
+    //si un appreil des tags match avec la recette
+   // mettre ce tag dans present
+    if(tag.toLocaleLowerCase()==recette.appliance.toLocaleLowerCase()){
+        return true;
+    }
+    //sinon renvoyer false
+    else{
+        return false;
+    }
+})
+//apres le filtre si present n est pas vide ou si la TagAppareilList est vide
+//valider le test et revoyer true
+if ((present)||NewTag.appareilsTaglist.length==0){
+    return true;
+    //sinon test non validide renvoyer false
+}  else {return false;}
+}
+static checkUstensils(){
+    return true
+}
 
 }
