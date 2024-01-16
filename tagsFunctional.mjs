@@ -107,8 +107,48 @@ if ((present)||NewTag.appareilsTaglist.length==0){
     //sinon test non validide renvoyer false
 }  else {return false;}
 }
-static checkUstensils(){
-    return true
+static checkUstensils(recette){
+
+
+//pour cette recette rechercher chaque IngredientTag dans la liste des ingredients
+// et le resultat est un tableau 
+
+
+let ustensilesPresent= NewTag.ustensilesTaglist.filter( 
+    // on utilise donc ici filter pour filtrer tous les ustensils de la taglist presents dans la recette
+    function filterTagPresents(taglistElement){
+
+    //verifier que ce tagUstensil est dans la recette 
+let FindedUstensile=recette.ustensiles.find(function findThisTag(ustensile){
+    if(ustensile.toLocaleLowerCase()==taglistElement.toLocaleLowerCase()){
+        return true
+    }
+    else{return false}
+})
+//si ce tagUstensile present renvoyer true sinon false
+       if (FindedUstensile)
+              //le tagUstensile est present et donc ajoute a UstensilesPresent
+       {return true}   
+// le tag n est pas ajoute a ingredients present
+       else{return false}     
+
+    
+       })
+     //apres le filtre on compar la largeur de la liste 
+     //des ustensiles presents a celle de la taglistUstensiles
+     
+       if (ustensilesPresent.length ==NewTag.ustensilesTaglist.length)
+       //  si les listes font la meme longeur cela signifie que  tous les ustensiles
+       // de la taglist sont presents dans la recette
+       // donc on valide la taglist Ustensiles
+       {   return true;}
+       // sinon on valide pas
+    else{ return false;}
+    
+ 
+
+
+    
 }
 
 }

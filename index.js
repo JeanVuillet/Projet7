@@ -107,7 +107,7 @@ appareilFinder.addEventListener("click", function () {
     
     //cette fonction(placee en paremetres) supprime l element selectionne 
     //de sa TagList et de son headerFinder
-    NewTagRemoveFunction(selectedIngredientP.textContent);
+    TagRemoveFunction(selectedIngredientP.textContent);
   
     tagDiv.removeChild(selectedIngredientP);
     headFinder.removeChild(headerElementP);
