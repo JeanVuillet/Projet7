@@ -8,6 +8,7 @@ export class MasterList{
     let   masterList=[];
      
      // FABRICATION DE NOUVELLE MASTERLIST
+     
      //traiter chaque recette
          for (let i = 0; i < recipes.length; i++) {
            // parcourir la liste de tag

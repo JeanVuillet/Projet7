@@ -4,7 +4,7 @@ import { Tag } from "./Tag/tags.mjs";
 import { ReloadPage } from "./reloadPage.mjs";
 import { MasterList } from "./reloadPage/reloadMasterList.mjs";
 
-
+import { FunctionalMasterList } from "./reloadPage/reloadMlFunctional.mjs";
 
 const ingredientDiv = document.getElementById("finder__ingrédients");
 const appareilDiv=document.getElementById('finder__appareils');
@@ -190,6 +190,12 @@ ustensileseDiv.addEventListener("click", function (g) {
 
  });
 
+document.addEventListener('keydown',(e)=>{
+  if(e.key=='a'){
+    FunctionalMasterList.reloadFunctionalMasterList(Tag);
+
+
+  }});
 
 
 
