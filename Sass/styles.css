@@ -81,7 +81,6 @@
   padding-left: 2rem;
 }
 .finders__option.active .content .header {
-  height: 100px;
   width: 195px;
   display: flex;
   flex-direction: column;
@@ -110,11 +109,14 @@
 .finders__option.active .content .header__selected {
   width: 100%;
   margin-left: -2rem;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 .finders__option.active .content .header__selected__element {
+  margin: 0;
   padding-left: 2rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   background-color: #FFD15B;
   width: 100%;
 }
@@ -144,7 +146,7 @@
 .finders__recipesTotal {
   font-family: Anton;
   position: absolute;
-  left: 1223px;
+  right: 60px;
   width: 97px;
   height: 32px;
   font-weight: 400;
@@ -195,7 +197,7 @@
 .recette {
   margin: 3rem;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   flex-wrap: wrap;
 }
@@ -205,7 +207,6 @@
   border-radius: 21px 21px 0 0;
   background-color: white;
   width: auto;
-  height: 731px;
 }
 .recetteContainer h2 {
   font-family: "Anton";

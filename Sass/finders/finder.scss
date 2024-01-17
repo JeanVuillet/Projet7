@@ -21,7 +21,7 @@
             padding-left:2rem;
 
             .header{
-            height:100px;
+            
             width:195px;
             display:flex;
             flex-direction: column;
@@ -29,6 +29,7 @@
             align-items: flex-start;
            
             &__title{
+           
                 display:flex;
                 justify-content: flex-start;
                 align-items: center;
@@ -50,12 +51,16 @@
                }
             }
             &__selected{
+       
             width: 100%;
             margin-left:-2rem;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
               &__element{ 
+                margin: 0;
                 padding-left: 2rem;
                 display:flex;
-                justify-content: space-around;
+                justify-content: flex-start;
                 background-color: #FFD15B;
                 width: 100%;
                 &>i{
