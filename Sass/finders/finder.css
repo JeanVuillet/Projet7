@@ -21,7 +21,6 @@
   padding-left: 2rem;
 }
 .finders__option.active .content .header {
-  height: 100px;
   width: 195px;
   display: flex;
   flex-direction: column;
@@ -50,11 +49,14 @@
 .finders__option.active .content .header__selected {
   width: 100%;
   margin-left: -2rem;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 .finders__option.active .content .header__selected__element {
+  margin: 0;
   padding-left: 2rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   background-color: #FFD15B;
   width: 100%;
 }
