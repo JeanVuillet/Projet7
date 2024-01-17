@@ -62,11 +62,20 @@ recette.ingredients.forEach(element => {
     ingredient.className="recetteContainer__detail__ingredientsSection__ingredients__nameQuantity__name";
     ingredient.innerHTML = element.ingredient;
     ingredientDiv.appendChild(ingredient);
-    //quantity
+    //quantity and unit
     const quantity = document.createElement("p");
     quantity.className="recetteContainer__detail__ingredientsSection__ingredients__nameQuantity__quantity";
-    (element.unit)? quantity.innerHTML = element.quantity+element.unit : quantity.innerHTML =element.quantity;
+    if((element.quantity)&&(element.unit)){
+        quantity.innerHTML = element.quantity+element.unit 
+    } else if ((element.quantity==undefined)&&(element.unity))
+    {quantity.innerHTML =element.unit}
+      else if((element.unit==undefined)&&(element.quantity))
+      { quantity.innerHTML=element.quantity }
+      //il n y a ni quntite ni unite
+      else{quantity.innerHTML=''};
+    //no name and no unit
     
+
 
     //name
     const ingredientName = document.createElement("p");
