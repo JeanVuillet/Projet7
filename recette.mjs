@@ -65,7 +65,14 @@ recette.ingredients.forEach(element => {
     //quantity
     const quantity = document.createElement("p");
     quantity.className="recetteContainer__detail__ingredientsSection__ingredients__nameQuantity__quantity";
-    (element.unit)? quantity.innerHTML = element.quantity+element.unit : quantity.innerHTML =element.quantity;
+    //quantity and unit
+    if((element.quantity)&&(element.unit)){
+        quantity.innerHTML = element.quantity+element.unit 
+    } 
+      else if((element.unit==undefined)&&(element.quantity))
+      { quantity.innerHTML=element.quantity }
+      //il n y a ni quntite ni unite
+      else{quantity.innerHTML=''};
     
 
     //name
