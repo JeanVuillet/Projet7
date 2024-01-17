@@ -48,6 +48,7 @@ static reloadIngredientsFinder(NewTag){
               }
               console.log(Finders.ingredentsFinder);
           let FilteredIngredientlist=[];
+          //on trie les ingredients de ingredientsFinder dans l ordre alphabetique
                FilteredIngredientlist  =  Finders.ingredentsFinder.sort(function (a, b) {
                 if (a > b) {
                   return 1;
@@ -58,10 +59,10 @@ static reloadIngredientsFinder(NewTag){
               let newIngredientsFinder=[];
                  newIngredientsFinder = [FilteredIngredientlist[0]];
               let i = 0;
-
+// suppression des doublons dans ingrdients list
               for(let i=1; i<FilteredIngredientlist.length; i++){
          
-             
+             //si un element d ingredient list est different du precedent on l ajoute a la nouvelle ingredientList
                 if (FilteredIngredientlist[i] !=FilteredIngredientlist[i-1] ) {
                   newIngredientsFinder.push(FilteredIngredientlist[i].toLowerCase());
                
@@ -113,7 +114,7 @@ static reloadAppareilsFinder(NewTag){
   
           }
           if(present==false) 
-          // si l ingredient n est pas dans la taglist on l ajoute au finder
+          // si l appareil n est pas dans la taglist on l ajoute au finder
           {Finders.appareilsFinder.push(FunctionalMasterList.masterList[i].appliance.toLowerCase()) 
         
           };
@@ -121,6 +122,7 @@ static reloadAppareilsFinder(NewTag){
      
       console.log(Finders.appareilsFinder);
   let FilteredAppareilslist=[];
+  //on trie les appareils par ordre alphabetique
        FilteredAppareilslist  =  Finders.appareilsFinder.sort(function (a, b) {
         if (a > b) {
           return 1;
@@ -131,10 +133,11 @@ static reloadAppareilsFinder(NewTag){
       let newAppareilsFinder=[];
          newAppareilsFinder = [FilteredAppareilslist[0]];
       let i = 0;
-
+// on supprime les doublons dans la liste AppareilFinders
       for(let i=1; i<FilteredAppareilslist.length; i++){
  
-     
+     //si un element d appareilList est different de l element precedent on 
+     //l ajoute a la nouvelle appareil liste (sans doublons)
         if (FilteredAppareilslist[i] !=FilteredAppareilslist[i-1] ) {
           newAppareilsFinder.push(FilteredAppareilslist[i]);
           
@@ -194,6 +197,7 @@ static reloadUstensilesFinder(NewTag){
       }
       console.log(Finders.ustensilesFinder);
   let FilteredUstensillist=[];
+  // on trie les ustensiles par ordre alphabetique
        FilteredUstensillist  =  Finders.ustensilesFinder.sort(function (a, b) {
         if (a > b) {
           return 1;
@@ -204,10 +208,11 @@ static reloadUstensilesFinder(NewTag){
       let newUstensilesFinder=[];
          newUstensilesFinder = [FilteredUstensillist[0]];
       let i = 0;
-
+// On supprime les doublons de finderUstensiles
       for(let i=1; i<FilteredUstensillist.length; i++){
  
-     
+     //si un element est different de son precedent il est ajouter a la 
+    // nouvelle ustensiles liste sans doublons
         if (FilteredUstensillist[i] !=FilteredUstensillist[i-1] ) {
           newUstensilesFinder.push(FilteredUstensillist[i]);
           i++;
