@@ -1,8 +1,8 @@
 
 import recetteMaker from "./recette.mjs";
-import { Tag } from "./Tag/tags.mjs";
+
 import { ReloadPage } from "./reloadPage.mjs";
-import { MasterList } from "./reloadPage/reloadMasterList.mjs";
+
 import { NewTag } from "./tagsFunctional.mjs";
 
 import { FunctionalMasterList } from "./reloadPage/reloadMlFunctional.mjs";

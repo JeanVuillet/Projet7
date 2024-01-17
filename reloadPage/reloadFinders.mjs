@@ -1,5 +1,5 @@
 
-import { Tag } from "../Tag/tags.mjs";
+
 
 import { FunctionalMasterList } from "./reloadMlFunctional.mjs";
 export class Finders{
@@ -8,15 +8,15 @@ static ingredentsFinder=[];
 static ustensilesFinder=[];
 static appareilsFinder=[];
 
-   static reloadFinders(Tag){
-   Finders.reloadIngredientsFinder(Tag);
-   Finders.reloadAppareilsFinder(Tag);
-    Finders.reloadUstensilesFinder(Tag);
+   static reloadFinders(NewTag){
+   Finders.reloadIngredientsFinder(NewTag);
+   Finders.reloadAppareilsFinder(NewTag);
+    Finders.reloadUstensilesFinder(NewTag);
   
 };
 
   
-static reloadIngredientsFinder(Tag){
+static reloadIngredientsFinder(NewTag){
 
 
 
@@ -32,9 +32,9 @@ static reloadIngredientsFinder(Tag){
                 for (let j = 0; j < FunctionalMasterList.masterList[i].ingredients.length; j++) {
                   let present=false;
                // comparer chaque ingredient a sa TagList si present =true
-                  for( let k=0; k<Tag.ingredientsTaglist.length; k++){
+                  for( let k=0; k<NewTag.ingredientsTaglist.length; k++){
                      
-                     if(Tag.ingredientsTaglist[k]==FunctionalMasterList.masterList[i].ingredients[j].ingredient.toLowerCase()){
+                     if(NewTag.ingredientsTaglist[k]==FunctionalMasterList.masterList[i].ingredients[j].ingredient.toLowerCase()){
                       present=true;
                      } 
           
@@ -88,7 +88,7 @@ static reloadIngredientsFinder(Tag){
    
 } 
    
-static reloadAppareilsFinder(Tag){
+static reloadAppareilsFinder(NewTag){
 
 
 
@@ -104,9 +104,9 @@ static reloadAppareilsFinder(Tag){
 
           let present=false;
        // comparer l appareil de cette recette a sa TagList si present =true
-          for( let k=0; k<Tag.appareilsTaglist.length; k++){
+          for( let k=0; k<NewTag.appareilsTaglist.length; k++){
              
-             if(Tag.appareilsTaglist[k]==FunctionalMasterList.masterList[i].appliance.toLowerCase()){
+             if(NewTag.appareilsTaglist[k]==FunctionalMasterList.masterList[i].appliance.toLowerCase()){
               present=true;
               break;
              } 
@@ -162,7 +162,7 @@ appareilDiv.appendChild(appareilP);
 } 
 
 
-static reloadUstensilesFinder(Tag){
+static reloadUstensilesFinder(NewTag){
 
 
 
@@ -178,9 +178,9 @@ static reloadUstensilesFinder(Tag){
         for (let j = 0; j < FunctionalMasterList.masterList[i].ustensiles.length; j++) {
           let present=false;
        // comparer chaque ingredient a sa TagList si present =true
-          for( let k=0; k<Tag.ustensilesTaglist.length; k++){
+          for( let k=0; k<NewTag.ustensilesTaglist.length; k++){
              
-             if(Tag.ustensilesTaglist[k]==FunctionalMasterList.masterList[i].ustensiles[j].toLowerCase()){
+             if(NewTag.ustensilesTaglist[k]==FunctionalMasterList.masterList[i].ustensiles[j].toLowerCase()){
               present=true;
              } 
   
