@@ -51,15 +51,18 @@ static  checkInupt(recette){
         if(recette.description.toLowerCase().includes(input.value.toLowerCase()))
         {inputMatch=true;return inputMatch};
   //checking recette ingredients match
-        for(let i=0; i<recette.ingredients.length; i++){
-  
-              if(recette.ingredients[i].ingredient.toLowerCase().includes(input.value.toLowerCase()))
-  
-              {inputMatch=true; return inputMatch;}
-  
-            }
-  //no match
-         inputMatch=false;
-         return inputMatch;
-        }
+ let ingredientPresent= recette.ingredients.find(function(ingredientObject){
+if (ingredientObject.ingredient.toLowerCase().includes(input.value.toLowerCase()))
+//si un ingredient de cette recette contient l input on revoie true
+//l ingredient est stocke dans ingredient present
+    { inputMatch=true; return inputMatch;}
+    //sinon on revoie false et l ingredient est vide
+    else{inputMatch=false; return inputMatch}
+  })
+    // si l ingredient est plein on valide le test et on revoie true
+if (ingredientPresent)
+{return true}
+//sinon test non valide et on renvoie false
+else{return false}
+}
 }
