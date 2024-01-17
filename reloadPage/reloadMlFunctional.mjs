@@ -14,7 +14,12 @@ export class FunctionalMasterList{
      
      //fitrer chaque recette
 var ingredientsPresent=[];
-       masterList= recipes.filter( function(recipe){return( NewTag.checkTags (recipe))});
+       masterList= recipes.filter( function(recipe){
+        if( (NewTag.checkTags (recipe))
+        &&(FunctionalMasterList.checkInupt(recipe))) 
+        {return true}
+        else{return false}
+    });
 
 console.log('je suis newMethode');
 console.log(masterList); 
@@ -34,8 +39,27 @@ FunctionalMasterList.masterList=masterList;
            recipesTotalDiv.innerText=`${masterList.length} recettes`;
 
 }
-static logMasterList(){
-    console.log('masterlist is now' );
-    console.log(FunctionalMasterList.masterList);
-}
+
+static  checkInupt(recette){
+
+    let inputMatch;
+    let input=document.getElementById('recherche');
+  //checking recette name match
+        if(recette.name.toLowerCase().includes(input.value.toLowerCase()))
+        {inputMatch=true;return inputMatch};
+  //checking recette description match
+        if(recette.description.toLowerCase().includes(input.value.toLowerCase()))
+        {inputMatch=true;return inputMatch};
+  //checking recette ingredients match
+        for(let i=0; i<recette.ingredients.length; i++){
+  
+              if(recette.ingredients[i].ingredient.toLowerCase().includes(input.value.toLowerCase()))
+  
+              {inputMatch=true; return inputMatch;}
+  
+            }
+  //no match
+         inputMatch=false;
+         return inputMatch;
+        }
 }

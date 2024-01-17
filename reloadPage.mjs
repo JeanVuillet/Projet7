@@ -7,7 +7,7 @@ import { Finders } from "./reloadPage/reloadFinders.mjs";
 export function  ReloadPage(tag){
         
         FunctionalMasterList.reloadFunctionalMasterList(tag);
-        FunctionalMasterList.logMasterList();
+        // FunctionalMasterList.logMasterList();
         Finders.reloadFinders(tag);
         FunctionalMasterList.masterList.forEach((recette)=>console.log('RecetteUstensiles'+recette.ustensiles));
         FunctionalMasterList.masterList.forEach((recette)=>console.log('RecetteIngredients'+recette.ingredients));
