@@ -3,7 +3,7 @@ $grey: #7a7a7a;
   margin: 3rem;
  
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   flex-wrap: wrap;
 }

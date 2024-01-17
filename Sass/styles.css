@@ -144,7 +144,7 @@
 .finders__recipesTotal {
   font-family: Anton;
   position: absolute;
-  left: 1223px;
+  right: 60px;
   width: 97px;
   height: 32px;
   font-weight: 400;
@@ -195,7 +195,7 @@
 .recette {
   margin: 3rem;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   flex-wrap: wrap;
 }
