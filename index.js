@@ -80,7 +80,11 @@ appareilFinder.addEventListener("click", function () {
 
 
     // USTENSILS SECTION
-
+//implementing ustensilesInput
+let ustensilesInput=document.getElementById('ustensilesInput');
+ustensilesInput.addEventListener('keyup',function(e){
+  Finders.inputFinders(ustensilesInput,Finders.ustensilesFinder,ustensileseDiv);});
+  
   //implementing ustensilesFinder
   let ustensilesFinder=document.getElementById('ustensileFinder');
   ustensilesFinder.addEventListener("click", function () {
