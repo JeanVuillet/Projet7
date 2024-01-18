@@ -3,6 +3,7 @@ import recetteMaker from "./recette.mjs";
 import { Tag } from "./Tag/tags.mjs";
 import { ReloadPage } from "./reloadPage.mjs";
 import { MasterList } from "./reloadPage/reloadMasterList.mjs";
+import { Finders } from "./reloadPage/reloadFinders.mjs";
 
 
 
@@ -31,8 +32,15 @@ active.classList.remove('active');}}
   }
   
 })
+// FINDERS SECTION
+
 //INGREDIENTS SECTION
 
+//Implenting ingredient Imput
+const FinderInput=document.getElementById('ingredientsInput');
+FinderInput.addEventListener('keyup',function(e){
+Finders.inputFinders(FinderInput,Finders.ingredentsFinder,ingredientDiv);
+})
 // Implementing ingredientsFinder
 let ingredientFinder=document.getElementById('ingredientFinder');
   ingredientFinder.addEventListener("click", function () {
