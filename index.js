@@ -54,7 +54,13 @@ let ingredientFinder=document.getElementById('ingredientFinder');
       open = false;
     });
     // APPAREIL SECTION
+    
+// inplementing Appareil input
 
+const AppareilsInput=document.getElementById('appareilsInput');
+AppareilsInput.addEventListener('keyup',function(e){
+Finders.inputFinders(AppareilsInput,Finders.appareilsFinder,appareilDiv);
+})
     // Implementing AppareilFinder
 
 let appareilFinder=document.getElementById('appareilFinder');
