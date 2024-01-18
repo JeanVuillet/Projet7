@@ -55,7 +55,7 @@ static reloadIngredientsFinder(Tag){
                 }
               });
               let newIngredientsFinder=[];
-                 newIngredientsFinder = [FilteredIngredientlist[0]];
+             if(FilteredIngredientlist.length>0){    newIngredientsFinder = [FilteredIngredientlist[0]]};
               let i = 0;
 
               for(let i=1; i<FilteredIngredientlist.length; i++){
@@ -128,7 +128,7 @@ static reloadAppareilsFinder(Tag){
         }
       });
       let newAppareilsFinder=[];
-         newAppareilsFinder = [FilteredAppareilslist[0]];
+       if(FilteredAppareilslist.length>0){  newAppareilsFinder = [FilteredAppareilslist[0]]};
       let i = 0;
 
       for(let i=1; i<FilteredAppareilslist.length; i++){
@@ -201,7 +201,7 @@ static reloadUstensilesFinder(Tag){
         }
       });
       let newUstensilesFinder=[];
-         newUstensilesFinder = [FilteredUstensillist[0]];
+     if(FilteredUstensillist.length>0){    newUstensilesFinder = [FilteredUstensillist[0]];}
       let i = 0;
 
       for(let i=1; i<FilteredUstensillist.length; i++){
