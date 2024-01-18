@@ -37,9 +37,9 @@ active.classList.remove('active');}}
 //INGREDIENTS SECTION
 
 //Implenting ingredient Imput
-const FinderInput=document.getElementById('ingredientsInput');
-FinderInput.addEventListener('keyup',function(e){
-Finders.inputFinders(FinderInput,Finders.ingredentsFinder,ingredientDiv);
+const ingredientsInput=document.getElementById('ingredientsInput');
+ingredientsInput.addEventListener('keyup',function(e){
+Finders.inputFinders(ingredientsInput,Finders.ingredentsFinder,ingredientDiv);
 })
 // Implementing ingredientsFinder
 let ingredientFinder=document.getElementById('ingredientFinder');
@@ -58,7 +58,12 @@ let ingredientFinder=document.getElementById('ingredientFinder');
       open = false;
     });
     // APPAREIL SECTION
+// inplementing Appareil input
 
+const AppareilsInput=document.getElementById('appareilsInput');
+AppareilsInput.addEventListener('keyup',function(e){
+Finders.inputFinders(AppareilsInput,Finders.appareilsFinder,appareilDiv);
+})
     // Implementing AppareilFinder
 
 let appareilFinder=document.getElementById('appareilFinder');
@@ -78,7 +83,10 @@ appareilFinder.addEventListener("click", function () {
 
 
     // USTENSILS SECTION
-
+//implementing ustensilesInput
+let ustensilesInput=document.getElementById('ustensilesInput');
+ustensilesInput.addEventListener('keyup',function(e){
+  Finders.inputFinders(ustensilesInput,Finders.ustensilesFinder,ustensileseDiv);});
   //implementing ustensilesFinder
   let ustensilesFinder=document.getElementById('ustensileFinder');
   ustensilesFinder.addEventListener("click", function () {
