@@ -17,11 +17,17 @@ export var open = true;
 ReloadPage(NewTag);
 
 //INPUT SECTION
+
 let input=document.getElementById('recherche');
 input.addEventListener('keyup',function(e){
+  for(let i=0; i<3; i++){
+let active=document.querySelector('.active');
+if(active){
+active.classList.remove('active');}}
   if((input.value.length>2)||(input.value.length==0)){
-    ReloadPage(NewTag);
+    ReloadPage(Tag);
   }
+  
 })
 //INGREDIENTS SECTION
 
