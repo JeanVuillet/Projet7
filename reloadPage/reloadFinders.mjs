@@ -57,7 +57,8 @@ static reloadIngredientsFinder(NewTag){
                 }
               });
               let newIngredientsFinder=[];
-                 newIngredientsFinder = [FilteredIngredientlist[0]];
+              if(FilteredIngredientlist.length!=0){
+                 newIngredientsFinder = [FilteredIngredientlist[0]];}
               let i = 0;
 // suppression des doublons dans ingrdients list
               for(let i=1; i<FilteredIngredientlist.length; i++){
@@ -131,7 +132,7 @@ static reloadAppareilsFinder(NewTag){
         }
       });
       let newAppareilsFinder=[];
-         newAppareilsFinder = [FilteredAppareilslist[0]];
+    if(FilteredAppareilslist.length>0){     newAppareilsFinder = [FilteredAppareilslist[0]]};
       let i = 0;
 // on supprime les doublons dans la liste AppareilFinders
       for(let i=1; i<FilteredAppareilslist.length; i++){
@@ -206,7 +207,7 @@ static reloadUstensilesFinder(NewTag){
         }
       });
       let newUstensilesFinder=[];
-         newUstensilesFinder = [FilteredUstensillist[0]];
+     if(FilteredUstensillist.length>0){    newUstensilesFinder = [FilteredUstensillist[0]]};
       let i = 0;
 // On supprime les doublons de finderUstensiles
       for(let i=1; i<FilteredUstensillist.length; i++){
