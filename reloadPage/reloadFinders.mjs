@@ -112,7 +112,7 @@ static reloadAppareilsFinder(Tag){
   
           }
           if(present==false) 
-          // si l ingredient n est pas dans la taglist on l ajoute au finder
+          // si l appareil n est pas dans la taglist on l ajoute au finder
           {Finders.appareilsFinder.push(MasterList.masterList[i].appliance.toLowerCase()) 
         
           };
