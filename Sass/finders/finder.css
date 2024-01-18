@@ -56,7 +56,7 @@
   margin: 0;
   padding-left: 2rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   background-color: #FFD15B;
   width: 100%;
 }
@@ -68,6 +68,7 @@
 }
 .finders__option.active .content .header__selected__element:hover > i {
   opacity: 1;
+  padding-right: 20%;
 }
 .finders__option .tags {
   display: block;
