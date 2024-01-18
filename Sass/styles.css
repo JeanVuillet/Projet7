@@ -154,6 +154,13 @@
   font-size: 21px;
   line-height: 31.61px;
 }
+.finders__content {
+  border: solid red;
+}
+.finders__content p {
+  margin-block: 0;
+  padding-block: 5px;
+}
 
 .title {
   display: flex;
