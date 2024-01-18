@@ -38,6 +38,7 @@
               gap:4rem;
           }
           &__finder{
+  
               padding-block: 2px;
           
               padding-inline: 0px;
@@ -51,12 +52,14 @@
              }
           }
           &__selected{
+      
      
           width: 100%;
           margin-left:-2rem;
           margin-block-start: 1em;
           margin-block-end: 1em;
             &__element{ 
+            
               margin: 0;
               padding-left: 2rem;
               display:flex;
@@ -111,7 +114,15 @@ font-weight: 400;
 font-size: 21px;
 line-height: 31.61px;
     }
+  
 
+&__content{
+border:solid;
+  p{
+    margin-block:0;
+    padding-block: 5px;
+  }
+}
   }
 
 
