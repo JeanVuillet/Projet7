@@ -1,2 +1,11 @@
-@import "../../themes/bootstrap/scss/bootstrap";
-@import "custom";
+
+
+.main{ background-color: #D9D9D9;
+}
+
+
+
+
+
+@import "finders/finder.scss";
+@import"recettes/recettes.scss";

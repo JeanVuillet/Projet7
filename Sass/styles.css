@@ -3,62 +3,6 @@
   background-color: #D9D9D9;
 }
 
-.Header {
-  height: 960px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.Header__img {
-  position: absolute;
-  z-index: -1;
-  height: 960px;
-  width: -webkit-fill-available;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-.Header__logo {
-  z-index: 1;
-  position: absolute;
-  left: 69px;
-  top: 69px;
-}
-.Header__inputLabel {
-  width: 954px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 30px;
-}
-.Header__inputLabel__slogan {
-  color: #FFD15B;
-  font-size: 44px;
-  font-family: Anton;
-  font-weight: 400;
-  word-wrap: break-word;
-  text-align: center;
-  margin-left: -70px;
-}
-.Header__inputLabel__finder {
-  display: flex;
-  height: 72px;
-  align-items: flex-start;
-}
-.Header__inputLabel__finder__input {
-  height: 100%;
-  width: 954px;
-}
-.Header__inputLabel__finder__button {
-  height: 51px;
-  width: 52px;
-}
-.Header__inputLabel__finder__button__img {
-  margin-left: -70px;
-  height: 100%;
-  width: 51px;
-}
-
 .finders {
   position: relative;
   display: flex;
@@ -81,7 +25,6 @@
   padding-left: 2rem;
 }
 .finders__option.active .content .header {
-  height: 100px;
   width: 195px;
   display: flex;
   flex-direction: column;
@@ -110,11 +53,14 @@
 .finders__option.active .content .header__selected {
   width: 100%;
   margin-left: -2rem;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 .finders__option.active .content .header__selected__element {
+  margin: 0;
   padding-left: 2rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   background-color: #FFD15B;
   width: 100%;
 }
