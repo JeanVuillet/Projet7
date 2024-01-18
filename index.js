@@ -161,7 +161,7 @@ appareilFinder.addEventListener("click", function () {
 
 //INGREDIENT tagMaker
 ingredientDiv.addEventListener("click", function (e) {
-
+if(e.target.textContent.length<35){
   //Adding Tag to taglist
   Tag.ingredientsTaglist.push(e.target.textContent.toLowerCase());
   ReloadPage(Tag);
@@ -169,25 +169,25 @@ ingredientDiv.addEventListener("click", function (e) {
   //creating tag in dom
   implementingTag('ingredient',e, Tag.removeIngredient);
 
-
+}
  });
 
  //appareil TagMaker
  
  appareilDiv.addEventListener("click", function (f) {
-
+  if(f.target.textContent.length<35){
   //Adding Tag to taglist
   Tag.appareilsTaglist.push(f.target.textContent.toLowerCase());
   ReloadPage(Tag);
 
   //creating tag in dom
   implementingTag('appareil',f, Tag.removeAppareil);
- });
+ }});
 
 // ustensiles TagMaker
 
 ustensileseDiv.addEventListener("click", function (g) {
-
+  if(g.target.textContent.length<35){
   //Adding Tag to taglist
   Tag.ustensilesTaglist.push(g.target.textContent.toLowerCase());
   ReloadPage(Tag);
@@ -197,7 +197,7 @@ ustensileseDiv.addEventListener("click", function (g) {
 
 
 
- });
+ }});
 
 
 
