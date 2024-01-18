@@ -14,7 +14,25 @@ static appareilsFinder=[];
     Finders.reloadUstensilesFinder(NewTag);
   
 };
-
+static inputFinders(Finder, FindersList,ElementDiv){
+  let newFinderList=[];
+  for(let i=0; i<FindersList.length; i++){
+    if( FindersList[i].includes(Finder.value.toLowerCase())){
+      newFinderList.push(FindersList[i]);
+    }
+  }
+  FindersList=[];
+  FindersList=newFinderList;
+  
+  // implementing newLIst in Dom
+  ElementDiv.innerHTML='';
+  for(let i=0; i<FindersList.length; i++){
+  let elementP = document.createElement("p");
+  elementP.textContent = `${FindersList[i]}`;
+  ElementDiv.appendChild(elementP);
+  
+    }
+  }
   
 static reloadIngredientsFinder(NewTag){
 
