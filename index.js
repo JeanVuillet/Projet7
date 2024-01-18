@@ -6,6 +6,7 @@ import { ReloadPage } from "./reloadPage.mjs";
 import { NewTag } from "./tagsFunctional.mjs";
 
 import { FunctionalMasterList } from "./reloadPage/reloadMlFunctional.mjs";
+import { Finders } from "./reloadPage/reloadFinders.mjs";
 
 const ingredientDiv = document.getElementById("finder__ingrédients");
 const appareilDiv=document.getElementById('finder__appareils');
@@ -30,6 +31,11 @@ active.classList.remove('active');}}
   
 })
 //INGREDIENTS SECTION
+
+//Implenting ingredient Input
+const ingredientsInput=document.getElementById('ingredientsInput');
+ingredientsInput.addEventListener('keyup',function(e){
+Finders.inputFinders(ingredientsInput,Finders.ingredentsFinder,ingredientDiv);});
 
 // Implementing ingredientsFinder
 let ingredientFinder=document.getElementById('ingredientFinder');
