@@ -16,7 +16,7 @@ detailDiv.className='recetteContainer__detail';
 //creating titile
 const title=document.createElement("h2");
 WebTransportBidirectionalStream.className="recetteContainer__detail__title";
-title.innerHTML=recette.name;
+title.innerText=recette.name;
 detailDiv.appendChild(title);
 
 //creating recepe section
@@ -36,7 +36,7 @@ detailDiv.appendChild(recetteSectionTime);
 //creating description
 const recepe=document.createElement("p");
 recepe.className="recetteContainer__detail__recepeSection__recepe";
-recepe.innerHTML=recette.description;
+recepe.innerText=recette.description;
 detailDiv.appendChild(recepe);
 
 //creating ingredients section
@@ -45,7 +45,7 @@ const ingredientsSection=document.createElement("section");
 ingredientsSection.className="recetteContainer__detail__ingredientsSection";
 //creating title
 const ingredientsSectionTitle=document.createElement("h3");
-ingredientsSectionTitle.innerHTML="Ingrédients";
+ingredientsSectionTitle.innerText="Ingrédients";
 ingredientsSectionTitle.className="recetteContainer__detail__ingredientsSection__title";
 
 //creating content
@@ -60,19 +60,19 @@ recette.ingredients.forEach(element => {
     //name
     const ingredient = document.createElement("p");
     ingredient.className="recetteContainer__detail__ingredientsSection__ingredients__nameQuantity__name";
-    ingredient.innerHTML = element.ingredient;
+    ingredient.innerText = element.ingredient;
     ingredientDiv.appendChild(ingredient);
     //quantity
     const quantity = document.createElement("p");
     quantity.className="recetteContainer__detail__ingredientsSection__ingredients__nameQuantity__quantity";
     //quantity and unit
     if((element.quantity)&&(element.unit)){
-        quantity.innerHTML = element.quantity+element.unit 
+        quantity.innerText = element.quantity+element.unit 
     } 
       else if((element.unit==undefined)&&(element.quantity))
-      { quantity.innerHTML=element.quantity }
+      { quantity.innerText=element.quantity }
       //il n y a ni quntite ni unite
-      else{quantity.innerHTML=''};
+      else{quantity.innerText=''};
     
 
     //name

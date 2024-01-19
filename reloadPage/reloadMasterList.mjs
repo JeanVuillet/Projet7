@@ -25,14 +25,14 @@ export class MasterList{
      // IMPLEMENTATION DANS LE DOM
 
      const sectionRecettes = document.getElementById("recettes");
-     sectionRecettes.innerHTML='';
+     sectionRecettes.innerText='';
        
          masterList.forEach(function (recipe) {
            let recetteArticle = recetteMaker(recipe);
            sectionRecettes.appendChild(recetteArticle);})
      
            const recipesTotalDiv=document.getElementById("recipesTotal");
-           recipesTotalDiv.innerHTML='';
+           recipesTotalDiv.innerText='';
            recipesTotalDiv.innerText=`${masterList.length} recettes`;
 
     
