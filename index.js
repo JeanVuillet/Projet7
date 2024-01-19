@@ -26,7 +26,7 @@ let active=document.querySelector('.active');
 if(active){
 active.classList.remove('active');}}
   if((input.value.length>2)||(input.value.length==0)){
-    ReloadPage(Tag);
+    ReloadPage(NewTag);
   }
   
 })
@@ -84,7 +84,7 @@ appareilFinder.addEventListener("click", function () {
 let ustensilesInput=document.getElementById('ustensilesInput');
 ustensilesInput.addEventListener('keyup',function(e){
   Finders.inputFinders(ustensilesInput,Finders.ustensilesFinder,ustensileseDiv);});
-  
+
   //implementing ustensilesFinder
   let ustensilesFinder=document.getElementById('ustensileFinder');
   ustensilesFinder.addEventListener("click", function () {
