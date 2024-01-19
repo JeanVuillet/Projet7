@@ -25,7 +25,7 @@ static inputFinders(Finder, FindersList,ElementDiv){
   FindersList=newFinderList;
   
   // implementing newLIst in Dom
-  ElementDiv.innerHTML='';
+  ElementDiv.innerText='';
   for(let i=0; i<FindersList.length; i++){
   let elementP = document.createElement("p");
   elementP.textContent = `${FindersList[i]}`;
@@ -95,7 +95,7 @@ static reloadIngredientsFinder(NewTag){
                    // implementing Dom
                
             let ingredientDiv = document.getElementById("finder__ingrédients");
-            ingredientDiv.innerHTML='';
+            ingredientDiv.innerText='';
         for(let i=0; i<Finders.ingredentsFinder.length; i++){
         let ingredientP = document.createElement("p");
         ingredientP.textContent = `${Finders.ingredentsFinder[i]}`;
@@ -170,7 +170,7 @@ static reloadAppareilsFinder(NewTag){
            // implementing Dom
        
     let appareilDiv = document.getElementById("finder__appareils");
-    appareilDiv.innerHTML='';
+    appareilDiv.innerText='';
 for(let i=0; i<Finders.appareilsFinder.length; i++){
 let appareilP = document.createElement("p");
 appareilP.textContent = `${Finders.appareilsFinder[i]}`;
@@ -245,7 +245,7 @@ static reloadUstensilesFinder(NewTag){
            // implementing Dom
        
     let ustensilesDiv = document.getElementById("finder__ustensiles");
-    ustensilesDiv.innerHTML='';
+    ustensilesDiv.innerText='';
 for(let i=0; i<Finders.ustensilesFinder.length; i++){
 let ustensilesP = document.createElement("p");
 ustensilesP.textContent = `${Finders.ustensilesFinder[i]}`;
