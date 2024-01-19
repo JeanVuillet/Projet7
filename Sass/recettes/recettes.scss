@@ -13,11 +13,11 @@ $grey: #7a7a7a;
   h2{
     font-family: 'Anton';
     font-size: 18px;
-    font-weight: regular;
+
   }
 
   h3 {
-    font-weight: 700px;
+   
     font-size: 12px;
     line-height: 16.39px;
     color: $grey;
@@ -39,7 +39,7 @@ $grey: #7a7a7a;
       font-family: Anton;
       font-weight: 400;
       font-size: 18px;
-      line-height: 27, 1px;
+      line-height: 27px;
     }
     &__time {
       display: flex;
