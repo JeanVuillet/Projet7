@@ -142,7 +142,7 @@
   height: 53px;
   background-color: #FFD15B;
   border-radius: 10px;
-  padding: 17px, 18px, 17px, 18px;
+  padding: 17px 18px 17px 18px;
   gap: 60px;
 }
 .finders__recipesTotal {
@@ -191,7 +191,7 @@
   height: 53px;
   background-color: #FFD15B;
   border-radius: 10px;
-  padding: 17px, 18px, 17px, 18px;
+  padding: 17px 18px 17px 18px;
   gap: 60px;
 }
 
@@ -216,10 +216,8 @@
 .recetteContainer h2 {
   font-family: "Anton";
   font-size: 18px;
-  font-weight: regular;
 }
 .recetteContainer h3 {
-  font-weight: 700px;
   font-size: 12px;
   line-height: 16.39px;
   color: #7a7a7a;
@@ -237,7 +235,8 @@
   font-family: Anton;
   font-weight: 400;
   font-size: 18px;
-  line-height: 27, 1px;
+  line-height: 27px;
+  color: red;
 }
 .recetteContainer__detail__time {
   display: flex;
@@ -250,6 +249,9 @@
   border-radius: 14px;
   justify-content: center;
   align-items: center;
+}
+.recetteContainer__detail__recepeSection__title {
+  font-weight: bold;
 }
 .recetteContainer__detail__recepeSection__recepe {
   font-weight: 400;
