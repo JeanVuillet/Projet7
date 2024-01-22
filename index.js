@@ -144,7 +144,7 @@ ustensilesInput.addEventListener('keyup',function(e){
   open = false;
 
   // TAGLIST
-  //implementing element in tagList
+  //implementing element in tagDiv
   const closeCross = document.createElement("i");
   closeCross.className = "fa-solid fa-xmark";
 
