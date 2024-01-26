@@ -66,20 +66,26 @@
   gap: 5rem;
   padding-top: 3rem;
   padding-left: 104px;
-  display: flex;
 }
 .finders__option {
+  position: relative;
   display: flex;
   flex-direction: column;
+  width: 179px;
 }
 .finders__option.active .title {
   display: none;
 }
 .finders__option.active .content {
+  position: absolute;
   display: flex;
   flex-direction: column;
   background-color: white;
   padding-left: 2rem;
+  z-index: 1;
+  height: 24rem;
+  scroll-snap-align: start;
+  overflow: auto;
 }
 .finders__option.active .content .header {
   width: 195px;
@@ -142,7 +148,7 @@
   height: 53px;
   background-color: #FFD15B;
   border-radius: 10px;
-  padding: 17px, 18px, 17px, 18px;
+  padding: 17px 18px 17px 18px;
   gap: 60px;
 }
 .finders__recipesTotal {
@@ -192,7 +198,7 @@
   height: 53px;
   background-color: #FFD15B;
   border-radius: 10px;
-  padding: 17px, 18px, 17px, 18px;
+  padding: 17px 18px 17px 18px;
   gap: 60px;
 }
 
@@ -210,17 +216,15 @@
 
 .recetteContainer {
   position: relative;
-  border-radius: 21px 21px 0 0;
+  border-radius: 21px 21px 21px 21px;
   background-color: white;
   width: auto;
 }
 .recetteContainer h2 {
   font-family: "Anton";
   font-size: 18px;
-  font-weight: regular;
 }
 .recetteContainer h3 {
-  font-weight: 700px;
   font-size: 12px;
   line-height: 16.39px;
   color: #7a7a7a;
@@ -230,6 +234,8 @@
   border-radius: 21px 21px 0 0;
   width: 100%;
   height: 253px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .recetteContainer__detail {
   margin: 25px;
@@ -238,7 +244,7 @@
   font-family: Anton;
   font-weight: 400;
   font-size: 18px;
-  line-height: 27, 1px;
+  line-height: 27px;
 }
 .recetteContainer__detail__time {
   display: flex;

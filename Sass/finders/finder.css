@@ -5,20 +5,26 @@
   gap: 5rem;
   padding-top: 3rem;
   padding-left: 104px;
-  display: flex;
 }
 .finders__option {
+  position: relative;
   display: flex;
   flex-direction: column;
+  width: 179px;
 }
 .finders__option.active .title {
   display: none;
 }
 .finders__option.active .content {
+  position: absolute;
   display: flex;
   flex-direction: column;
   background-color: white;
   padding-left: 2rem;
+  z-index: 1;
+  height: 24rem;
+  scroll-snap-align: start;
+  overflow: auto;
 }
 .finders__option.active .content .header {
   width: 195px;
