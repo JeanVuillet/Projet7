@@ -3,11 +3,24 @@
   position: relative;
   display: flex;
   gap: 5rem;
-  padding-top: 3rem;
   padding-left: 104px;
+  margin-bottom: 5rem;
   display: flex;
 }
+.finders #ingredientFinder {
+  left: 5rem;
+  top: 3rem;
+}
+.finders #appareilFinder {
+  left: 21rem;
+  top: 3rem;
+}
+.finders #ustensileFinder {
+  left: 37rem;
+  top: 3rem;
+}
 .finders__option {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -15,10 +28,15 @@
   display: none;
 }
 .finders__option.active .content {
+  position: absolute;
   display: flex;
   flex-direction: column;
   background-color: white;
   padding-left: 2rem;
+  z-index: 1;
+  height: 24rem;
+  scroll-snap-align: start;
+  overflow: auto;
 }
 .finders__option.active .content .header {
   width: 195px;

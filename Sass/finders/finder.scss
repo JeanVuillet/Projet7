@@ -1,12 +1,27 @@
 .finders {
+  
   position: relative;
   display: flex;
   gap: 5rem;
-  padding-top: 3rem;
-  padding-left: 104px;
-  display: flex;
 
+  padding-left: 104px;
+  margin-bottom: 5rem;
+  display: flex;
+     #ingredientFinder{
+      left:5rem;
+      top:3rem;
+     }
+     #appareilFinder{
+      left: 21rem;
+      top:3rem;
+
+     }
+     #ustensileFinder{
+      left:37rem;
+      top:3rem;
+     }
   &__option {
+    position:relative;
       display:flex;
       flex-direction: column;
     &.active {
@@ -15,10 +30,15 @@
       }
 
           .content {
-          display: flex;
-          flex-direction: column;
-          background-color:white;
-          padding-left:2rem;
+  position:absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding-left: 2rem;
+    z-index: 1;
+    height: 24rem;
+    scroll-snap-align: start;
+    overflow: auto;
 
           .header{
           
