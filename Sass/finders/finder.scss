@@ -1,6 +1,23 @@
+#ingredientFinder{
+
+  left:104px;
+}
+#appareilFinder{
+
+  left:365px;
+
+}
+
+#ustensileFinder{
+
+  left:608px;
+
+}
+
+
 .finders {
   
-  position: relative;
+
   display: flex;
   gap: 5rem;
   padding-top: 3rem;
@@ -9,25 +26,27 @@
   
  
   &__option {
-    position:relative;
+    
       display:flex;
       flex-direction: column;
-      width: 179px;
+     
+    
+
     &.active {
-    .title {
-        display: none;
-      }
+ 
 
           .content {
   position:absolute;
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding-left: 2rem;
+  
     z-index: 1;
-    height: 24rem;
-    scroll-snap-align: start;
-    overflow: auto;
+height: 315px;
+width: 195px;
+
+
+ 
 
           .header{
           
@@ -64,13 +83,13 @@
       
      
           width: 100%;
-          margin-left:-2rem;
+        
           margin-block-start: 1em;
           margin-block-end: 1em;
             &__element{ 
             
               margin: 0;
-              padding-left: 2rem;
+             
               display:flex;
               justify-content: space-between;
               background-color: #FFD15B;
@@ -126,7 +145,8 @@ line-height: 31.61px;
   
 
 &__content{
-
+  overflow: auto;
+  scroll-snap-align: start;
   p{
     margin-block:0;
     padding-block: 5px;
@@ -136,14 +156,12 @@ line-height: 31.61px;
 
 
 .title {
-display:flex;
-justify-content: space-around;
-align-items: center;
-background-color: white;
-border:solid black;
-height: 56px;
-width: 179px;
-
+  display: inline-flex;
+  padding: 17px 16px;
+  align-items: center;
+  gap: 63px;
+  border-radius: 11px;
+background: #FFF;
 /* Appliquer les styles lorsque .finders__ingrédients est activé */
 
 
@@ -166,15 +184,14 @@ gap:1rem;
   flex-direction: column;
 
   &__tag{
-    display:flex;
-    justify-content: space-around;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    width:203px;
-    height: 53px;
+    width: 105px;
+    height: 19px;
     background-color: #FFD15B;
     border-radius: 10px;
-    padding:17px 18px 17px 18px;
-    gap:60px;
+    padding: 17px 18px;
   }
 }
 

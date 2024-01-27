@@ -60,32 +60,36 @@
   width: 51px;
 }
 
+#ingredientFinder {
+  left: 104px;
+}
+
+#appareilFinder {
+  left: 365px;
+}
+
+#ustensileFinder {
+  left: 608px;
+}
+
 .finders {
-  position: relative;
   display: flex;
   gap: 5rem;
   padding-top: 3rem;
   padding-left: 104px;
 }
 .finders__option {
-  position: relative;
   display: flex;
   flex-direction: column;
-  width: 179px;
-}
-.finders__option.active .title {
-  display: none;
 }
 .finders__option.active .content {
   position: absolute;
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding-left: 2rem;
   z-index: 1;
-  height: 24rem;
-  scroll-snap-align: start;
-  overflow: auto;
+  height: 315px;
+  width: 195px;
 }
 .finders__option.active .content .header {
   width: 195px;
@@ -115,13 +119,11 @@
 }
 .finders__option.active .content .header__selected {
   width: 100%;
-  margin-left: -2rem;
   margin-block-start: 1em;
   margin-block-end: 1em;
 }
 .finders__option.active .content .header__selected__element {
   margin: 0;
-  padding-left: 2rem;
   display: flex;
   justify-content: space-between;
   background-color: #FFD15B;
@@ -161,19 +163,22 @@
   font-size: 21px;
   line-height: 31.61px;
 }
+.finders__content {
+  overflow: auto;
+  scroll-snap-align: start;
+}
 .finders__content p {
   margin-block: 0;
   padding-block: 5px;
 }
 
 .title {
-  display: flex;
-  justify-content: space-around;
+  display: inline-flex;
+  padding: 17px 16px;
   align-items: center;
-  background-color: white;
-  border: solid black;
-  height: 56px;
-  width: 179px;
+  gap: 63px;
+  border-radius: 11px;
+  background: #FFF;
   /* Appliquer les styles lorsque .finders__ingrédients est activé */
 }
 
@@ -192,14 +197,13 @@
 }
 .tags__tagDiv__tag {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: 203px;
-  height: 53px;
+  width: 105px;
+  height: 19px;
   background-color: #FFD15B;
   border-radius: 10px;
-  padding: 17px 18px 17px 18px;
-  gap: 60px;
+  padding: 17px 18px;
 }
 
 .header__selected__element:hover > i {
