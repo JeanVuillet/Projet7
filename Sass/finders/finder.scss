@@ -34,7 +34,7 @@
 
     &.active {
  
-
+      width: 184px;
           .content {
   position:absolute;
     display: flex;
@@ -43,7 +43,9 @@
   
     z-index: 1;
 height: 315px;
-width: 195px;
+
+padding-left: 16px;
+width: 184px;
 
 
  
@@ -93,7 +95,9 @@ width: 195px;
               display:flex;
               justify-content: space-between;
               background-color: #FFD15B;
-              width: 100%;
+          
+              width: 103%;
+              margin-left: -16px;
               &>i{
                 opacity: 0;
               }
@@ -145,11 +149,16 @@ line-height: 31.61px;
   
 
 &__content{
+  display: inline-flex;
+  flex-direction: column;
+  flex-direction: auto;
   overflow: auto;
   scroll-snap-align: start;
   p{
+    display: inline-block;
     margin-block:0;
     padding-block: 5px;
+    width:max-content;
   }
 }
   }

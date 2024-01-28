@@ -21,6 +21,9 @@
   display: flex;
   flex-direction: column;
 }
+.finders__option.active {
+  width: 184px;
+}
 .finders__option.active .content {
   position: absolute;
   display: flex;
@@ -28,7 +31,8 @@
   background-color: white;
   z-index: 1;
   height: 315px;
-  width: 195px;
+  padding-left: 16px;
+  width: 184px;
 }
 .finders__option.active .content .header {
   width: 195px;
@@ -66,7 +70,8 @@
   display: flex;
   justify-content: space-between;
   background-color: #FFD15B;
-  width: 100%;
+  width: 103%;
+  margin-left: -16px;
 }
 .finders__option.active .content .header__selected__element > i {
   opacity: 0;
@@ -103,12 +108,18 @@
   line-height: 31.61px;
 }
 .finders__content {
+  display: inline-flex;
+  flex-direction: column;
+  flex-direction: auto;
   overflow: auto;
   scroll-snap-align: start;
 }
 .finders__content p {
+  display: inline-block;
   margin-block: 0;
   padding-block: 5px;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .title {
