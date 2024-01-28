@@ -34,8 +34,9 @@
 
     &.active {
  
-      width: 184px;
+
           .content {
+           
   position:absolute;
     display: flex;
     flex-direction: column;
@@ -44,31 +45,30 @@
     z-index: 1;
 height: 315px;
 
-padding-left: 16px;
-width: 184px;
+
+
 
 
  
 
           .header{
           
-          width:195px;
+       
           display:flex;
           flex-direction: column;
 
           align-items: flex-start;
          
           &__title{
-         
-              display:flex;
-              justify-content: flex-start;
-              align-items: center;
-              width:195px;
-              height:56px;  
-              gap:4rem;
+                display: inline-flex;
+      padding: 17px 16px;
+      align-items: center;
+      gap: 63px;
+      border-radius: 11px;
+    background: #FFF;
           }
           &__finder{
-  
+            margin-left: 16px;
               padding-block: 2px;
           
               padding-inline: 0px;
@@ -149,16 +149,18 @@ line-height: 31.61px;
   
 
 &__content{
+  padding-left: 16px;
   display: inline-flex;
   flex-direction: column;
   flex-direction: auto;
   overflow: auto;
   scroll-snap-align: start;
+  width: min-content;
   p{
     display: inline-block;
     margin-block:0;
     padding-block: 5px;
-    width:max-content;
+   
   }
 }
   }
