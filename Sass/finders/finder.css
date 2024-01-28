@@ -65,8 +65,7 @@
   display: flex;
   justify-content: space-between;
   background-color: #FFD15B;
-  width: 103%;
-  margin-left: -16px;
+  padding-left: 16px;
 }
 .finders__option.active .content .header__selected__element > i {
   opacity: 0;
