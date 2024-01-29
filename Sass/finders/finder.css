@@ -31,6 +31,7 @@
   background-color: white;
   z-index: 1;
   height: 315px;
+  border-radius: 11px;
   width: -moz-min-content;
   width: min-content;
 }
@@ -71,6 +72,7 @@
   justify-content: space-between;
   background-color: #FFD15B;
   padding-left: 16px;
+  padding-right: 16px;
 }
 .finders__option.active .content .header__selected__element > i {
   opacity: 0;
@@ -81,6 +83,9 @@
 .finders__option.active .content .header__selected__element:hover > i {
   opacity: 1;
   padding-right: 20%;
+}
+.finders__option.active .content p:hover {
+  background-color: #FFD15B;
 }
 .finders__option .tags {
   display: block;
@@ -107,7 +112,6 @@
   line-height: 31.61px;
 }
 .finders__content {
-  padding-left: 16px;
   display: inline-flex;
   flex-direction: column;
   flex-direction: auto;
@@ -115,6 +119,7 @@
   scroll-snap-align: start;
 }
 .finders__content p {
+  padding-left: 16px;
   display: inline-block;
   margin-block: 0;
   padding-block: 5px;

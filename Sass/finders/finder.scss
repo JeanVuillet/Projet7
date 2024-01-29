@@ -44,6 +44,7 @@
   
     z-index: 1;
 height: 315px;
+border-radius: 11px;
 
 width: min-content;
 
@@ -97,6 +98,7 @@ width: min-content;
               background-color: #FFD15B;
           
               padding-left: 16px;
+              padding-right: 16px;
               &>i{
                 opacity: 0;
               }
@@ -111,6 +113,10 @@ width: min-content;
             }
           }
 
+          }
+
+          p:hover{
+background-color: #FFD15B;
           }
           }
     }
@@ -148,7 +154,7 @@ line-height: 31.61px;
   
 
 &__content{
-  padding-left: 16px;
+
   display: inline-flex;
   flex-direction: column;
   flex-direction: auto;
@@ -156,6 +162,7 @@ line-height: 31.61px;
   scroll-snap-align: start;
  
   p{
+    padding-left: 16px;
     display: inline-block;
     margin-block:0;
     padding-block: 5px;
