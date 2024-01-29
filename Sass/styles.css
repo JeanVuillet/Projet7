@@ -155,24 +155,9 @@
 }
 .finders__option.active .content .header__selected__element:hover > .closeCrossFinder {
   opacity: 1;
-  padding-right: 20%;
 }
 .finders__option.active .content p:hover {
   background-color: #FFD15B;
-}
-.finders__option .tags {
-  display: block;
-}
-.finders__option .tags__tag {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 203px;
-  height: 53px;
-  background-color: #FFD15B;
-  border-radius: 10px;
-  padding: 17px 18px 17px 18px;
-  gap: 60px;
 }
 .finders__recipesTotal {
   font-family: Anton;
@@ -214,22 +199,35 @@
 }
 
 .tags {
+  padding-top: 21px;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 21px;
 }
 .tags__tagDiv {
   display: flex;
   flex-direction: column;
 }
 .tags__tagDiv__tag {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 105px;
-  height: 19px;
+  display: inline-flex;
   background-color: #FFD15B;
   border-radius: 10px;
   padding: 17px 18px;
+  align-items: center;
+  gap: 60px;
+  width: -moz-min-content;
+  width: min-content;
+  margin-block: 0;
+}
+.tags__tagDiv__tag p {
+  margin-block: 0;
+  color: #000;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-wrap: nowrap;
 }
 
 .header__selected__element:hover > i {
