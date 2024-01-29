@@ -116,8 +116,15 @@ ustensilesInput.addEventListener('keyup',function(e){
  
    //FINDERLIST
   // implementing selected element in findersList
-  const closeCrossFinder = document.createElement("i");
-  closeCrossFinder.className = "fa-solid fa-xmark";
+  const closeCrossFinder = document.createElement("div");
+  closeCrossFinder.className='closeCrossFinder';
+  let closeCross=`<svg width="17" height="17" viewBox="0 0 17
+  17" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="Group 11"><circle id="Ellipse 5" cx="8.5" cy="8.5" r="8.5" fill="black"/><path id="Vector" 
+  d="M11 11L8.5 8.5M8.5 8.5L6 6M8.5 8.5L11 6M8.5 8.5L6 11" stroke="#FFD15B"
+  stroke-linecap="round" stroke-linejoin="round"/></g></svg>`;
+  closeCrossFinder.innerHTML=closeCross;
+
 
 
   let headerElementP=document.createElement("p");
@@ -145,14 +152,19 @@ ustensilesInput.addEventListener('keyup',function(e){
 
   // TAGLIST
   //implementing element in tagDiv
-  const closeCross = document.createElement("i");
-  closeCross.className = "fa-solid fa-xmark";
+const tagCloseCross=document.createElement('div');
+tagCloseCross.className='tagCloseCross';
+tagCloseCross.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" 
+viewBox="0 0 14 13" fill="none">
+<path d="M12 11.5L7 6.5M7 6.5L2 1.5M7 6.5L12 1.5M7 6.5L2 11.5" 
+stroke="#1B1B1B" stroke-width="2.16667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
 
 
 
   let selectedIngredientP = document.createElement("p");
   selectedIngredientP.appendChild(event.target);
-    selectedIngredientP.appendChild(closeCross);
+    selectedIngredientP.appendChild(tagCloseCross);
     selectedIngredientP.className =`tags__tagDiv__tag`;
     let tagDiv = document.getElementById(`${type}sTag`);
     tagDiv.appendChild(selectedIngredientP);
@@ -160,7 +172,7 @@ ustensilesInput.addEventListener('keyup',function(e){
 
 
   //adding Tag close event listener
-  closeCross.addEventListener("click",function  () {
+  tagCloseCross.addEventListener("click",function  () {
     
     //cette fonction(placee en paremetres) supprime l element selectionne 
     //de sa TagList et de son headerFinder

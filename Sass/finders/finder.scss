@@ -101,13 +101,13 @@ width: min-content;
               padding-right: 16px;
               padding-top: 9px;
               padding-bottom: 9px;
-              &>i{
+              &>.closeCrossFinder{
                 opacity: 0;
               }
               &:hover{
                 font-weight: bolder;
          
-                &>i{
+                &>.closeCrossFinder{
                   opacity: 1;
                   padding-right: 20%;
                 }

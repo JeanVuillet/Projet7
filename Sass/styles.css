@@ -147,13 +147,13 @@
   padding-top: 9px;
   padding-bottom: 9px;
 }
-.finders__option.active .content .header__selected__element > i {
+.finders__option.active .content .header__selected__element > .closeCrossFinder {
   opacity: 0;
 }
 .finders__option.active .content .header__selected__element:hover {
   font-weight: bolder;
 }
-.finders__option.active .content .header__selected__element:hover > i {
+.finders__option.active .content .header__selected__element:hover > .closeCrossFinder {
   opacity: 1;
   padding-right: 20%;
 }
