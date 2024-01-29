@@ -73,6 +73,8 @@
   background-color: #FFD15B;
   padding-left: 16px;
   padding-right: 16px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 .finders__option.active .content .header__selected__element > i {
   opacity: 0;

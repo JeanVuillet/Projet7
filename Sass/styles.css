@@ -45,6 +45,7 @@
   display: flex;
   height: 72px;
   align-items: center;
+  position: relative;
 }
 .Header__inputLabel__finder__input {
   height: 100%;
@@ -53,11 +54,20 @@
 .Header__inputLabel__finder__button {
   height: 51px;
   width: 52px;
+  position: absolute;
+  right: 10px;
+  border-radius: 10px;
+  background: var(--Black, #1B1B1B);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.Header__inputLabel__finder__button__img {
-  margin-left: -70px;
-  height: 100%;
-  width: 51px;
+.Header__inputLabel__finder__button:hover {
+  background-color: #FFD15B;
+  color: black;
+}
+.Header__inputLabel__finder__button:hover svg > * {
+  stroke: black;
 }
 
 #ingredientFinder {
@@ -134,6 +144,8 @@
   background-color: #FFD15B;
   padding-left: 16px;
   padding-right: 16px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 .finders__option.active .content .header__selected__element > i {
   opacity: 0;

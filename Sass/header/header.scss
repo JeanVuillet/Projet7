@@ -43,6 +43,7 @@
     display: flex;
     height: 72px;
     align-items: center;
+    position:relative;
 
     &__input {
       height: 100%;
@@ -51,12 +52,21 @@
     &__button {
       height: 51px;
       width: 52px;
+      position: absolute;
+      right: 10px;
+      border-radius: 10px;
+background: var(--Black, #1B1B1B);
+ display:flex;
+ justify-content: center;
+ align-items: center;
 
-      &__img {
-        margin-left: -70px;
-        height: 100%;
-        width: 51px;
+    &:hover{
+      background-color: #FFD15B;
+      color:black;
+      svg>*{
+        stroke:black;
       }
+    }
     }
 }
 }
