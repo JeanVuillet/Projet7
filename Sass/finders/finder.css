@@ -28,6 +28,8 @@
   background-color: white;
   z-index: 1;
   height: 315px;
+  width: -moz-min-content;
+  width: min-content;
 }
 .finders__option.active .content .header {
   display: flex;
@@ -108,8 +110,6 @@
   flex-direction: auto;
   overflow: auto;
   scroll-snap-align: start;
-  width: -moz-min-content;
-  width: min-content;
 }
 .finders__content p {
   display: inline-block;
