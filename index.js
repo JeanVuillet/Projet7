@@ -136,68 +136,82 @@ ustensilesInput.addEventListener('keyup',function(e){
     // cette fonction permet d implementer les tags dans le dom
     // et dans les finders
     //avec leur close event listener
-
     function implementingTag(type, event, TagRemoveFunction){
  
-   //FINDERLIST
-  // implementing selected element in findersList
-  const closeCrossFinder = document.createElement("i");
-  closeCrossFinder.className = "fa-solid fa-xmark";
-
-
-  let headerElementP=document.createElement("p");
-  headerElementP.className="header__selected__element";
-  headerElementP.textContent=event.target.textContent;
-  headerElementP.appendChild(closeCrossFinder);
-  let headFinder=document.getElementById(`${type}Selected`);
-  headFinder.appendChild(headerElementP);
-
-  closeCrossFinder.addEventListener("click",function  () {
+      //FINDERLIST
+     // implementing selected element in findersList
+     const closeCrossFinder = document.createElement("div");
+     closeCrossFinder.className='closeCrossFinder';
+     let closeCross=`<svg width="17" height="17" viewBox="0 0 17
+     17" fill="none" xmlns="http://www.w3.org/2000/svg">
+     <g id="Group 11"><circle id="Ellipse 5" cx="8.5" cy="8.5" r="8.5" fill="black"/><path id="Vector" 
+     d="M11 11L8.5 8.5M8.5 8.5L6 6M8.5 8.5L11 6M8.5 8.5L6 11" stroke="#FFD15B"
+     stroke-linecap="round" stroke-linejoin="round"/></g></svg>`;
+     closeCrossFinder.innerHTML=closeCross;
+   
+   
+   
+     let headerElementP=document.createElement("p");
+     headerElementP.className="header__selected__element";
+     headerElementP.textContent=event.target.textContent;
+     headerElementP.appendChild(closeCrossFinder);
+     let headFinder=document.getElementById(`${type}Selected`);
+     headFinder.appendChild(headerElementP);
+   
+     closeCrossFinder.addEventListener("click",function  () {
+       
+       //cette fonction(placee en paremetres) supprime l element selectionne 
+       //de sa TagList et de son headerFinder
+       TagRemoveFunction(target.textContent);
+     
+       tagDiv.removeChild(selectedIngredientP);
+       headFinder.removeChild(headerElementP);
+         ReloadPage(NewTag);
     
-    //cette fonction(placee en paremetres) supprime l element selectionne 
-    //de sa TagList et de son headerFinder
-    TagRemoveFunction(selectedIngredientP.textContent);
-  
-    tagDiv.removeChild(selectedIngredientP);
-    headFinder.removeChild(headerElementP);
-      ReloadPage(NewTag);
+       });
+     //close finder
+     const finder = document.getElementById(`${type}Finder`);
+     finder.classList.remove("active");
+     open = false;
+   
+     // TAGLIST
+     //implementing element in tagDiv
+   const tagCloseCross=document.createElement('div');
+   tagCloseCross.className='tagCloseCross';
+   tagCloseCross.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" 
+   viewBox="0 0 14 13" fill="none">
+   <path d="M12 11.5L7 6.5M7 6.5L2 1.5M7 6.5L12 1.5M7 6.5L2 11.5" 
+   stroke="#1B1B1B" stroke-width="2.16667" stroke-linecap="round" stroke-linejoin="round"/>
+   </svg>`;
+   
+   
+   
+     let selectedIngredientP = document.createElement("p");
+   let target=event.target;
+     event.target.className='target';
+     selectedIngredientP.appendChild(target);
+       selectedIngredientP.appendChild(tagCloseCross);
+       selectedIngredientP.className =`tags__tagDiv__tag`;
+       let tagDiv = document.getElementById(`${type}sTag`);
+       tagDiv.appendChild(selectedIngredientP);
+   
+   
+   
+     //adding Tag close event listener
+     tagCloseCross.addEventListener("click",function  () {
+       
+       //cette fonction(placee en paremetres) supprime l element selectionne 
+       //de sa TagList et de son headerFinder
+       TagRemoveFunction(target.textContent);
+     
+       tagDiv.removeChild(selectedIngredientP);
+       headFinder.removeChild(headerElementP);
+         ReloadPage(NewTag);
+    
+       });
+       
+     }
  
-    });
-  //close finder
-  const finder = document.getElementById(`${type}Finder`);
-  finder.classList.remove("active");
-  open = false;
-
-  // TAGLIST
-  //implementing element in tagList
-  const closeCross = document.createElement("i");
-  closeCross.className = "fa-solid fa-xmark";
-
-
-
-  let selectedIngredientP = document.createElement("p");
-  selectedIngredientP.appendChild(event.target);
-    selectedIngredientP.appendChild(closeCross);
-    selectedIngredientP.className =`tags__tagDiv__tag`;
-    let tagDiv = document.getElementById(`${type}sTag`);
-    tagDiv.appendChild(selectedIngredientP);
-
-
-
-  //adding Tag close event listener
-  closeCross.addEventListener("click",function  () {
-    
-    //cette fonction(placee en paremetres) supprime l element selectionne 
-    //de sa TagList et de son headerFinder
-    TagRemoveFunction(selectedIngredientP.textContent);
-  
-    tagDiv.removeChild(selectedIngredientP);
-    headFinder.removeChild(headerElementP);
-      ReloadPage(NewTag);
- 
-    });
-    
-  }
 // APPEL DE CETTE FONCTION DANS LES EVENT LISTENERS DES FINDERS
 
 //INGREDIENT tagMaker
