@@ -50,6 +50,12 @@
 .Header__inputLabel__finder__input {
   height: 100%;
   width: 954px;
+  color: var(--Grey, #7A7A7A);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .Header__inputLabel__finder__button {
   height: 51px;
@@ -68,6 +74,10 @@
 }
 .Header__inputLabel__finder__button:hover svg > * {
   stroke: black;
+}
+.Header__inputLabel__finder__closeCross {
+  position: absolute;
+  left: 856px;
 }
 
 #ingredientFinder {
