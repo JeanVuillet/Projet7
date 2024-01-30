@@ -60,8 +60,29 @@ ReloadPage(NewTag)}
 //INGREDIENTS SECTION
 
 //Implenting ingredient Input
+
 const ingredientsInput=document.getElementById('ingredientsInput');
+const ingredientsHeaderFinder=document.getElementById('ingredientHeaderFinder');
+let crossFinderDiv=document.createElement('div');
+crossFinderDiv.className='crossFinderDiv';
+crossFinderDiv.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" 
+width="8" height="8" viewBox="0 0 8 8" fill="none">
+<path d="M7 7L4 4M4 4L1 1M4 4L7 1M4 4L1 7" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`
+crossFinderDiv.style.display='none';
+ingredientsHeaderFinder.appendChild(crossFinderDiv);
+crossFinderDiv.addEventListener('click',function(){
+  ingredientsInput.value='';
+  crossFinderDiv.style.display='none';
+  Finders.inputFinders(ingredientsInput,Finders.ingredentsFinder,ingredientDiv); 
+ 
+});
 ingredientsInput.addEventListener('keyup',function(e){
+  if(ingredientsInput.value.length>0){
+    crossFinderDiv.style.display='flex';
+  }
+  else{crossFinderDiv.style.display='none';
+}
 Finders.inputFinders(ingredientsInput,Finders.ingredentsFinder,ingredientDiv);});
 
 // Implementing ingredientsFinder

@@ -35,7 +35,7 @@
     &.active {
       border-radius:11px;
 
-          .content {
+          .open {
            
   position:absolute;
     display: flex;
@@ -54,7 +54,7 @@ width: min-content;
 
           .header{
           
-       
+       position:relative;
           display:flex;
           flex-direction: column;
 
@@ -76,7 +76,7 @@ width: min-content;
               display:flex;
               align-items:center;
              .fa-magnifying-glass{
-              position: relative;
+              position: absolute;
               right: 25px;
               font-size: 14px;
              }
@@ -171,7 +171,7 @@ background: #FFF;
 
 }
 
-.content {
+.open {
 
 display: none;
 
