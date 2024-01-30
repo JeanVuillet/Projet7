@@ -1,0 +1,164 @@
+@charset "UTF-8";
+#ingredientFinder {
+  left: 104px;
+}
+
+#appareilFinder {
+  left: 365px;
+}
+
+#ustensileFinder {
+  left: 608px;
+}
+
+.finders {
+  display: flex;
+  gap: 5rem;
+  padding-top: 3rem;
+  padding-left: 104px;
+}
+.finders__option {
+  display: flex;
+  flex-direction: column;
+}
+.finders__option.active {
+  border-radius: 11px;
+}
+.finders__option.active .content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  z-index: 1;
+  height: 315px;
+  border-radius: 11px;
+  width: -moz-min-content;
+  width: min-content;
+}
+.finders__option.active .content .header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.finders__option.active .content .header__title {
+  display: inline-flex;
+  padding: 17px 16px;
+  align-items: center;
+  gap: 63px;
+  border-radius: 11px;
+  background: #FFF;
+}
+.finders__option.active .content .header__finder {
+  margin-left: 16px;
+  padding-block: 2px;
+  padding-inline: 0px;
+}
+.finders__option.active .content .header__finder .fa-magnifying-glass {
+  position: relative;
+  right: 25px;
+  font-size: 14px;
+}
+.finders__option.active .content .header__finder .input {
+  padding-inline: 3px;
+}
+.finders__option.active .content .header__selected {
+  width: 100%;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+.finders__option.active .content .header__selected__element {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFD15B;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+.finders__option.active .content .header__selected__element > .closeCrossFinder {
+  opacity: 0;
+}
+.finders__option.active .content .header__selected__element:hover {
+  font-weight: bolder;
+}
+.finders__option.active .content .header__selected__element:hover > .closeCrossFinder {
+  opacity: 1;
+}
+.finders__option.active .content p:hover {
+  background-color: #FFD15B;
+}
+.finders__recipesTotal {
+  font-family: Anton;
+  position: absolute;
+  right: 60px;
+  width: 97px;
+  height: 32px;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 31.61px;
+}
+.finders__content {
+  display: inline-flex;
+  flex-direction: column;
+  flex-direction: auto;
+  overflow: auto;
+  scroll-snap-align: start;
+}
+.finders__content p {
+  padding-left: 16px;
+  display: inline-block;
+  margin-block: 0;
+  padding-block: 5px;
+}
+
+.title {
+  display: inline-flex;
+  padding: 17px 16px;
+  align-items: center;
+  gap: 63px;
+  border-radius: 11px;
+  background: #FFF;
+  /* Appliquer les styles lorsque .finders__ingrédients est activé */
+}
+
+.content {
+  display: none;
+  /* Afficher le contenu lorsque .finders__ingrédients est activé */
+}
+
+.tags {
+  padding-top: 21px;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+.tags__tagDiv {
+  display: flex;
+  flex-direction: column;
+}
+.tags__tagDiv__tag {
+  display: inline-flex;
+  background-color: #FFD15B;
+  border-radius: 10px;
+  padding: 17px 18px;
+  align-items: center;
+  gap: 60px;
+  width: -moz-min-content;
+  width: min-content;
+  margin-block: 0;
+}
+.tags__tagDiv__tag p {
+  margin-block: 0;
+  color: #000;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-wrap: nowrap;
+}
+
+.header__selected__element:hover > i {
+  opacity: 1;
+}/*# sourceMappingURL=finder.css.map */

@@ -1,0 +1,85 @@
+*{
+   
+}
+.Header {
+    height: 960px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    position:absolute;
+    z-index:-1;
+    height: 960px;
+    width: -webkit-fill-available;
+    margin-left:8px;
+    margin-right: 8px;
+  }
+  &__logo {
+    z-index:1;
+    position:absolute;
+    
+    left: 69px; 
+    top: 69px;
+ 
+  }
+  &__inputLabel{
+    width: 954px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    &__slogan{
+        color: #FFD15B;
+        font-size: 44px;
+        font-family: Anton;
+        font-weight: 400;
+        word-wrap: break-word;
+        text-align: center;
+        margin-left: -70px;
+       
+    }
+  &__finder {
+    display: flex;
+    height: 72px;
+    align-items: center;
+    position:relative;
+
+    &__input {
+      height: 100%;
+      width: 954px;
+      color: var(--Grey, #7A7A7A);
+font-family: Manrope;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+    }
+    &__button {
+      height: 51px;
+      width: 52px;
+      position: absolute;
+      right: 10px;
+      border-radius: 10px;
+background: var(--Black, #1B1B1B);
+ display:flex;
+ justify-content: center;
+ align-items: center;
+
+    &:hover{
+      background-color: #FFD15B;
+      color:black;
+      svg>*{
+        stroke:black;
+      }
+    }
+    }
+    &__closeCross{
+      position:absolute;
+      left:856px;
+    }
+
+}
+}
+
+}
