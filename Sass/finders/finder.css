@@ -52,6 +52,8 @@
   margin-left: 16px;
   padding-block: 2px;
   padding-inline: 0px;
+  display: flex;
+  align-items: center;
 }
 .finders__option.active .content .header__finder .fa-magnifying-glass {
   position: relative;
