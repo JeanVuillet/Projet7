@@ -138,7 +138,7 @@ ustensilesInput.addEventListener('keyup',function(e){
     
     //cette fonction(placee en paremetres) supprime l element selectionne 
     //de sa TagList et de son headerFinder
-    TagRemoveFunction(selectedIngredientP.textContent);
+    TagRemoveFunction(target.textContent);
   
     tagDiv.removeChild(selectedIngredientP);
     headFinder.removeChild(headerElementP);
@@ -163,7 +163,9 @@ stroke="#1B1B1B" stroke-width="2.16667" stroke-linecap="round" stroke-linejoin="
 
 
   let selectedIngredientP = document.createElement("p");
-  selectedIngredientP.appendChild(event.target);
+let target=event.target;
+  event.target.className='target';
+  selectedIngredientP.appendChild(target);
     selectedIngredientP.appendChild(tagCloseCross);
     selectedIngredientP.className =`tags__tagDiv__tag`;
     let tagDiv = document.getElementById(`${type}sTag`);
@@ -176,7 +178,7 @@ stroke="#1B1B1B" stroke-width="2.16667" stroke-linecap="round" stroke-linejoin="
     
     //cette fonction(placee en paremetres) supprime l element selectionne 
     //de sa TagList et de son headerFinder
-    TagRemoveFunction(selectedIngredientP.textContent);
+    TagRemoveFunction(target.textContent);
   
     tagDiv.removeChild(selectedIngredientP);
     headFinder.removeChild(headerElementP);
