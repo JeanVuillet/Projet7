@@ -4,6 +4,7 @@ import { Tag } from "./Tag/tags.mjs";
 import { ReloadPage } from "./reloadPage.mjs";
 import { MasterList } from "./reloadPage/reloadMasterList.mjs";
 import { Finders } from "./reloadPage/reloadFinders.mjs";
+import { closeCross } from "./closeCross.mjs";
 
 
 
@@ -46,7 +47,7 @@ if((input.value.length>0) ){
 crossDiv.style.display='flex';
 
 }
-else{ inputDiv.removeChild(crossDiv);
+else{ crossDiv.style.display='none';
 ReloadPage(Tag)}
 
   if((input.value.length>2)||(input.value.length==0)){
