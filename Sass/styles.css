@@ -102,10 +102,23 @@
   display: flex;
   flex-direction: column;
 }
+.finders__option .title {
+  display: inline-flex;
+  padding: 17px 16px;
+  align-items: center;
+  gap: 63px;
+  border-radius: 11px;
+  background: #fff;
+  /* Appliquer les styles lorsque .finders__ingrédients est activé */
+}
+.finders__option .open {
+  display: none;
+  /* Afficher le contenu lorsque .finders__ingrédients est activé */
+}
 .finders__option.active {
   border-radius: 11px;
 }
-.finders__option.active .content {
+.finders__option.active .open {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -116,60 +129,88 @@
   width: -moz-min-content;
   width: min-content;
 }
-.finders__option.active .content .header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.finders__option.active .open p:hover {
+  background-color: #ffd15b;
 }
-.finders__option.active .content .header__title {
-  display: inline-flex;
-  padding: 17px 16px;
-  align-items: center;
-  gap: 63px;
-  border-radius: 11px;
-  background: #FFF;
-}
-.finders__option.active .content .header__finder {
-  margin-left: 16px;
-  padding-block: 2px;
-  padding-inline: 0px;
-  display: flex;
-  align-items: center;
-}
-.finders__option.active .content .header__finder .fa-magnifying-glass {
+.finders__option.active .open .header {
   position: relative;
-  right: 25px;
+}
+.finders__option.active .open .header__finder {
+  width: 195px;
+  height: 100px;
+}
+.finders__option.active .open .header__finder__title {
+  border-radius: 11px;
+  background: #fff;
+  position: absolute;
+  left: 16px;
+  top: 17px;
+  display: flex;
+  gap: 63px;
+}
+.finders__option.active .open .header__finder__input {
+  position: absolute;
+  left: 16px;
+  top: 53px;
+  padding-inline: 3px;
+  width: 163px;
+  height: 36px;
+}
+.finders__option.active .open .header__finder .fa-magnifying-glass {
+  position: absolute;
+  left: 154px;
+  top: 64px;
   font-size: 14px;
 }
-.finders__option.active .content .header__finder .input {
-  padding-inline: 3px;
+.finders__option.active .open .header__finder .crossFinderDiv {
+  width: 6px;
+  stroke-width: 1px;
+  stroke: var(--Grey, #7A7A7A);
+  height: 6px;
+  flex-shrink: 0;
+  position: absolute;
+  left: 138px;
+  top: 68px;
 }
-.finders__option.active .content .header__selected {
+.finders__option.active .open .header__selected {
   width: 100%;
   margin-block-start: 1em;
   margin-block-end: 1em;
 }
-.finders__option.active .content .header__selected__element {
+.finders__option.active .open .header__selected__element {
   margin: 0;
   display: flex;
   justify-content: space-between;
-  background-color: #FFD15B;
+  background-color: #ffd15b;
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 9px;
   padding-bottom: 9px;
 }
-.finders__option.active .content .header__selected__element > .closeCrossFinder {
+.finders__option.active .open .header__selected__element > .closeCrossFinder {
   opacity: 0;
 }
-.finders__option.active .content .header__selected__element:hover {
+.finders__option.active .open .header__selected__element:hover {
   font-weight: bolder;
 }
-.finders__option.active .content .header__selected__element:hover > .closeCrossFinder {
+.finders__option.active .open .header__selected__element:hover > .closeCrossFinder {
   opacity: 1;
 }
-.finders__option.active .content p:hover {
-  background-color: #FFD15B;
+.finders__option.active .open .header__selected__element:hover > i {
+  opacity: 1;
+}
+.finders__option.active .open .content {
+  display: inline-flex;
+  flex-direction: column;
+  flex-direction: auto;
+  overflow: auto;
+  scroll-snap-align: start;
+}
+.finders__option.active .open .content p {
+  padding-left: 16px;
+  display: inline-block;
+  margin-block: 0;
+  padding-block: 5px;
 }
 .finders__recipesTotal {
   font-family: Anton;
@@ -180,34 +221,6 @@
   font-weight: 400;
   font-size: 21px;
   line-height: 31.61px;
-}
-.finders__content {
-  display: inline-flex;
-  flex-direction: column;
-  flex-direction: auto;
-  overflow: auto;
-  scroll-snap-align: start;
-}
-.finders__content p {
-  padding-left: 16px;
-  display: inline-block;
-  margin-block: 0;
-  padding-block: 5px;
-}
-
-.title {
-  display: inline-flex;
-  padding: 17px 16px;
-  align-items: center;
-  gap: 63px;
-  border-radius: 11px;
-  background: #FFF;
-  /* Appliquer les styles lorsque .finders__ingrédients est activé */
-}
-
-.content {
-  display: none;
-  /* Afficher le contenu lorsque .finders__ingrédients est activé */
 }
 
 .tags {
@@ -222,7 +235,7 @@
 }
 .tags__tagDiv__tag {
   display: inline-flex;
-  background-color: #FFD15B;
+  background-color: #ffd15b;
   border-radius: 10px;
   padding: 17px 18px;
   align-items: center;
