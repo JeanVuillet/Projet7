@@ -172,7 +172,7 @@ appareilFinder.addEventListener("click", function () {
 //implementing ustensilesInput
 
       //   EXPORT THIS
-//Implenting ingredient Input
+//Implenting ustensil Input
 let ustensilesInput=document.getElementById('ustensilesInput');
 ustensilesInput.addEventListener('keyup',function(e){
   Finders.inputFinders(ustensilesInput,Finders.ustensilesFinder,ustensileseDiv);});
