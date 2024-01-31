@@ -111,10 +111,41 @@ let ingredientFinder=document.getElementById('ingredientFinder');
     // APPAREIL SECTION
 // inplementing Appareil input
 
+
+// inplementing Appareil input
+
 const AppareilsInput=document.getElementById('appareilsInput');
 AppareilsInput.addEventListener('keyup',function(e){
 Finders.inputFinders(AppareilsInput,Finders.appareilsFinder,appareilDiv);
 })
+
+
+
+const appareilsHeaderFinder=document.getElementById('appareilHeaderFinder');
+let appareilFinderCross=document.createElement('div');
+appareilFinderCross.className='crossFinderDiv';
+appareilFinderCross.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" 
+width="8" height="8" viewBox="0 0 8 8" fill="none">
+<path d="M7 7L4 4M4 4L1 1M4 4L7 1M4 4L1 7" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`
+appareilFinderCross.style.display='none';
+appareilsHeaderFinder.appendChild(appareilFinderCross);
+appareilFinderCross.addEventListener('click',function(){
+  AppareilsInput.value='';
+  appareilFinderCross.style.display='none';
+  Finders.inputFinders(AppareilsInput,Finders.appareilsFinder,appareilDiv); 
+ 
+});
+AppareilsInput.addEventListener('keyup',function(e){
+  if(AppareilsInput.value.length>0){
+    appareilFinderCross.style.display='flex';
+  }
+  else{appareilFinderCross.style.display='none';
+}
+Finders.inputFinders(AppareilsInput,Finders.appareilsFinder,appareilDiv);
+});
+
+
     // Implementing AppareilFinder
 
 let appareilFinder=document.getElementById('appareilFinder');
