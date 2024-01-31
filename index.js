@@ -59,29 +59,30 @@ ReloadPage(NewTag)}
 })
 //INGREDIENTS SECTION
 
+      //   EXPORT THIS
 //Implenting ingredient Input
 
 const ingredientsInput=document.getElementById('ingredientsInput');
 const ingredientsHeaderFinder=document.getElementById('ingredientHeaderFinder');
-let crossFinderDiv=document.createElement('div');
-crossFinderDiv.className='crossFinderDiv';
-crossFinderDiv.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" 
+let ingredientFinderCross=document.createElement('div');
+ingredientFinderCross.className='crossFinderDiv';
+ingredientFinderCross.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" 
 width="8" height="8" viewBox="0 0 8 8" fill="none">
 <path d="M7 7L4 4M4 4L1 1M4 4L7 1M4 4L1 7" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`
-crossFinderDiv.style.display='none';
-ingredientsHeaderFinder.appendChild(crossFinderDiv);
-crossFinderDiv.addEventListener('click',function(){
+ingredientFinderCross.style.display='none';
+ingredientsHeaderFinder.appendChild(ingredientFinderCross);
+ingredientFinderCross.addEventListener('click',function(){
   ingredientsInput.value='';
-  crossFinderDiv.style.display='none';
+  ingredientFinderCross.style.display='none';
   Finders.inputFinders(ingredientsInput,Finders.ingredentsFinder,ingredientDiv); 
  
 });
 ingredientsInput.addEventListener('keyup',function(e){
   if(ingredientsInput.value.length>0){
-    crossFinderDiv.style.display='flex';
+    ingredientFinderCross.style.display='flex';
   }
-  else{crossFinderDiv.style.display='none';
+  else{ingredientFinderCross.style.display='none';
 }
 Finders.inputFinders(ingredientsInput,Finders.ingredentsFinder,ingredientDiv);});
 
@@ -102,13 +103,53 @@ let ingredientFinder=document.getElementById('ingredientFinder');
       open = false;
     });
     // APPAREIL SECTION
-    
+        //   EXPORT THIS
 // inplementing Appareil input
 
 const AppareilsInput=document.getElementById('appareilsInput');
 AppareilsInput.addEventListener('keyup',function(e){
 Finders.inputFinders(AppareilsInput,Finders.appareilsFinder,appareilDiv);
 })
+
+
+
+const appareilsHeaderFinder=document.getElementById('appareilHeaderFinder');
+let appareilFinderCross=document.createElement('div');
+appareilFinderCross.className='crossFinderDiv';
+appareilFinderCross.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" 
+width="8" height="8" viewBox="0 0 8 8" fill="none">
+<path d="M7 7L4 4M4 4L1 1M4 4L7 1M4 4L1 7" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`
+appareilFinderCross.style.display='none';
+appareilsHeaderFinder.appendChild(appareilFinderCross);
+appareilFinderCross.addEventListener('click',function(){
+  AppareilsInput.value='';
+  appareilFinderCross.style.display='none';
+  Finders.inputFinders(AppareilsInput,Finders.appareilsFinder,appareilDiv); 
+ 
+});
+AppareilsInput.addEventListener('keyup',function(e){
+  if(AppareilsInput.value.length>0){
+    appareilFinderCross.style.display='flex';
+  }
+  else{appareilFinderCross.style.display='none';
+}
+Finders.inputFinders(AppareilsInput,Finders.appareilsFinder,appareilDiv);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Implementing AppareilFinder
 
 let appareilFinder=document.getElementById('appareilFinder');
@@ -129,9 +170,45 @@ appareilFinder.addEventListener("click", function () {
 
     // USTENSILS SECTION
 //implementing ustensilesInput
+
+      //   EXPORT THIS
+//Implenting ingredient Input
 let ustensilesInput=document.getElementById('ustensilesInput');
 ustensilesInput.addEventListener('keyup',function(e){
   Finders.inputFinders(ustensilesInput,Finders.ustensilesFinder,ustensileseDiv);});
+
+
+
+const ustensilesHeaderFinder=document.getElementById('ustensilesHeaderFinder');
+let ustensileFinderCross=document.createElement('div');
+ustensileFinderCross.className='crossFinderDiv';
+ustensileFinderCross.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" 
+width="8" height="8" viewBox="0 0 8 8" fill="none">
+<path d="M7 7L4 4M4 4L1 1M4 4L7 1M4 4L1 7" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`
+ustensileFinderCross.style.display='none';
+ustensilesHeaderFinder.appendChild(ustensileFinderCross);
+ustensileFinderCross.addEventListener('click',function(){
+  ustensilesInput.value='';
+  ustensileFinderCross.style.display='none';
+  Finders.inputFinders(ustensilesInput,Finders.ustensilesFinder,ustensileseDiv); 
+ 
+});
+ustensilesInput.addEventListener('keyup',function(e){
+  if(ustensilesInput.value.length>0){
+    ustensileFinderCross.style.display='flex';
+  }
+  else{ustensileFinderCross.style.display='none';
+}
+Finders.inputFinders(ustensilesInput,Finders.ustensilesFinder,ustensileseDiv);});
+
+
+
+
+
+
+
+
 
   //implementing ustensilesFinder
   let ustensilesFinder=document.getElementById('ustensileFinder');
