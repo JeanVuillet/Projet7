@@ -60,10 +60,38 @@ ReloadPage(Tag)}
 //INGREDIENTS SECTION
 
 //Implenting ingredient Imput
+
+
 const ingredientsInput=document.getElementById('ingredientsInput');
+const ingredientsHeaderFinder=document.getElementById('ingredientHeaderFinder');
+let ingredientFinderCross=document.createElement('div');
+ingredientFinderCross.className='crossFinderDiv';
+ingredientFinderCross.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" 
+width="8" height="8" viewBox="0 0 8 8" fill="none">
+<path d="M7 7L4 4M4 4L1 1M4 4L7 1M4 4L1 7" stroke="#7A7A7A" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`
+ingredientFinderCross.style.display='none';
+ingredientsHeaderFinder.appendChild(ingredientFinderCross);
+ingredientFinderCross.addEventListener('click',function(){
+  ingredientsInput.value='';
+  ingredientFinderCross.style.display='none';
+  Finders.inputFinders(ingredientsInput,Finders.ingredentsFinder,ingredientDiv); 
+ 
+});
 ingredientsInput.addEventListener('keyup',function(e){
-Finders.inputFinders(ingredientsInput,Finders.ingredentsFinder,ingredientDiv);
-})
+  if(ingredientsInput.value.length>0){
+    ingredientFinderCross.style.display='flex';
+  }
+  else{ingredientFinderCross.style.display='none';
+}
+Finders.inputFinders(ingredientsInput,Finders.ingredentsFinder,ingredientDiv);});
+
+
+
+
+
+
+
 // Implementing ingredientsFinder
 let ingredientFinder=document.getElementById('ingredientFinder');
   ingredientFinder.addEventListener("click", function () {
