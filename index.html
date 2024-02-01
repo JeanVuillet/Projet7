@@ -1,118 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="Sass/styles.css">
+    <link rel="stylesheet" href="Sass/styles.css" />
 
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/76ea79564c.js" crossorigin="anonymous"></script>
-    
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/76ea79564c.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- <script src="recipes.js"></script> -->
-   
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">   
-</head>
-<body>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="Header">
-        <img src="Assets/backgroundImage.jpeg" alt="image de bienvenue" class="Header__img">
-             <img src="Assets/icons/logo.svg" alt="logo les petits plats" class="Header__logo"> 
-       <div class="Header__inputLabel">
-            <label for="recherche" class="Header__inputLabel__slogan">CHERCHEZ PARMI PLUS DE 1500 RECETTES <br/> DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</label>
-            <div class="Header__inputLabel__finder" id="inputDiv">
-                <input  class="Header__inputLabel__finder__input" type="text"  id="recherche" placeholder="Rechercher une recette, un ingrédient, ...">
-                <div class="Header__inputLabel__finder__button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29" fill="none">
-                        <circle cx="10" cy="10.4219" r="9.5" stroke="white"/>
-                        <line x1="18.3536" y1="19.0683" x2="27.3536" y2="28.0683" stroke="white"/>
-                        </svg>
-                </div>
-            </div> .
+      <img
+        src="Assets/backgroundImage.jpeg"
+        alt="image de bienvenue"
+        class="Header__img"
+      />
+      <img
+        src="Assets/icons/logo.svg"
+        alt="logo les petits plats"
+        class="Header__logo"
+      />
+      <div class="Header__inputLabel">
+        <label for="recherche" class="Header__inputLabel__slogan"
+          >CHERCHEZ PARMI PLUS DE 1500 RECETTES <br />
+          DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</label
+        >
+        <div class="Header__inputLabel__finder" id="inputDiv">
+          <input
+            class="Header__inputLabel__finder__input"
+            type="text"
+            id="recherche"
+            placeholder="Rechercher une recette, un ingrédient, ..."
+          />
+          <div class="Header__inputLabel__finder__button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="29"
+              viewBox="0 0 28 29"
+              fill="none"
+            >
+              <circle cx="10" cy="10.4219" r="9.5" stroke="white" />
+              <line
+                x1="18.3536"
+                y1="19.0683"
+                x2="27.3536"
+                y2="28.0683"
+                stroke="white"
+              />
+            </svg>
+          </div>
         </div>
-    </header>  
+        .
+      </div>
+    </header>
 
     <main class="main">
-        <section class="finders">
-
-            <div class="finders__option" id="ingredientFinder">
-                <div class="title" id="finder">Ingrédients <i class="fas fa-chevron-down"></i></div> 
-                <div class="open">
-                    <div class="header"  >
-                        <div class="header__finder"  id="ingredientHeaderFinder">
-                            <div class="header__finder__title">Ingrédients <i class="fas fa-chevron-up" id="closingIngredientFinder"></i></div>
-                            <input class="header__finder__input" id="ingredientsInput" type="text"> <i class=" fa-solid fa-magnifying-glass"></i>
-                        </div>
-                        <div class="header__selected" id="ingredientSelected" ></div>
-                        
-                    </div>
-                    <div  class="content" id="finder__ingrédients"></div>
-
+      <section class="finders">
+        <div class="finders__option" id="ingredientFinder">
+          <div class="title" id="finder">
+            Ingrédients <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="open">
+            <div class="header">
+              <div class="header__finder" id="ingredientHeaderFinder">
+                <div class="header__finder__title">
+                  Ingrédients
+                  <i class="fas fa-chevron-up" id="closingIngredientFinder"></i>
                 </div>
-                <div class="tags" id="ingredientsTag"></div>
+                <input
+                  class="header__finder__input"
+                  id="ingredientsInput"
+                  type="text"
+                />
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="header__selected" id="ingredientSelected"></div>
             </div>
-            
-            
-            <div class="finders__option" id="appareilFinder">
-     
-                    <div class="title">Appareils  <i class="fas fa-chevron-down"></i> </div> 
-                    <div class="open">
-                        <div class="header">
-                            
+            <div class="content" id="finder__ingrédients"></div>
+          </div>
+          <div class="tags" id="ingredientsTag"></div>
+        </div>
 
-                            <div class="header__finder" id="appareilHeaderFinder">
-                                <div class="header__finder__title">Appareils <i class="fas fa-chevron-up" id="closingAppareilFinder"></i></div> 
-                                <input class="header__finder__input" id="appareilsInput" type="text"> <i class="fas fa-magnifying-glass"></i>
-                            </div>
-                            <div class="header__selected" id="appareilSelected" >
-
-                            </div>
-                         
-                        </div>
-                        <div  class="content" id="finder__appareils"></div>
-                    </div>               
-                    <div class="tags" id="appareilsTag"></div>
-            </div>
-
-            <div class="finders__option" id="ustensileFinder">
-                <div class="title">Ustensiles  <i class="fas fa-chevron-down"></i></div>
-
-                <div class="open">
-                    <div class="header">
-
-                        <div class="header__finder" id="ustensilesHeaderFinder">
-                            <div class="header__finder__title">Ustensiles <i class="fas fa-chevron-up" id="closingUstensileFinder"></i></div> 
-                            <input class="header__finder__input"  id='ustensilesInput' type="text"> <i class="fas fa-magnifying-glass"></i>
-                        </div>
-                        <div class="header__selected" id="ustensileSelected" >
-
-                        </div>
-                    </div>
-                    <div  class="content" id="finder__ustensiles"></div>
+        <div class="finders__option" id="appareilFinder">
+          <div class="title">Appareils <i class="fas fa-chevron-down"></i></div>
+          <div class="open">
+            <div class="header">
+              <div class="header__finder" id="appareilHeaderFinder">
+                <div class="header__finder__title">
+                  Appareils
+                  <i class="fas fa-chevron-up" id="closingAppareilFinder"></i>
                 </div>
-                <div class="tags" id="ustensilesTag"></div>
+                <input
+                  class="header__finder__input"
+                  id="appareilsInput"
+                  type="text"
+                />
+                <i class="fas fa-magnifying-glass"></i>
+              </div>
+              <div class="header__selected" id="appareilSelected"></div>
             </div>
-           <div class="finders__recipesTotal" id="recipesTotal"></div>
-        </section>
-  
-        <section class="recette" id="recettes">
-        </section>
+            <div class="content" id="finder__appareils"></div>
+          </div>
+          <div class="tags" id="appareilsTag"></div>
+        </div>
 
+        <div class="finders__option" id="ustensileFinder">
+          <div class="title">
+            Ustensiles <i class="fas fa-chevron-down"></i>
+          </div>
+
+          <div class="open">
+            <div class="header">
+              <div class="header__finder" id="ustensilesHeaderFinder">
+                <div class="header__finder__title">
+                  Ustensiles
+                  <i class="fas fa-chevron-up" id="closingUstensileFinder"></i>
+                </div>
+                <input
+                  class="header__finder__input"
+                  id="ustensilesInput"
+                  type="text"
+                />
+                <i class="fas fa-magnifying-glass"></i>
+              </div>
+              <div class="header__selected" id="ustensileSelected"></div>
+            </div>
+            <div class="content" id="finder__ustensiles"></div>
+          </div>
+          <div class="tags" id="ustensilesTag"></div>
+        </div>
+        <div class="finders__recipesTotal" id="recipesTotal"></div>
+      </section>
+
+      <section class="recette" id="recettes"></section>
     </main>
-    
-    <script src="index.js" type="module"></script> 
-    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g id="Group 11">
-        <circle id="Ellipse 5" cx="8.5" cy="8.5" r="8.5" fill="black"/>
-        <path id="Vector" d="M11 11L8.5 8.5M8.5 8.5L6 6M8.5 8.5L11 6M8.5 8.5L6 11" stroke="#FFD15B" stroke-linecap="round" stroke-linejoin="round"/>
-        </g>
-        </svg>
-</body>
 
-
+    <script src="index.js" type="module"></script>
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 17 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="Group 11">
+        <circle id="Ellipse 5" cx="8.5" cy="8.5" r="8.5" fill="black" />
+        <path
+          id="Vector"
+          d="M11 11L8.5 8.5M8.5 8.5L6 6M8.5 8.5L11 6M8.5 8.5L6 11"
+          stroke="#FFD15B"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+    </svg>
+  </body>
 </html>

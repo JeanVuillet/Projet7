@@ -51,3 +51,15 @@ virer border solid pink
 Projet 7
 
 attention a l injection du css
+
+
+indentation 
+prettyer
+
+retirer les consol log
+
+border radius
+
+mettre la fiche en pdf
+test d algo screenshot pdf
+
