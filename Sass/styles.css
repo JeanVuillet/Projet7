@@ -48,8 +48,10 @@
   position: relative;
 }
 .Header__inputLabel__finder__input {
-  height: 100%;
+  border-radius: 11px;
+  height: 72px;
   width: 954px;
+  padding-left: 35px;
   color: var(--Grey, #7A7A7A);
   font-family: Manrope;
   font-size: 16px;

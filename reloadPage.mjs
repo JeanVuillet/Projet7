@@ -9,12 +9,12 @@ export function  ReloadPage(tag){
         FunctionalMasterList.reloadFunctionalMasterList(tag);
         // FunctionalMasterList.logMasterList();
         Finders.reloadFinders(tag);
-        FunctionalMasterList.masterList.forEach((recette)=>console.log('RecetteUstensiles'+recette.ustensiles));
-        FunctionalMasterList.masterList.forEach((recette)=>console.log('RecetteIngredients'+recette.ingredients));
-        FunctionalMasterList.masterList.forEach((recette)=>console.log('RecetteAppareil'+recette.appliance));
-        console.log('tagIngredients'+tag.ingredientsTaglist)
-        console.log('tagAppareils'+tag.appareilsTaglist)
-        console.log('tagUstensils'+tag.ustensilesTaglist)
+           
+        // CONSOLE.LOG POUR VERIFIER LES APPAREILS ET USTENSILES
+        // FunctionalMasterList.masterList.forEach((recette)=>console.log('RecetteAppareil'+recette.appliance));
+        // console.log('tagIngredients'+tag.ingredientsTaglist)
+        // console.log('tagAppareils'+tag.appareilsTaglist)
+        // console.log('tagUstensils'+tag.ustensilesTaglist)
            
         }
  
