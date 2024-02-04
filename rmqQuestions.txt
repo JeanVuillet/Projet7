@@ -50,15 +50,20 @@ virer border solid pink
 
 Projet 7
 
+attention a l injection du css ok
 
 
+indentation ok
+prettyer ok
 
+retirer les consol log ok
 
+border radius ok
 
-
-
-border radius
-
+IL RESTE
 mettre la fiche en pdf
 test d algo screenshot pdf
+
+DERNIERE QUESTION:
+A QUOI SERT LA LOUPE DANS LE FINDER
 
