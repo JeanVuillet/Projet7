@@ -63,7 +63,7 @@ static reloadIngredientsFinder(Tag){
                   };
                 }
               }
-              console.log(Finders.ingredentsFinder);
+            
           let FilteredIngredientlist=[];
                FilteredIngredientlist  =  Finders.ingredentsFinder.sort(function (a, b) {
                 if (a > b) {
@@ -136,7 +136,7 @@ static reloadAppareilsFinder(Tag){
           };
         }
      
-      console.log(Finders.appareilsFinder);
+     
   let FilteredAppareilslist=[];
        FilteredAppareilslist  =  Finders.appareilsFinder.sort(function (a, b) {
         if (a > b) {
@@ -209,7 +209,7 @@ static reloadUstensilesFinder(Tag){
           };
         }
       }
-      console.log(Finders.ustensilesFinder);
+ 
   let FilteredUstensillist=[];
        FilteredUstensillist  =  Finders.ustensilesFinder.sort(function (a, b) {
         if (a > b) {

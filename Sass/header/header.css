@@ -27,7 +27,7 @@
   row-gap: 30px;
 }
 .Header__inputLabel__slogan {
-  color: #FFD15B;
+  color: #ffd15b;
   font-size: 44px;
   font-family: Anton;
   font-weight: 400;
@@ -42,9 +42,11 @@
   position: relative;
 }
 .Header__inputLabel__finder__input {
-  height: 100%;
+  border-radius: 11px;
+  height: 72px;
   width: 954px;
-  color: var(--Grey, #7A7A7A);
+  padding-left: 35px;
+  color: var(--Grey, #7a7a7a);
   font-family: Manrope;
   font-size: 16px;
   font-style: normal;
@@ -57,13 +59,13 @@
   position: absolute;
   right: 10px;
   border-radius: 10px;
-  background: var(--Black, #1B1B1B);
+  background: var(--Black, #1b1b1b);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .Header__inputLabel__finder__button:hover {
-  background-color: #FFD15B;
+  background-color: #ffd15b;
   color: black;
 }
 .Header__inputLabel__finder__button:hover svg > * {

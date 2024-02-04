@@ -20,7 +20,7 @@ export class MasterList{
          if ((present==true) && (inputMatch==true))
          {masterList.push(recipes[i])}
          }
-     console.log(masterList);
+
        MasterList.masterList=masterList;
      // IMPLEMENTATION DANS LE DOM
 

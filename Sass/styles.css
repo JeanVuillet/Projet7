@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .main {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   font-family: "Manrope", sans-serif;
 }
 
@@ -33,7 +33,7 @@
   row-gap: 30px;
 }
 .Header__inputLabel__slogan {
-  color: #FFD15B;
+  color: #ffd15b;
   font-size: 44px;
   font-family: Anton;
   font-weight: 400;
@@ -48,9 +48,11 @@
   position: relative;
 }
 .Header__inputLabel__finder__input {
-  height: 100%;
+  border-radius: 11px;
+  height: 72px;
   width: 954px;
-  color: var(--Grey, #7A7A7A);
+  padding-left: 35px;
+  color: var(--Grey, #7a7a7a);
   font-family: Manrope;
   font-size: 16px;
   font-style: normal;
@@ -63,13 +65,13 @@
   position: absolute;
   right: 10px;
   border-radius: 10px;
-  background: var(--Black, #1B1B1B);
+  background: var(--Black, #1b1b1b);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .Header__inputLabel__finder__button:hover {
-  background-color: #FFD15B;
+  background-color: #ffd15b;
   color: black;
 }
 .Header__inputLabel__finder__button:hover svg > * {
@@ -165,7 +167,7 @@
 .finders__option.active .open .header__finder .crossFinderDiv {
   width: 6px;
   stroke-width: 1px;
-  stroke: var(--Grey, #7A7A7A);
+  stroke: var(--Grey, #7a7a7a);
   height: 6px;
   flex-shrink: 0;
   position: absolute;

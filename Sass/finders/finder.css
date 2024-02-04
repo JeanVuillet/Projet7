@@ -84,7 +84,7 @@
 .finders__option.active .open .header__finder .crossFinderDiv {
   width: 6px;
   stroke-width: 1px;
-  stroke: var(--Grey, #7A7A7A);
+  stroke: var(--Grey, #7a7a7a);
   height: 6px;
   flex-shrink: 0;
   position: absolute;

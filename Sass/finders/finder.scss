@@ -27,10 +27,10 @@
       background: #fff;
       /* Appliquer les styles lorsque .finders__ingrédients est activé */
     }
-    
+
     .open {
       display: none;
-    
+
       /* Afficher le contenu lorsque .finders__ingrédients est activé */
     }
 
@@ -54,25 +54,24 @@
 
         .header {
           position: relative;
-       
 
           &__finder {
-            width:195px;
+            width: 195px;
             height: 100px;
 
             &__title {
               border-radius: 11px;
               background: #fff;
-              position : absolute;
-              left:16px;
-              top:17px;
-              display:flex;
-              gap:63px;
+              position: absolute;
+              left: 16px;
+              top: 17px;
+              display: flex;
+              gap: 63px;
             }
             &__input {
-              position:absolute;
-              left:16px;
-              top :53px;
+              position: absolute;
+              left: 16px;
+              top: 53px;
               padding-inline: 3px;
               width: 163px;
               height: 36px;
@@ -80,19 +79,19 @@
 
             .fa-magnifying-glass {
               position: absolute;
-            left:154px;
-            top:64px;
+              left: 154px;
+              top: 64px;
               font-size: 14px;
             }
-            .crossFinderDiv{
+            .crossFinderDiv {
               width: 6px;
               stroke-width: 1px;
-              stroke: var(--Grey, #7A7A7A);
+              stroke: var(--Grey, #7a7a7a);
               height: 6px;
               flex-shrink: 0;
-              position:absolute;
-              left:138px;
-              top:68px;
+              position: absolute;
+              left: 138px;
+              top: 68px;
             }
           }
 
@@ -121,7 +120,7 @@
                 & > .closeCrossFinder {
                   opacity: 1;
                 }
-                &> i{
+                & > i {
                   opacity: 1;
                 }
               }
@@ -129,14 +128,13 @@
           }
         }
 
-       
         .content {
           display: inline-flex;
           flex-direction: column;
           flex-direction: auto;
           overflow: auto;
           scroll-snap-align: start;
-      
+
           p {
             padding-left: 16px;
             display: inline-block;
@@ -147,8 +145,6 @@
       }
     }
   }
-
-
 
   &__recipesTotal {
     font-family: Anton;
@@ -162,8 +158,6 @@
     line-height: 31.61px;
   }
 }
-
-
 
 .tags {
   padding-top: 21px;

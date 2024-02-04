@@ -5,6 +5,6 @@ export async function closeCross(){
   {const svgContent= await response.text();
 
 return svgContent;}
-else{console.log('svg error');}
+
 
 }
