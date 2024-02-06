@@ -5,6 +5,7 @@ export default function recetteMaker(recette) {
 
   //creating image
   const imageRecette = document.createElement("img");
+  imageRecette.setAttribute('loading','lazy');
   imageRecette.src = `Assets/${recette.image}`;
   imageRecette.alt = `${recette.name}`;
   imageRecette.className = "recetteContainer__imageRecette";
