@@ -11,12 +11,12 @@ export function  ReloadPage(tag){
         Finders.reloadFinders(tag);
 
         // CONSOLE.LOG FORT TESTING APPAREILS USTENSILES
-        // MasterList.masterList.forEach((recette)=>console.log('RecetteUstensiles'+recette.ustensiles));
-        // MasterList.masterList.forEach((recette)=>console.log('RecetteIngredients'+recette.ingredients));
-        // MasterList.masterList.forEach((recette)=>console.log('RecetteAppareil'+recette.appliance));
-        // console.log('tagIngredients'+tag.ingredientsTaglist)
-        // console.log('tagAppareils'+tag.appareilsTaglist)
-        // console.log('tagUstensils'+tag.ustensilesTaglist)
+        MasterList.masterList.forEach((recette)=>console.log('RecetteUstensiles'+recette.ustensiles));
+        MasterList.masterList.forEach((recette)=>console.log('RecetteIngredients'+recette.ingredients));
+        MasterList.masterList.forEach((recette)=>console.log('RecetteAppareil'+recette.appliance));
+        console.log('tagIngredients'+tag.ingredientsTaglist)
+        console.log('tagAppareils'+tag.appareilsTaglist)
+        console.log('tagUstensils'+tag.ustensilesTaglist)
            
         }
  
